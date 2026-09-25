@@ -1,0 +1,20 @@
+{
+  "platform": "windows",
+  "name": "Windows",
+  "status": "available",
+  "latestVersion": "v2.2.0",
+  "releaseDate": "2026-09-25",
+  "downloadUrl": "https://example.com/insurance-ai/windows/insurance-ai-v2.2.0-setup.exe",
+  "fileName": "insurance-ai-v2.2.0-setup.exe",
+  "fileSize": "준비 중",
+  "minimumVersion": "v2.0.0",
+  "checksum": {
+    "sha256": ""
+  },
+  "changelog": [
+    "업데이트 서버 정적 사이트 지원",
+    "Windows 데스크톱 앱 최신 버전 정보 제공",
+    "다운로드 링크 및 변경사항 표시"
+  ],
+  "notes": "다운로드 URL과 체크섬은 실제 배포 파일 업로드 후 교체하세요."
+}

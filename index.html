@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>insurance-ai 업데이트 서버</title>
+  <style>
+    :root {
+      --brand: #2563eb;
+      --brand-dark: #1d4ed8;
+      --brand-soft: #dbeafe;
+      --bg: #f8fafc;
+      --surface: rgba(255, 255, 255, 0.86);
+      --surface-strong: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: rgba(148, 163, 184, 0.28);
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
+      --success: #16a34a;
+      --warning: #d97706;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --brand: #60a5fa;
+      --brand-dark: #3b82f6;
+      --brand-soft: rgba(37, 99, 235, 0.18);
+      --bg: #020617;
+      --surface: rgba(15, 23, 42, 0.80);
+      --surface-strong: #0f172a;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.22);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      --success: #4ade80;
+      --warning: #fbbf24;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.12), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 52px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 44px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .logo {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      background: linear-gradient(135deg, var(--brand), #0ea5e9);
+      box-shadow: 0 12px 34px rgba(37, 99, 235, 0.35);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 700;
+      backdrop-filter: blur(14px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy, .panel {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
+    }
+
+    .hero-copy { padding: clamp(28px, 5vw, 56px); }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--brand-dark);
+      background: var(--brand-soft);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.25rem, 6vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+    }
+
+    .hero-copy p {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      line-height: 1.75;
+    }
+
+    .panel { padding: 24px; }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 6px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(148, 163, 184, 0.10);
+    }
+
+    .tab {
+      border: 0;
+      border-radius: 13px;
+      padding: 12px 14px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.98rem;
+      font-weight: 800;
+    }
+
+    .tab.active {
+      background: var(--surface-strong);
+      color: var(--brand-dark);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .status-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.86rem;
+      background: rgba(22, 163, 74, 0.12);
+      color: var(--success);
+    }
+
+    .badge.pending {
+      background: rgba(217, 119, 6, 0.13);
+      color: var(--warning);
+    }
+
+    .version {
+      margin: 0;
+      font-size: clamp(2.2rem, 8vw, 4.6rem);
+      letter-spacing: -0.07em;
+      line-height: 1;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .meta {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .meta span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .meta strong {
+      display: block;
+      margin-top: 7px;
+      overflow-wrap: anywhere;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--brand), #0ea5e9);
+      color: white;
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.34);
+    }
+
+    .download.disabled {
+      pointer-events: none;
+      opacity: 0.55;
+      filter: grayscale(0.35);
+    }
+
+    .api-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 16px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 800;
+      background: var(--surface-strong);
+    }
+
+    .changelog-title {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .changelog {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .changelog li {
+      display: flex;
+      gap: 10px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .changelog li::before {
+      content: "";
+      flex: 0 0 7px;
+      width: 7px;
+      height: 7px;
+      margin-top: 9px;
+      border-radius: 999px;
+      background: var(--brand);
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      color: var(--muted);
+      background: rgba(37, 99, 235, 0.07);
+      line-height: 1.65;
+    }
+
+    footer {
+      margin-top: 34px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .skeleton {
+      min-height: 260px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      border: 1px dashed var(--border);
+      border-radius: 22px;
+    }
+
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; }
+      header { margin-bottom: 24px; }
+      .page { width: min(100% - 24px, 1120px); padding-top: 18px; }
+      .hero-copy, .panel { border-radius: 24px; }
+    }
+
+    @media (max-width: 520px) {
+      header { align-items: flex-start; flex-direction: column; }
+      .theme-toggle { width: 100%; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .actions a { width: 100%; }
+      .tabs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand" aria-label="insurance-ai">
+        <div class="logo" aria-hidden="true">IA</div>
+        <span>insurance-ai 업데이트</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="다크모드 전환">🌙 다크모드</button>
+    </header>
+
+    <main class="hero">
+      <section class="hero-copy" aria-labelledby="pageTitle">
+        <div class="eyebrow">안전한 최신 버전 배포</div>
+        <h1 id="pageTitle">insurance-ai<br>Update Center</h1>
+        <p>
+          Windows와 Android 앱의 최신 버전, 다운로드 링크, 변경사항을 한 곳에서 확인합니다.
+          이 페이지는 <strong>api/windows.json</strong>과 <strong>api/android.json</strong>을 자동으로 읽어 최신 정보를 표시합니다.
+        </p>
+        <div class="notice">
+          배포 파일을 업로드한 뒤 JSON의 <strong>downloadUrl</strong>, <strong>fileSize</strong>, <strong>checksum.sha256</strong> 값을 실제 값으로 교체하세요.
+        </div>
+      </section>
+
+      <section class="panel" aria-live="polite">
+        <nav class="tabs" aria-label="플랫폼 선택">
+          <button class="tab active" type="button" data-platform="windows">Windows</button>
+          <button class="tab" type="button" data-platform="android">Android</button>
+        </nav>
+
+        <div id="content" class="skeleton">버전 정보를 불러오는 중...</div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> insurance-ai. Static update metadata server.
+    </footer>
+  </div>
+
+  <script>
+    const state = {
+      platform: 'windows',
+      data: {},
+      endpoints: {
+        windows: 'api/windows.json',
+        android: 'api/android.json'
+      }
+    };
+
+    const content = document.getElementById('content');
+    const tabs = document.querySelectorAll('.tab');
+    const themeToggle = document.getElementById('themeToggle');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function getPreferredTheme() {
+      const saved = localStorage.getItem('insurance-ai-theme');
+      if (saved) return saved;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      themeToggle.textContent = theme === 'dark' ? '☀️ 라이트모드' : '🌙 다크모드';
+      localStorage.setItem('insurance-ai-theme', theme);
+    }
+
+    function formatValue(value, fallback = '준비 중') {
+      return value === null || value === undefined || value === '' ? fallback : value;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    async function loadPlatform(platform) {
+      if (!state.data[platform]) {
+        const response = await fetch(state.endpoints[platform], { cache: 'no-store' });
+        if (!response.ok) throw new Error(`${platform} API 응답 오류: ${response.status}`);
+        state.data[platform] = await response.json();
+      }
+      return state.data[platform];
+    }
+
+    function renderError(error) {
+      content.className = 'skeleton';
+      content.innerHTML = `버전 정보를 불러오지 못했습니다.<br><small>${escapeHtml(error.message)}</small>`;
+    }
+
+    function renderPlatform(data) {
+      const available = data.status === 'available' && data.downloadUrl;
+      const badgeClass = available ? 'badge' : 'badge pending';
+      const badgeText = available ? '● 다운로드 가능' : '● 준비 중';
+      const version = formatValue(data.latestVersion);
+      const changelog = Array.isArray(data.changelog) && data.changelog.length
+        ? data.changelog
+        : ['변경사항이 아직 등록되지 않았습니다.'];
+      const platform = escapeHtml(data.platform || state.platform);
+
+      content.className = '';
+      content.innerHTML = `
+        <div class="status-line">
+          <span class="${badgeClass}">${badgeText}</span>
+          <strong>${escapeHtml(formatValue(data.name, platform))}</strong>
+        </div>
+        <h2 class="version">${escapeHtml(version)}</h2>
+        <div class="meta-grid">
+          <div class="meta"><span>Release date</span><strong>${escapeHtml(formatValue(data.releaseDate))}</strong></div>
+          <div class="meta"><span>File size</span><strong>${escapeHtml(formatValue(data.fileSize))}</strong></div>
+          <div class="meta"><span>Minimum version</span><strong>${escapeHtml(formatValue(data.minimumVersion))}</strong></div>
+          <div class="meta"><span>SHA-256</span><strong>${escapeHtml(formatValue(data.checksum && data.checksum.sha256))}</strong></div>
+        </div>
+        <div class="actions">
+          <a class="download ${available ? '' : 'disabled'}" href="${available ? escapeHtml(data.downloadUrl) : '#'}" ${available ? 'download' : 'aria-disabled="true"'}>
+            ${available ? '다운로드' : '출시 준비 중'}
+          </a>
+          <a class="api-link" href="${escapeHtml(state.endpoints[state.platform])}" target="_blank" rel="noreferrer">JSON 보기</a>
+        </div>
+        <h3 class="changelog-title">변경사항</h3>
+        <ul class="changelog">
+          ${changelog.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    async function selectPlatform(platform) {
+      state.platform = platform;
+      tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.platform === platform));
+      content.className = 'skeleton';
+      content.textContent = '버전 정보를 불러오는 중...';
+      try {
+        const data = await loadPlatform(platform);
+        renderPlatform(data);
+      } catch (error) {
+        renderError(error);
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => selectPlatform(tab.dataset.platform));
+    });
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    applyTheme(getPreferredTheme());
+    selectPlatform(state.platform);
+  </script>
+</body>
+</html>
