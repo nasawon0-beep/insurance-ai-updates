@@ -200,9 +200,9 @@
         h1 {
             max-width: 780px;
             margin: 28px 0 22px;
-            font-size: clamp(32px, 7vw, 104px);
-            line-height: 1.1;
-            letter-spacing: -.02em;
+            font-size: clamp(28px, 6vw, 104px);
+            line-height: 1.15;
+            letter-spacing: -.01em;
             font-weight: 670;
             word-break: keep-all;
         }
@@ -218,9 +218,10 @@
             max-width: 650px;
             margin: 0;
             color: #d6deee;
-            font-size: clamp(15px, 1.8vw, 21px);
-            line-height: 1.6;
-            letter-spacing: -.01em;
+            font-size: clamp(14px, 1.5vw, 21px);
+            line-height: 1.7;
+            letter-spacing: 0;
+            word-break: keep-all;
         }
         .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
         .button {
@@ -337,8 +338,8 @@
         .section-head { max-width: 770px; margin-bottom: 46px; }
         .section-head.center { text-align: center; margin-inline: auto; }
         .kicker { display: inline-block; margin-bottom: 14px; color: var(--mint); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-        .section h2 { margin: 0; font-size: clamp(36px, 5vw, 66px); line-height: .99; letter-spacing: -.07em; font-weight: 650; text-wrap: balance; }
-        .section-head p, .download-intro p { margin: 20px 0 0; color: var(--ink-2); font-size: clamp(16px, 1.55vw, 20px); line-height: 1.72; letter-spacing: -.025em; text-wrap: pretty; }
+        .section h2 { margin: 0; font-size: clamp(28px, 5vw, 66px); line-height: 1.1; letter-spacing: -.03em; font-weight: 650; word-break: keep-all; }
+        .section-head p, .download-intro p { margin: 20px 0 0; color: var(--ink-2); font-size: clamp(14px, 1.55vw, 20px); line-height: 1.7; letter-spacing: 0; word-break: keep-all; }
 
         .trust-band { margin-top: -34px; position: relative; z-index: 4; }
         .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line-soft); border-radius: 30px; background: rgba(255,255,255,.07); box-shadow: 0 28px 80px rgba(0,0,0,.38); }
@@ -352,8 +353,8 @@
         .feature-card { position: relative; padding: 21px 22px 21px 70px; border-radius: 23px; border: 1px solid var(--line-soft); background: rgba(255,255,255,.04); transition: transform .26s var(--ease), background .26s var(--ease), border-color .26s var(--ease); }
         .feature-card:hover { transform: translate3d(6px, -2px, 0); background: rgba(255,255,255,.062); border-color: rgba(255,255,255,.16); }
         .feature-number { position: absolute; left: 18px; top: 20px; width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid rgba(61,242,208,.16); border-radius: 13px; color: var(--mint); background: rgba(61,242,208,.08); font-size: 12px; font-weight: 800; }
-        .feature-card h3 { margin: 0 0 7px; font-size: 18px; letter-spacing: -.03em; }
-        .feature-card p { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.65; }
+        .feature-card h3 { margin: 0 0 7px; font-size: 18px; letter-spacing: -.01em; word-break: keep-all; }
+        .feature-card p { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.7; word-break: keep-all; }
         .scan-panel { min-height: 650px; border-radius: 38px; padding: 30px; display: grid; align-content: space-between; }
         .doc-surface { padding: 22px; border: 1px solid var(--line-soft); border-radius: 26px; background: rgba(0,0,0,.18); }
         .doc-line { height: 12px; margin-bottom: 13px; border-radius: 99px; background: rgba(255,255,255,.13); }
