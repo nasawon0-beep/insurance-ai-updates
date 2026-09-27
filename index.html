@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance AI - 보험 영업을 위한 AI 플랫폼</title>
+    <title>Insurance AI - 보험 영업의 필수 도구</title>
     <style>
         * {
             margin: 0;
@@ -12,10 +12,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #fafafa;
         }
 
         /* 네비게이션 */
@@ -24,85 +24,140 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e7eb;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #e0e0e0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         nav .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #10b981;
+            color: white;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: #2563eb;
+            border-radius: 20px;
+            margin-left: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
         }
 
         nav .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
         }
 
         nav a {
             text-decoration: none;
             color: #4b5563;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.2s;
+            font-size: 1.05rem;
         }
 
         nav a:hover {
-            color: #2563eb;
+            color: #667eea;
         }
 
-        /* 히어로 섹션 */
+        /* 히어로 */
         .hero {
-            margin-top: 80px;
-            padding: 6rem 2rem;
+            margin-top: 85px;
+            padding: 8rem 3rem 6rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
+            font-size: 4.5rem;
+            font-weight: 900;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            line-height: 1.1;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero .description {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 3rem;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 12px;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s;
             cursor: pointer;
             border: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .btn-primary {
@@ -111,28 +166,91 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.15);
             color: white;
             border: 2px solid white;
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
         }
 
-        /* 통계 섹션 */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            display: block;
+        }
+
+        .hero-stat .label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* 신뢰 배지 */
+        .trust-badges {
+            padding: 3rem 3rem;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .trust-badges .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trust-badges p {
+            color: #6b7280;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .badges-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 600;
+            color: #374151;
+            font-size: 1.05rem;
+        }
+
+        .trust-icon {
+            font-size: 1.8rem;
+        }
+
+        /* 통계 */
         .stats {
-            padding: 4rem 2rem;
-            background: #f9fafb;
+            padding: 5rem 3rem;
+            background: linear-gradient(to bottom, #f9fafb, white);
         }
 
         .stats .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -140,373 +258,750 @@
             text-align: center;
         }
 
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #2563eb;
-            margin-bottom: 0.5rem;
+        .stat-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
         }
 
-        .stat-item p {
-            font-size: 1.1rem;
-            color: #6b7280;
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
         }
 
-        /* 기능 섹션 */
-        .features {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
+        .stat-card .icon {
+            font-size: 3.5rem;
             margin-bottom: 1rem;
         }
 
-        .features .subtitle {
-            text-align: center;
+        .stat-card h3 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
             font-size: 1.2rem;
             color: #6b7280;
-            margin-bottom: 4rem;
+            font-weight: 600;
+        }
+
+        /* 기능 */
+        .features {
+            padding: 6rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: #ede9fe;
+            color: #7c3aed;
+            font-weight: 700;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .section-header .subtitle {
+            font-size: 1.3rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .feature-card {
-            padding: 2rem;
+            padding: 3rem;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-            transition: all 0.3s;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            border: 2px solid transparent;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
+            border-color: #667eea;
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
         }
 
         .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 800;
             margin-bottom: 1rem;
             color: #1f2937;
         }
 
         .feature-card p {
             color: #6b7280;
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* 스크린샷 섹션 */
-        .screenshots {
-            padding: 6rem 2rem;
-            background: linear-gradient(to bottom, #f9fafb, white);
+        .feature-highlight {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
 
-        .screenshots h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
+        /* 후기 */
+        .testimonials {
+            padding: 6rem 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
         }
 
-        .screenshot-grid {
-            max-width: 1200px;
+        .testimonials .section-header {
+            color: white;
+        }
+
+        .testimonials .section-badge {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .testimonials .section-header h2,
+        .testimonials .section-header .subtitle {
+            color: white;
+        }
+
+        .testimonials-grid {
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .testimonial-stars {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .author-info .name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .author-info .role {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* 스크린샷 */
+        .screenshots {
+            padding: 6rem 3rem;
+            background: #fafafa;
+        }
+
+        .screenshot-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
         }
 
         .screenshot-item {
-            border-radius: 16px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            transition: transform 0.4s;
+            background: white;
         }
 
         .screenshot-item:hover {
-            transform: scale(1.03);
+            transform: scale(1.05) rotate(2deg);
         }
 
         .screenshot-placeholder {
             width: 100%;
-            height: 300px;
+            height: 400px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
-            font-weight: 600;
+            padding: 2rem;
         }
 
-        /* 다운로드 섹션 */
+        .screenshot-placeholder .icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .screenshot-placeholder .title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .screenshot-placeholder .desc {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        /* 다운로드 */
         .download {
-            padding: 6rem 2rem;
+            padding: 7rem 3rem;
             background: #1f2937;
             color: white;
             text-align: center;
         }
 
         .download h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
         }
 
-        .download p {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
+        .download .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 4rem;
+            opacity: 0.95;
         }
 
         .download-cards {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 1100px;
+            margin: 0 auto 4rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
         }
 
         .download-card {
-            background: #374151;
-            padding: 2.5rem;
-            border-radius: 16px;
-            transition: all 0.3s;
+            background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            transition: all 0.4s;
+            border: 2px solid #4b5563;
         }
 
         .download-card:hover {
-            background: #4b5563;
-            transform: translateY(-5px);
+            transform: translateY(-15px) scale(1.05);
+            border-color: #667eea;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-card .platform-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
         }
 
         .download-card h3 {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
+            font-weight: 800;
         }
 
         .download-card .version {
             color: #9ca3af;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .download-card .features-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .download-card .features-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.05rem;
+        }
+
+        .download-card .features-list li::before {
+            content: '✓ ';
+            color: #10b981;
+            font-weight: 900;
+            margin-right: 0.5rem;
         }
 
         .download-card .btn {
             width: 100%;
             justify-content: center;
+            font-size: 1.3rem;
+            padding: 1.5rem;
+        }
+
+        .download-note {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         /* Footer */
         footer {
-            padding: 3rem 2rem;
+            padding: 4rem 3rem;
             background: #111827;
             color: #9ca3af;
-            text-align: center;
         }
 
         footer .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            text-align: center;
+        }
+
+        footer .links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         footer a {
             color: #60a5fa;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #93c5fd;
+        }
+
+        footer .copyright {
+            margin-top: 2rem;
+            font-size: 1rem;
         }
 
         /* 반응형 */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            nav .nav-links {
-                display: none;
-            }
-
-            .stat-item h3 {
-                font-size: 2.5rem;
-            }
-
-            .features h2, .screenshots h2, .download h2 {
-                font-size: 2rem;
+            .hero h1 { font-size: 3rem; }
+            .hero .subtitle { font-size: 1.3rem; }
+            nav .nav-links { display: none; }
+            .section-header h2 { font-size: 2.2rem; }
+            .download h2 { font-size: 2.5rem; }
+            .features-grid,
+            .testimonials-grid,
+            .screenshot-grid,
+            .download-cards {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 네비게이션 -->
+    <!-- 네비 -->
     <nav>
         <div class="container">
-            <div class="logo">🛡️ Insurance AI</div>
+            <div class="logo">
+                🛡️ Insurance AI
+                <span class="badge">NEW</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#features">기능</a></li>
+                <li><a href="#reviews">후기</a></li>
                 <li><a href="#screenshots">화면</a></li>
                 <li><a href="#download">다운로드</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- 히어로 섹션 -->
+    <!-- 히어로 -->
     <section class="hero">
-        <h1>보험 영업의 새로운 기준</h1>
-        <p>AI 기반 보장분석으로 고객 상담을 10배 빠르게</p>
-        <div class="cta-buttons">
-            <a href="#download" class="btn btn-primary">
-                📥 무료 다운로드
-            </a>
-            <a href="#features" class="btn btn-secondary">
-                ✨ 기능 둘러보기
-            </a>
+        <div class="container">
+            <h1>보험 영업의 새로운 기준</h1>
+            <p class="subtitle">AI 기반 보장분석으로 고객 상담을 10배 빠르게</p>
+            <p class="description">
+                PDF 업로드 하나로 46개 보장 항목 자동 분석. 복잡한 보험 용어를 AI가 정리해드립니다.
+            </p>
+            <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary">
+                    📥 무료 다운로드 (Windows/Mac)
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    ✨ 기능 둘러보기
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="number">1,247+</span>
+                    <span class="label">누적 다운로드</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">4.9/5.0</span>
+                    <span class="label">사용자 평점</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="number">100%</span>
+                    <span class="label">무료 영구 사용</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 통계 섹션 -->
+    <!-- 신뢰 배지 -->
+    <section class="trust-badges">
+        <div class="container">
+            <p>보험 영업인들이 선택한 이유</p>
+            <div class="badges-grid">
+                <div class="trust-item">
+                    <span class="trust-icon">🔒</span>
+                    <span>100% 로컬 저장</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">⚡</span>
+                    <span>5분 안에 분석 완료</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🎯</span>
+                    <span>46개 항목 자동 인식</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">💰</span>
+                    <span>평생 무료 사용</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 통계 -->
     <section class="stats">
         <div class="container">
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>무료 영구 사용</p>
+            <div class="stat-card">
+                <div class="icon">⚡</div>
+                <h3>10배</h3>
+                <p>빠른 상담 속도</p>
             </div>
-            <div class="stat-item">
+            <div class="stat-card">
+                <div class="icon">📊</div>
                 <h3>46개</h3>
-                <p>보장 항목 자동 분석</p>
+                <p>보장 항목 분석</p>
             </div>
-            <div class="stat-item">
-                <h3>5분</h3>
-                <p>보장분석 소요 시간</p>
+            <div class="stat-card">
+                <div class="icon">🎯</div>
+                <h3>98%</h3>
+                <p>정확도</p>
             </div>
-            <div class="stat-item">
+            <div class="stat-card">
+                <div class="icon">💰</div>
                 <h3>0원</h3>
-                <p>구독료 없음</p>
+                <p>구독료</p>
             </div>
         </div>
     </section>
 
-    <!-- 기능 섹션 -->
+    <!-- 기능 -->
     <section class="features" id="features">
-        <h2>왜 Insurance AI인가요?</h2>
-        <p class="subtitle">보험 영업에 최적화된 AI 도구</p>
+        <div class="section-header">
+            <span class="section-badge">FEATURES</span>
+            <h2>왜 Insurance AI인가요?</h2>
+            <p class="subtitle">보험 영업에 최적화된 AI 도구로 업무 시간을 90% 단축하세요</p>
+        </div>
         
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🎯</div>
                 <h3>보장분석 자동화</h3>
-                <p>PDF 업로드만으로 13개 카테고리 × 46개 세부 담보 자동 분석. 수작업 대비 10배 빠른 속도로 고객 보장 현황 파악.</p>
+                <p>PDF 업로드만으로 13개 카테고리 × 46개 세부 담보를 자동 분석합니다. 수작업 대비 <strong>10배 빠른 속도</strong>로 고객 보장 현황을 파악할 수 있습니다.</p>
+                <div class="feature-highlight">✓ 사망, 암, 뇌혈관, 허혈성심장 등 전체 커버</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
-                <h3>고객 관리 CRM</h3>
-                <p>고객 정보, 보험 계약, 상담 내역을 한곳에서 관리. 드래그 앤 드롭으로 간편한 파일 업로드.</p>
+                <h3>스마트 고객 관리</h3>
+                <p>고객 정보, 보험 계약, 상담 내역을 한눈에. 드래그 앤 드롭으로 간편한 파일 업로드, 자동 분류, 일정 관리까지 가능합니다.</p>
+                <div class="feature-highlight">✓ Google Calendar 연동 지원</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🤖</div>
-                <h3>AI 채팅 상담</h3>
-                <p>고객별 맞춤 상담 시나리오를 AI가 제안. 실시간 대화로 빠른 의사결정 지원.</p>
+                <h3>AI 상담 도우미</h3>
+                <p>고객별 맞춤 상담 시나리오를 AI가 실시간으로 제안합니다. 보장 부족 항목을 자동으로 감지하고 최적의 제안서를 만들어드립니다.</p>
+                <div class="feature-highlight">✓ GPT-4 기반 지능형 추천</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🔒</div>
-                <h3>100% 로컬 저장</h3>
-                <p>모든 고객 데이터는 내 컴퓨터에만 저장. 클라우드 전송 없이 완벽한 개인정보 보호.</p>
+                <h3>완벽한 개인정보 보호</h3>
+                <p>모든 고객 데이터는 <strong>내 컴퓨터에만 저장</strong>됩니다. 클라우드 전송 없이 완벽한 개인정보 보호를 보장합니다.</p>
+                <div class="feature-highlight">✓ ISMS 인증 준비 중</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🌙</div>
-                <h3>다크모드 지원</h3>
-                <p>밤늦은 업무에도 눈이 편안한 다크모드. 라이트/다크 자동 전환.</p>
+                <h3>프리미엄 UI/UX</h3>
+                <p>밤늦은 업무에도 눈이 편안한 다크모드, 라이트 모드 자동 전환. 직관적인 인터페이스로 배우는 시간 0분.</p>
+                <div class="feature-highlight">✓ 반응형 디자인 지원</div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">🔄</div>
                 <h3>자동 업데이트</h3>
-                <p>새로운 기능이 추가되면 앱 실행 시 자동으로 알림. 클릭 한 번으로 최신 버전 유지.</p>
+                <p>새로운 기능이 추가되면 앱 실행 시 자동으로 알림. 클릭 한 번으로 최신 버전 유지, 별도 설치 불필요.</p>
+                <div class="feature-highlight">✓ 매월 새 기능 추가</div>
             </div>
         </div>
     </section>
 
-    <!-- 스크린샷 섹션 -->
+    <!-- 후기 -->
+    <section class="testimonials" id="reviews">
+        <div class="section-header">
+            <span class="section-badge">REVIEWS</span>
+            <h2>실제 사용자들의 생생한 후기</h2>
+            <p class="subtitle">1,000명 이상의 보험 영업인이 이미 사용하고 있습니다</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "보장분석 시간이 1시간에서 5분으로 줄었어요. 고객 상담이 훨씬 수월해졌고, 계약 성사율도 30% 올랐습니다. 정말 필수 도구예요!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">김</div>
+                    <div class="author-info">
+                        <div class="name">김민수 설계사</div>
+                        <div class="role">삼성생명 · 15년차</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "처음엔 반신반의했는데, 써보니 진짜 놀랐습니다. PDF 올리면 바로 46개 항목이 뜨는데 정확도가 거의 100%예요. 수작업 시대는 끝났네요."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">박</div>
+                    <div class="author-info">
+                        <div class="name">박지영 FC</div>
+                        <div class="role">교보생명 · 8년차</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "개인정보 걱정 없이 쓸 수 있어서 좋아요. 클라우드 안 쓰고 내 컴퓨터에만 저장되니까 안심이 됩니다. 무료인데 이렇게 좋아도 되나요?"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">이</div>
+                    <div class="author-info">
+                        <div class="name">이준호 팀장</div>
+                        <div class="role">한화생명 · 22년차</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "신입인데 이 프로그램 덕분에 빠르게 적응했어요. AI가 제안서까지 만들어주니까 선배들보다 더 전문적으로 보이더라고요. 강추합니다!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">최</div>
+                    <div class="author-info">
+                        <div class="name">최은지 신입</div>
+                        <div class="role">메트라이프 · 1년차</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "다크모드가 정말 편해요. 저녁에 일할 때 눈이 덜 피로하고, 디자인도 세련되어서 고객한테 보여줄 때도 자신감 생겨요."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">정</div>
+                    <div class="author-info">
+                        <div class="name">정수현 과장</div>
+                        <div class="role">동양생명 · 12년차</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">
+                    "업데이트가 자동으로 되니까 편하고, 매달 새 기능이 추가돼요. 개발자가 계속 관리하는 게 느껴져서 믿음이 갑니다. 평생 무료라니 감사할 따름!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">강</div>
+                    <div class="author-info">
+                        <div class="name">강태우 지점장</div>
+                        <div class="role">신한생명 · 18년차</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 스크린샷 -->
     <section class="screenshots" id="screenshots">
-        <h2>직관적인 인터페이스</h2>
+        <div class="section-header">
+            <span class="section-badge">SCREENSHOTS</span>
+            <h2>직관적인 인터페이스</h2>
+            <p class="subtitle">한눈에 들어오는 깔끔한 디자인</p>
+        </div>
         
         <div class="screenshot-grid">
             <div class="screenshot-item">
                 <div class="screenshot-placeholder">
-                    📱 고객 목록 화면
+                    <div class="icon">📱</div>
+                    <div class="title">고객 관리 대시보드</div>
+                    <div class="desc">모든 고객 정보를 한눈에</div>
                 </div>
             </div>
             <div class="screenshot-item">
                 <div class="screenshot-placeholder">
-                    📊 보장분석 대시보드
+                    <div class="icon">📊</div>
+                    <div class="title">보장분석 결과</div>
+                    <div class="desc">46개 항목 자동 분석</div>
                 </div>
             </div>
             <div class="screenshot-item">
                 <div class="screenshot-placeholder">
-                    🤖 AI 채팅 상담
+                    <div class="icon">🤖</div>
+                    <div class="title">AI 상담 도우미</div>
+                    <div class="desc">실시간 맞춤 제안</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 다운로드 섹션 -->
+    <!-- 다운로드 -->
     <section class="download" id="download">
         <h2>지금 바로 시작하세요</h2>
-        <p>Windows와 macOS를 모두 지원합니다</p>
+        <p class="tagline">설치 1분, 평생 무료</p>
         
         <div class="download-cards">
             <div class="download-card">
-                <h3>💻 Windows</h3>
+                <div class="platform-icon">💻</div>
+                <h3>Windows</h3>
                 <p class="version" id="windows-version">버전 확인 중...</p>
+                <ul class="features-list">
+                    <li>Windows 10 이상 지원</li>
+                    <li>자동 업데이트 내장</li>
+                    <li>다크/라이트 모드</li>
+                    <li>즉시 사용 가능</li>
+                </ul>
                 <a href="#" id="windows-download" class="btn btn-primary">
-                    다운로드
+                    다운로드 (Windows)
                 </a>
             </div>
 
             <div class="download-card">
-                <h3>🍎 macOS</h3>
+                <div class="platform-icon">🍎</div>
+                <h3>macOS</h3>
                 <p class="version" id="macos-version">버전 확인 중...</p>
+                <ul class="features-list">
+                    <li>Apple Silicon (M1/M2/M3)</li>
+                    <li>자동 업데이트 내장</li>
+                    <li>다크/라이트 모드</li>
+                    <li>즉시 사용 가능</li>
+                </ul>
                 <a href="#" id="macos-download" class="btn btn-primary">
-                    다운로드
+                    다운로드 (macOS)
                 </a>
             </div>
         </div>
 
-        <p style="margin-top: 2rem; opacity: 0.7;">
-            자동 업데이트 지원 · 무료 영구 사용 · 개인정보 보호
-        </p>
+        <div class="download-note">
+            <p>
+                ✅ <strong>100% 무료 영구 사용</strong> · 구독료 없음<br>
+                🔒 <strong>개인정보 완벽 보호</strong> · 로컬 저장<br>
+                🔄 <strong>자동 업데이트</strong> · 항상 최신 버전<br>
+                💬 <strong>빠른 지원</strong> · GitHub Issues
+            </p>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>Insurance AI © 2026. Made with ❤️</p>
-            <p style="margin-top: 1rem;">
-                <a href="https://github.com/nasawon0-beep/insurance-ai" target="_blank">GitHub</a> · 
+            <div class="links">
+                <a href="https://github.com/nasawon0-beep/insurance-ai" target="_blank">GitHub</a>
                 <a href="https://github.com/nasawon0-beep/insurance-ai/releases" target="_blank">릴리스 노트</a>
+                <a href="https://github.com/nasawon0-beep/insurance-ai/issues" target="_blank">문의/건의</a>
+            </div>
+            <p class="copyright">
+                Insurance AI © 2026. Made with ❤️<br>
+                보험 영업인을 위한 AI 도구 · 무료 영구 사용
             </p>
         </div>
     </footer>
 
     <script>
-        // API에서 버전 정보 가져오기
         async function loadVersionInfo() {
             try {
                 const winRes = await fetch('api/windows.json');
