@@ -200,27 +200,27 @@
         h1 {
             max-width: 780px;
             margin: 28px 0 22px;
-            font-size: clamp(52px, 8.2vw, 104px);
-            line-height: .9;
-            letter-spacing: -.085em;
+            font-size: clamp(32px, 7vw, 104px);
+            line-height: 1.1;
+            letter-spacing: -.02em;
             font-weight: 670;
-            text-wrap: balance;
+            word-break: keep-all;
         }
         .title-gradient {
-            color: transparent;
+            color: #ffffff;
             background: linear-gradient(96deg, #fff 0%, #e2e8ff 31%, #9fe8ff 62%, #99ffe9 100%);
             -webkit-background-clip: text;
             background-clip: text;
-            text-shadow: 0 0 70px rgba(141,124,255,.22);
+            -webkit-text-fill-color: transparent;
+            text-shadow: none;
         }
         .hero-lede {
             max-width: 650px;
             margin: 0;
-            color: var(--ink-2);
-            font-size: clamp(17px, 1.6vw, 21px);
-            line-height: 1.75;
-            letter-spacing: -.026em;
-            text-wrap: pretty;
+            color: #d6deee;
+            font-size: clamp(15px, 1.8vw, 21px);
+            line-height: 1.6;
+            letter-spacing: -.01em;
         }
         .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
         .button {
@@ -457,6 +457,8 @@
         }
         @media (max-width: 760px) {
             .container { width: min(100% - 28px, var(--container)); }
+            [data-reveal] { opacity: 1 !important; transform: none !important; }
+            [data-reveal].is-visible { opacity: 1; transform: none; }
             .nav { top: 8px; }
             .nav-inner { height: 56px; padding-left: 13px; }
             .brand small, .nav-links a:not(.nav-download) { display: none; }
