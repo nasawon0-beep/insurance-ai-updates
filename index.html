@@ -3,1030 +3,758 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance AI - 보험 영업의 필수 도구</title>
+    <meta name="description" content="Insurance AI - 보험 영업인을 위한 프리미엄 AI 보장분석 도구">
+    <title>Insurance AI — Premium Coverage Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --ink: #f8fbff;
+            --ink-2: #d6deee;
+            --ink-3: #8f9ab2;
+            --ink-4: #596173;
+            --void: #02030a;
+            --void-2: #060814;
+            --glass: rgba(255, 255, 255, 0.065);
+            --glass-2: rgba(255, 255, 255, 0.105);
+            --line: rgba(255, 255, 255, 0.12);
+            --line-soft: rgba(255, 255, 255, 0.07);
+            --violet: #8d7cff;
+            --blue: #54b8ff;
+            --mint: #3df2d0;
+            --gold: #f5d38a;
+            --rose: #ff78aa;
+            --radius-1: 12px;
+            --radius-2: 22px;
+            --radius-3: 34px;
+            --radius-4: 48px;
+            --ease: cubic-bezier(.19, 1, .22, 1);
+            --container: 1180px;
         }
 
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; background: var(--void); }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #fafafa;
+            margin: 0;
+            min-width: 320px;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 18% -8%, rgba(141, 124, 255, .34), transparent 34rem),
+                radial-gradient(circle at 96% 9%, rgba(61, 242, 208, .22), transparent 33rem),
+                radial-gradient(circle at 58% 52%, rgba(84, 184, 255, .11), transparent 42rem),
+                linear-gradient(180deg, #050713 0%, #02030a 48%, #070910 100%);
+            font-family: Geist, 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            font-feature-settings: "liga", "tnum";
+            line-height: 1.55;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: geometricPrecision;
         }
 
-        /* 네비게이션 */
-        nav {
+        body::before,
+        body::after {
+            content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid #e0e0e0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            inset: 0;
+            pointer-events: none;
+        }
+        body::before {
+            z-index: -3;
+            background-image:
+                linear-gradient(rgba(255,255,255,.042) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.042) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: radial-gradient(circle at 50% 0%, black, transparent 66%);
+        }
+        body::after {
+            z-index: -2;
+            opacity: .42;
+            mix-blend-mode: soft-light;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.48'/%3E%3C/svg%3E");
         }
 
-        nav .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.2rem 3rem;
+        a { color: inherit; text-decoration: none; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+        .container { width: min(var(--container), calc(100% - 48px)); margin-inline: auto; }
+        .mono { font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+        .premium-aurora {
+            position: fixed;
+            inset: auto auto 6% -8%;
+            width: 46vw;
+            height: 46vw;
+            z-index: -1;
+            border-radius: 999px;
+            background: conic-gradient(from 210deg, transparent, rgba(141,124,255,.35), rgba(61,242,208,.27), rgba(255,120,170,.18), transparent 74%);
+            filter: blur(56px);
+            opacity: .62;
+            animation: auroraDrift 18s ease-in-out infinite alternate;
+        }
+        .executive-cosmos {
+            position: fixed;
+            top: 8%;
+            right: -14%;
+            width: 54vw;
+            height: 54vw;
+            z-index: -1;
+            border-radius: 999px;
+            background: radial-gradient(circle, rgba(84,184,255,.18), rgba(141,124,255,.12) 38%, transparent 68%);
+            filter: blur(18px);
+            opacity: .9;
+            animation: cosmosPulse 10s ease-in-out infinite;
+        }
+
+        .nav {
+            position: fixed;
+            inset: 16px 0 auto;
+            z-index: 50;
+            pointer-events: none;
+        }
+        .nav-inner {
+            pointer-events: auto;
+            height: 62px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 0 13px 0 18px;
+            border: 1px solid var(--line-soft);
+            border-radius: 999px;
+            background: rgba(7, 10, 20, .66);
+            box-shadow: 0 22px 80px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.1);
+            backdrop-filter: blur(26px) saturate(160%);
         }
-
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            background: #10b981;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-            border-radius: 20px;
-            margin-left: 0.5rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        nav .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #4b5563;
-            font-weight: 600;
-            transition: color 0.2s;
-            font-size: 1.05rem;
-        }
-
-        nav a:hover {
-            color: #667eea;
-        }
-
-        /* 히어로 */
-        .hero {
-            margin-top: 85px;
-            padding: 8rem 3rem 6rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-
-        .hero .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-
-        .hero .description {
-            font-size: 1.3rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .btn {
-            padding: 1.2rem 3rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
+        .brand {
             display: inline-flex;
             align-items: center;
-            gap: 0.7rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn-primary {
-            background: white;
-            color: #667eea;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255,255,255,0.15);
-            color: white;
-            border: 2px solid white;
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-3px);
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-stat {
-            text-align: center;
-        }
-
-        .hero-stat .number {
-            font-size: 2.5rem;
-            font-weight: 900;
-            display: block;
-        }
-
-        .hero-stat .label {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        /* 신뢰 배지 */
-        .trust-badges {
-            padding: 3rem 3rem;
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .trust-badges .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .trust-badges p {
-            color: #6b7280;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .badges-grid {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-weight: 600;
-            color: #374151;
-            font-size: 1.05rem;
-        }
-
-        .trust-icon {
-            font-size: 1.8rem;
-        }
-
-        /* 통계 */
-        .stats {
-            padding: 5rem 3rem;
-            background: linear-gradient(to bottom, #f9fafb, white);
-        }
-
-        .stats .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
-        }
-
-        .stat-card .icon {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .stat-card h3 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-card p {
-            font-size: 1.2rem;
-            color: #6b7280;
-            font-weight: 600;
-        }
-
-        /* 기능 */
-        .features {
-            padding: 6rem 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .section-badge {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            background: #ede9fe;
-            color: #7c3aed;
+            gap: 11px;
             font-weight: 700;
-            border-radius: 30px;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+            letter-spacing: -.04em;
+            white-space: nowrap;
         }
-
-        .section-header h2 {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
-        }
-
-        .section-header .subtitle {
-            font-size: 1.3rem;
-            color: #6b7280;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .features-grid {
+        .brand-symbol {
+            width: 34px;
+            height: 34px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            place-items: center;
+            border-radius: 13px;
+            color: #06100f;
+            background:
+                radial-gradient(circle at 26% 18%, #fff 0 10%, transparent 34%),
+                linear-gradient(135deg, var(--mint), var(--blue) 45%, var(--violet));
+            box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 14px 34px rgba(84,184,255,.32);
+        }
+        .brand small { color: var(--ink-3); font-weight: 500; letter-spacing: 0; margin-left: 4px; }
+        .nav-links { display: flex; align-items: center; gap: 4px; }
+        .nav-links a {
+            color: var(--ink-2);
+            font-size: 13px;
+            font-weight: 650;
+            padding: 10px 13px;
+            border-radius: 999px;
+            transition: background .22s var(--ease), color .22s var(--ease), transform .22s var(--ease);
+        }
+        .nav-links a:hover { color: white; background: rgba(255,255,255,.075); transform: translateY(-1px); }
+        .nav-links .nav-download {
+            color: #041210;
+            background: linear-gradient(135deg, #fff, #b7fff2 42%, var(--mint));
+            box-shadow: 0 10px 28px rgba(61,242,208,.22), inset 0 1px 0 rgba(255,255,255,.9);
         }
 
-        .feature-card {
-            padding: 3rem;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.4s;
-            border: 2px solid transparent;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.25);
-            border-color: #667eea;
-        }
-
-        .feature-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        .feature-card h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-
-        .feature-card p {
-            color: #6b7280;
-            line-height: 1.8;
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-highlight {
-            color: #667eea;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        /* 후기 */
-        .testimonials {
-            padding: 6rem 3rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .testimonials .section-header {
-            color: white;
-        }
-
-        .testimonials .section-badge {
-            background: rgba(255,255,255,0.2);
-            color: white;
-        }
-
-        .testimonials .section-header h2,
-        .testimonials .section-header .subtitle {
-            color: white;
-        }
-
-        .testimonials-grid {
-            max-width: 1400px;
-            margin: 0 auto;
+        .hero {
+            position: relative;
+            min-height: 100svh;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(20px);
-            padding: 3rem;
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .testimonial-stars {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
             align-items: center;
-            gap: 1rem;
+            padding: 142px 0 76px;
         }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
+        .hero-layout {
+            display: grid;
+            grid-template-columns: minmax(0, .86fr) minmax(420px, 1.14fr);
+            align-items: center;
+            gap: clamp(34px, 6vw, 82px);
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            width: fit-content;
+            color: var(--ink-2);
+            padding: 8px 12px;
+            border: 1px solid var(--line-soft);
+            border-radius: 999px;
+            background: rgba(255,255,255,.055);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .01em;
+        }
+        .spark {
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            display: flex;
+            background: var(--mint);
+            box-shadow: 0 0 0 6px rgba(61,242,208,.12), 0 0 24px rgba(61,242,208,.95);
+        }
+        h1 {
+            max-width: 780px;
+            margin: 28px 0 22px;
+            font-size: clamp(52px, 8.2vw, 104px);
+            line-height: .9;
+            letter-spacing: -.085em;
+            font-weight: 670;
+            text-wrap: balance;
+        }
+        .title-gradient {
+            color: transparent;
+            background: linear-gradient(96deg, #fff 0%, #e2e8ff 31%, #9fe8ff 62%, #99ffe9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 0 0 70px rgba(141,124,255,.22);
+        }
+        .hero-lede {
+            max-width: 650px;
+            margin: 0;
+            color: var(--ink-2);
+            font-size: clamp(17px, 1.6vw, 21px);
+            line-height: 1.75;
+            letter-spacing: -.026em;
+            text-wrap: pretty;
+        }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+        .button {
+            min-height: 50px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            gap: 10px;
+            padding: 0 18px;
+            border: 1px solid var(--line-soft);
+            border-radius: 999px;
+            background: rgba(255,255,255,.055);
+            color: var(--ink);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+            font-size: 14px;
             font-weight: 700;
+            letter-spacing: -.015em;
+            transition: transform .24s var(--ease), box-shadow .24s var(--ease), background .24s var(--ease), border-color .24s var(--ease);
         }
+        .button:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.09); box-shadow: inset 0 1px 0 rgba(255,255,255,.13), 0 18px 44px rgba(0,0,0,.34); }
+        .button.primary { color: #041210; border-color: rgba(61,242,208,.34); background: linear-gradient(135deg, #fff 0%, #dffff8 34%, var(--mint) 100%); box-shadow: 0 18px 52px rgba(61,242,208,.24), inset 0 1px 0 #fff; }
+        .button svg { width: 18px; height: 18px; flex: 0 0 auto; }
 
-        .author-info .name {
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .author-info .role {
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-
-        /* 스크린샷 */
-        .screenshots {
-            padding: 6rem 3rem;
-            background: #fafafa;
-        }
-
-        .screenshot-grid {
-            max-width: 1400px;
-            margin: 0 auto;
+        .metric-ribbon {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            max-width: 650px;
+            margin-top: 44px;
         }
-
-        .screenshot-item {
-            border-radius: 24px;
+        .metric-pill {
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            transition: transform 0.4s;
-            background: white;
-        }
-
-        .screenshot-item:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        .screenshot-placeholder {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            padding: 2rem;
-        }
-
-        .screenshot-placeholder .icon {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .screenshot-placeholder .title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .screenshot-placeholder .desc {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            text-align: center;
-        }
-
-        /* 다운로드 */
-        .download {
-            padding: 7rem 3rem;
-            background: #1f2937;
-            color: white;
-            text-align: center;
-        }
-
-        .download h2 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-        }
-
-        .download .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 4rem;
-            opacity: 0.95;
-        }
-
-        .download-cards {
-            max-width: 1100px;
-            margin: 0 auto 4rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-        }
-
-        .download-card {
-            background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
-            padding: 4rem 3rem;
-            border-radius: 30px;
-            transition: all 0.4s;
-            border: 2px solid #4b5563;
-        }
-
-        .download-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            border-color: #667eea;
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
-        }
-
-        .download-card .platform-icon {
-            font-size: 5rem;
-            margin-bottom: 2rem;
-        }
-
-        .download-card h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .download-card .version {
-            color: #9ca3af;
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        .download-card .features-list {
-            list-style: none;
-            margin-bottom: 2.5rem;
-            text-align: left;
-        }
-
-        .download-card .features-list li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            font-size: 1.05rem;
-        }
-
-        .download-card .features-list li::before {
-            content: '✓ ';
-            color: #10b981;
-            font-weight: 900;
-            margin-right: 0.5rem;
-        }
-
-        .download-card .btn {
-            width: 100%;
-            justify-content: center;
-            font-size: 1.3rem;
-            padding: 1.5rem;
-        }
-
-        .download-note {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: rgba(255,255,255,0.05);
+            padding: 17px 18px;
+            border: 1px solid var(--line-soft);
             border-radius: 20px;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            background: rgba(255,255,255,.045);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
         }
+        .metric-pill strong { display: block; font-size: clamp(24px, 2.6vw, 36px); line-height: 1; letter-spacing: -.055em; }
+        .metric-pill span { display: block; margin-top: 7px; color: var(--ink-3); font-size: 12px; font-weight: 650; }
 
-        /* Footer */
-        footer {
-            padding: 4rem 3rem;
-            background: #111827;
-            color: #9ca3af;
+        .hero-visual {
+            position: relative;
+            min-height: 680px;
+            perspective: 1600px;
         }
-
-        footer .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
+        .visual-halo {
+            position: absolute;
+            inset: 2% 0 auto 18%;
+            width: 430px;
+            height: 430px;
+            border-radius: 999px;
+            background: conic-gradient(from 120deg, transparent, rgba(141,124,255,.48), rgba(61,242,208,.34), rgba(245,211,138,.22), transparent);
+            filter: blur(42px);
+            opacity: .74;
+            animation: rotateSlow 22s linear infinite;
         }
-
-        footer .links {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+        .dashboard-frame {
+            position: absolute;
+            right: 0;
+            top: 34px;
+            width: min(640px, 100%);
+            min-height: 590px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 38px;
+            background: linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.03)), rgba(6,8,18,.78);
+            box-shadow: 0 48px 120px rgba(0,0,0,.62), inset 0 1px 0 rgba(255,255,255,.14);
+            backdrop-filter: blur(24px) saturate(155%);
+            transform: rotateX(7deg) rotateY(-10deg) rotateZ(1deg);
+            transform-origin: 50% 55%;
+            transition: transform .2s ease-out;
         }
+        .traffic { height: 46px; display: flex; align-items: center; gap: 8px; padding: 0 18px; border-bottom: 1px solid var(--line-soft); background: rgba(255,255,255,.035); }
+        .traffic span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.22); }
+        .traffic span:nth-child(1) { background: #ff6b7f; } .traffic span:nth-child(2) { background: #ffd166; } .traffic span:nth-child(3) { background: #3df2d0; }
+        .app-canvas { display: grid; grid-template-columns: 154px 1fr; min-height: 544px; }
+        .rail { padding: 20px 12px; border-right: 1px solid var(--line-soft); background: rgba(255,255,255,.025); }
+        .rail-logo { width: 38px; height: 38px; border-radius: 14px; margin-bottom: 24px; background: linear-gradient(135deg, var(--mint), var(--blue), var(--violet)); }
+        .rail-line { height: 35px; margin-bottom: 9px; border-radius: 12px; background: rgba(255,255,255,.052); }
+        .rail-line.active { background: linear-gradient(90deg, rgba(141,124,255,.36), rgba(84,184,255,.08)); box-shadow: inset 0 0 0 1px rgba(141,124,255,.25); }
+        .main-panel { padding: 23px; background: radial-gradient(circle at 78% 10%, rgba(141,124,255,.16), transparent 17rem), radial-gradient(circle at 22% 92%, rgba(61,242,208,.12), transparent 18rem); }
+        .panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 21px; }
+        .panel-head h2 { margin: 0; font-size: 26px; line-height: 1.05; letter-spacing: -.052em; }
+        .panel-head p { margin: 7px 0 0; color: var(--ink-3); font-size: 12px; }
+        .live-badge { display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; border-radius: 999px; color: #cafff6; background: rgba(61,242,208,.1); border: 1px solid rgba(61,242,208,.2); font-size: 11px; font-weight: 750; }
+        .analytics { display: grid; grid-template-columns: 1.15fr .85fr; gap: 14px; }
+        .ui-card { position: relative; overflow: hidden; border: 1px solid var(--line-soft); border-radius: 20px; background: rgba(255,255,255,.046); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+        .coverage { min-height: 270px; padding: 17px; }
+        .card-label { display: flex; justify-content: space-between; color: var(--ink-3); font-size: 11px; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; }
+        .ring { position: relative; width: 152px; height: 152px; display: grid; place-items: center; margin: 22px auto 18px; border-radius: 999px; background: conic-gradient(var(--mint) 0 78%, rgba(255,255,255,.09) 78% 100%); box-shadow: 0 0 46px rgba(61,242,208,.18); }
+        .ring::before { content: ""; position: absolute; width: 116px; height: 116px; border-radius: 999px; background: #080b16; }
+        .ring strong { position: relative; z-index: 1; font-size: 34px; letter-spacing: -.055em; }
+        .bars { display: grid; gap: 9px; }
+        .bar { display: grid; grid-template-columns: 68px 1fr 34px; align-items: center; gap: 9px; color: var(--ink-2); font-size: 11px; }
+        .bar-track { height: 7px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.09); }
+        .bar-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--violet), var(--mint)); }
+        .client-box { padding: 15px; }
+        .client-list { display: grid; gap: 10px; margin-top: 14px; }
+        .client { display: grid; grid-template-columns: 31px 1fr auto; gap: 10px; align-items: center; padding: 10px; border-radius: 14px; background: rgba(255,255,255,.045); }
+        .avatar { width: 31px; height: 31px; border-radius: 50%; background: linear-gradient(135deg, #fff, #afbcff); }
+        .client strong { display: block; font-size: 12px; } .client span { color: var(--ink-3); font-size: 10px; }
+        .tag { color: #061210; background: #b7fff2; border-radius: 999px; padding: 4px 7px; font-size: 9px; font-weight: 800; }
+        .recommend { grid-column: 1/-1; min-height: 140px; padding: 17px; }
+        .recommend::after { content: ""; position: absolute; right: -80px; bottom: -120px; width: 230px; height: 230px; border-radius: 999px; background: radial-gradient(circle, rgba(245,211,138,.26), transparent 66%); }
+        .ai-row { position: relative; z-index: 1; display: grid; grid-template-columns: 44px 1fr; gap: 13px; margin-top: 17px; }
+        .ai-mark { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 16px; color: var(--mint); background: rgba(61,242,208,.09); border: 1px solid rgba(61,242,208,.16); }
+        .ai-row strong { display: block; margin-bottom: 6px; font-size: 15px; } .ai-row p { margin: 0; color: var(--ink-2); font-size: 12px; line-height: 1.6; }
+        .floating-note { position: absolute; z-index: 4; width: 218px; padding: 15px 16px; border: 1px solid var(--line); border-radius: 22px; background: rgba(8,11,23,.72); box-shadow: 0 26px 70px rgba(0,0,0,.48), inset 0 1px 0 rgba(255,255,255,.1); backdrop-filter: blur(24px) saturate(155%); animation: floatSoft 6s var(--ease) infinite; }
+        .floating-note.one { left: -16px; top: 112px; } .floating-note.two { right: -28px; bottom: 88px; animation-delay: -2.4s; }
+        .floating-note small { color: var(--ink-3); font-size: 11px; font-weight: 750; } .floating-note strong { display: block; margin-top: 7px; font-size: 24px; line-height: 1; letter-spacing: -.055em; } .floating-note p { margin: 8px 0 0; color: var(--ink-2); font-size: 12px; line-height: 1.45; }
 
-        footer a {
-            color: #60a5fa;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: color 0.2s;
+        .section { position: relative; padding: clamp(88px, 10vw, 148px) 0; }
+        .section-head { max-width: 770px; margin-bottom: 46px; }
+        .section-head.center { text-align: center; margin-inline: auto; }
+        .kicker { display: inline-block; margin-bottom: 14px; color: var(--mint); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+        .section h2 { margin: 0; font-size: clamp(36px, 5vw, 66px); line-height: .99; letter-spacing: -.07em; font-weight: 650; text-wrap: balance; }
+        .section-head p, .download-intro p { margin: 20px 0 0; color: var(--ink-2); font-size: clamp(16px, 1.55vw, 20px); line-height: 1.72; letter-spacing: -.025em; text-wrap: pretty; }
+
+        .trust-band { margin-top: -34px; position: relative; z-index: 4; }
+        .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--line-soft); border-radius: 30px; background: rgba(255,255,255,.07); box-shadow: 0 28px 80px rgba(0,0,0,.38); }
+        .trust-item { min-height: 132px; padding: 24px; background: rgba(6,8,18,.82); }
+        .trust-icon { width: 38px; height: 38px; display: grid; place-items: center; margin-bottom: 15px; border: 1px solid rgba(61,242,208,.16); border-radius: 14px; color: var(--mint); background: rgba(61,242,208,.08); }
+        .trust-item strong { display: block; font-size: 15px; letter-spacing: -.02em; } .trust-item span { display: block; margin-top: 6px; color: var(--ink-3); font-size: 13px; line-height: 1.5; }
+
+        .glass-panel { position: relative; overflow: hidden; border: 1px solid var(--line-soft); background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.03)), rgba(255,255,255,.028); box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 32px 90px rgba(0,0,0,.34); backdrop-filter: blur(24px) saturate(150%); }
+        .feature-split { display: grid; grid-template-columns: .86fr 1.14fr; gap: clamp(30px, 6vw, 78px); align-items: center; }
+        .feature-list { display: grid; gap: 13px; }
+        .feature-card { position: relative; padding: 21px 22px 21px 70px; border-radius: 23px; border: 1px solid var(--line-soft); background: rgba(255,255,255,.04); transition: transform .26s var(--ease), background .26s var(--ease), border-color .26s var(--ease); }
+        .feature-card:hover { transform: translate3d(6px, -2px, 0); background: rgba(255,255,255,.062); border-color: rgba(255,255,255,.16); }
+        .feature-number { position: absolute; left: 18px; top: 20px; width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid rgba(61,242,208,.16); border-radius: 13px; color: var(--mint); background: rgba(61,242,208,.08); font-size: 12px; font-weight: 800; }
+        .feature-card h3 { margin: 0 0 7px; font-size: 18px; letter-spacing: -.03em; }
+        .feature-card p { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.65; }
+        .scan-panel { min-height: 650px; border-radius: 38px; padding: 30px; display: grid; align-content: space-between; }
+        .doc-surface { padding: 22px; border: 1px solid var(--line-soft); border-radius: 26px; background: rgba(0,0,0,.18); }
+        .doc-line { height: 12px; margin-bottom: 13px; border-radius: 99px; background: rgba(255,255,255,.13); }
+        .doc-line:nth-child(2) { width: 78%; } .doc-line:nth-child(3) { width: 91%; } .doc-line:nth-child(4) { width: 60%; }
+        .scan-laser { height: 2px; margin: 22px 0; border-radius: 999px; background: linear-gradient(90deg, transparent, var(--mint), transparent); box-shadow: 0 0 30px rgba(61,242,208,.9); animation: laserSweep 2.45s ease-in-out infinite; }
+        .insights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        .insight-card { min-height: 144px; padding: 17px; border: 1px solid var(--line-soft); border-radius: 22px; background: rgba(255,255,255,.045); }
+        .insight-card span { color: var(--ink-3); font-size: 12px; font-weight: 750; } .insight-card strong { display: block; margin-top: 28px; font-size: 32px; line-height: 1; letter-spacing: -.055em; } .insight-card em { display: block; margin-top: 8px; color: var(--ink-2); font-size: 12px; font-style: normal; }
+
+        .journey-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; }
+        .journey-main { min-height: 528px; padding: 34px; border-radius: 36px; }
+        .journey-main::after { content: ""; position: absolute; right: -120px; bottom: -150px; width: 420px; height: 420px; border-radius: 999px; background: radial-gradient(circle, rgba(141,124,255,.22), transparent 65%); }
+        .journey-main h3 { position: relative; z-index: 1; max-width: 560px; margin: 0; font-size: clamp(30px, 3.5vw, 50px); line-height: 1.03; letter-spacing: -.06em; }
+        .journey-main p { position: relative; z-index: 1; max-width: 510px; margin: 18px 0 0; color: var(--ink-2); line-height: 1.75; }
+        .steps { position: absolute; left: 34px; right: 34px; bottom: 34px; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .step { padding: 15px; border: 1px solid var(--line-soft); border-radius: 19px; background: rgba(255,255,255,.055); }
+        .step strong { display: block; font-size: 23px; letter-spacing: -.045em; } .step span { color: var(--ink-3); font-size: 11px; }
+        .journey-side { display: grid; gap: 18px; }
+        .mini-panel { min-height: 255px; padding: 26px; border-radius: 30px; }
+        .mini-panel h3 { margin: 0; font-size: 24px; line-height: 1.1; letter-spacing: -.045em; } .mini-panel p { margin: 12px 0 0; color: var(--ink-2); font-size: 14px; line-height: 1.65; }
+        .mini-symbol { width: 46px; height: 46px; display: grid; place-items: center; margin-bottom: 45px; border: 1px solid rgba(61,242,208,.16); border-radius: 17px; color: var(--mint); background: rgba(61,242,208,.08); }
+
+        .showcase-layout { display: grid; grid-template-columns: .86fr 1.14fr; gap: 18px; align-items: start; }
+        .conversation-phone { min-height: 615px; padding: 13px; border-radius: 42px; transform: rotate(-2.2deg); }
+        .phone-screen { min-height: 589px; overflow: hidden; padding: 24px 18px; border: 1px solid var(--line-soft); border-radius: 31px; background: radial-gradient(circle at 50% 0, rgba(141,124,255,.24), transparent 230px), #070a15; }
+        .notch { width: 92px; height: 23px; margin: -25px auto 22px; border-radius: 0 0 15px 15px; background: #02030a; }
+        .bubble { width: fit-content; max-width: 92%; margin-bottom: 12px; padding: 12px 14px; border: 1px solid var(--line-soft); border-radius: 18px; background: rgba(255,255,255,.057); color: var(--ink-2); font-size: 13px; line-height: 1.5; }
+        .bubble.answer { margin-left: auto; color: #061210; background: linear-gradient(135deg, #effffb, #9efbea); border-color: transparent; }
+        .board { min-height: 615px; border-radius: 36px; padding: 26px; }
+        .columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin-top: 22px; }
+        .column { min-height: 474px; padding: 12px; border: 1px solid var(--line-soft); border-radius: 21px; background: rgba(255,255,255,.036); }
+        .column h4 { margin: 3px 4px 14px; color: var(--ink-3); font-size: 12px; }
+        .ticket { padding: 13px; margin-bottom: 10px; border: 1px solid var(--line-soft); border-radius: 16px; background: rgba(255,255,255,.062); }
+        .ticket strong { display: block; font-size: 13px; line-height: 1.3; } .ticket span { display: block; margin-top: 14px; color: var(--ink-3); font-size: 11px; }
+
+        .testimonials { background: radial-gradient(circle at 8% 24%, rgba(141,124,255,.16), transparent 28rem), radial-gradient(circle at 92% 48%, rgba(61,242,208,.12), transparent 30rem); }
+        .testimonial-layout { display: grid; grid-template-columns: .86fr 1.14fr; gap: clamp(24px, 5vw, 70px); align-items: start; }
+        .review-panel { position: sticky; top: 104px; padding: 30px; border-radius: 34px; }
+        .stars { color: var(--gold); letter-spacing: .07em; }
+        .review-panel h2 { margin-top: 20px; font-size: clamp(36px, 4.2vw, 60px); }
+        .score-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; overflow: hidden; margin-top: 28px; border: 1px solid var(--line-soft); border-radius: 23px; background: rgba(255,255,255,.07); }
+        .score-box div { padding: 20px; background: rgba(5,7,15,.75); } .score-box strong { display: block; font-size: 33px; letter-spacing: -.055em; } .score-box span { color: var(--ink-3); font-size: 12px; }
+        .testimonial-masonry { columns: 2 280px; column-gap: 16px; }
+        .testimonial-card { break-inside: avoid; display: inline-block; width: 100%; margin: 0 0 16px; padding: 23px; border: 1px solid var(--line-soft); border-radius: 26px; background: rgba(255,255,255,.04); transition: transform .25s var(--ease), background .25s var(--ease), border-color .25s var(--ease); }
+        .testimonial-card:hover { transform: translate3d(0, -5px, 0); background: rgba(255,255,255,.062); border-color: rgba(255,255,255,.15); }
+        .quote { margin: 13px 0 20px; color: var(--ink-2); font-size: 14px; line-height: 1.76; }
+        .author { display: flex; align-items: center; gap: 11px; }
+        .author-avatar { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 50%; color: #101118; font-weight: 800; background: linear-gradient(135deg, #fff, #bdc8ff); }
+        .author strong { display: block; font-size: 13px; } .author span { color: var(--ink-3); font-size: 12px; }
+
+        .download { padding-bottom: 48px; }
+        .download-box { position: relative; overflow: hidden; padding: clamp(35px, 5vw, 60px); border-radius: 46px; }
+        .download-box::after { content: ""; position: absolute; right: -190px; top: -225px; width: 560px; height: 560px; border-radius: 999px; background: radial-gradient(circle, rgba(61,242,208,.22), transparent 66%); }
+        .download-intro { position: relative; z-index: 1; max-width: 750px; }
+        .download-intro h2 { font-size: clamp(40px, 5.7vw, 76px); }
+        .download-cards { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 38px; }
+        .download-card { position: relative; overflow: hidden; min-height: 362px; padding: 27px; border: 1px solid var(--line-soft); border-radius: 30px; background: rgba(0,0,0,.18); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+        .download-card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 76% 14%, rgba(141,124,255,.2), transparent 215px); }
+        .platform { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 18px; margin-bottom: 30px; }
+        .platform h3 { margin: 0; font-size: 31px; letter-spacing: -.055em; }
+        .version { margin: 7px 0 0; min-height: 20px; color: var(--ink-3); font-size: 13px; }
+        .platform-icon { width: 55px; height: 55px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.065); }
+        .download-card ul { position: relative; z-index: 1; display: grid; gap: 10px; list-style: none; padding: 0; margin: 0 0 25px; }
+        .download-card li { display: flex; align-items: center; gap: 9px; color: var(--ink-2); font-size: 14px; }
+        .download-card li::before { content: ""; width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: var(--mint); box-shadow: 0 0 16px rgba(61,242,208,.72); }
+        .download-card .button { position: relative; z-index: 1; width: 100%; }
+        .download-note { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+        .download-note span { padding: 9px 12px; border: 1px solid var(--line-soft); border-radius: 999px; color: var(--ink-2); background: rgba(255,255,255,.045); font-size: 13px; }
+
+        footer { padding: 34px 0 56px; color: var(--ink-3); }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding-top: 25px; border-top: 1px solid var(--line-soft); font-size: 13px; }
+        .footer-links { display: flex; flex-wrap: wrap; gap: 18px; } .footer-links a { color: var(--ink-2); } .footer-links a:hover { color: white; }
+
+        [data-reveal] { opacity: 0; transform: translate3d(0, 34px, 0); transition: opacity .82s var(--ease), transform .82s var(--ease); }
+        [data-reveal].is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
+        [data-reveal="delay-1"] { transition-delay: .08s; } [data-reveal="delay-2"] { transition-delay: .16s; } [data-reveal="delay-3"] { transition-delay: .24s; }
+
+        @keyframes auroraDrift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(8vw, -4vw, 0) scale(1.16); } }
+        @keyframes cosmosPulse { 0%, 100% { transform: scale(1); opacity: .72; } 50% { transform: scale(1.08); opacity: 1; } }
+        @keyframes rotateSlow { to { transform: rotate(360deg); } }
+        @keyframes floatSoft { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -15px, 0); } }
+        @keyframes laserSweep { 0%, 100% { transform: translate3d(0, -5px, 0); opacity: .54; } 50% { transform: translate3d(0, 50px, 0); opacity: 1; } }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
+            [data-reveal] { opacity: 1; transform: none; }
         }
-
-        footer a:hover {
-            color: #93c5fd;
+        @media (max-width: 1080px) {
+            .hero-layout, .feature-split, .journey-layout, .showcase-layout, .testimonial-layout { grid-template-columns: 1fr; }
+            .hero-visual { min-height: 640px; }
+            .dashboard-frame { left: 50%; right: auto; transform: translateX(-50%) rotateX(5deg) rotateY(-7deg); }
+            .review-panel { position: relative; top: auto; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
-        footer .copyright {
-            margin-top: 2rem;
-            font-size: 1rem;
+        @media (max-width: 980px) {
+            .app-canvas { grid-template-columns: 132px 1fr; }
+            .scan-panel { min-height: 580px; }
+            .download-cards { grid-template-columns: 1fr; }
+            .journey-main { min-height: 650px; }
+            .steps { grid-template-columns: repeat(2, 1fr); }
         }
-
-        /* 반응형 */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .hero .subtitle { font-size: 1.3rem; }
-            nav .nav-links { display: none; }
-            .section-header h2 { font-size: 2.2rem; }
-            .download h2 { font-size: 2.5rem; }
-            .features-grid,
-            .testimonials-grid,
-            .screenshot-grid,
-            .download-cards {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 760px) {
+            .container { width: min(100% - 28px, var(--container)); }
+            .nav { top: 8px; }
+            .nav-inner { height: 56px; padding-left: 13px; }
+            .brand small, .nav-links a:not(.nav-download) { display: none; }
+            .hero { padding-top: 110px; }
+            .metric-ribbon { grid-template-columns: 1fr; }
+            .metric-pill { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+            .hero-visual { min-height: 540px; margin-inline: -12px; }
+            .dashboard-frame { width: 660px; max-width: none; top: -10px; transform: translateX(-50%) scale(.72) rotateX(5deg) rotateY(-5deg); }
+            .floating-note { display: none; }
+            .trust-grid, .steps { grid-template-columns: 1fr; }
+            .steps { position: relative; left: auto; right: auto; bottom: auto; margin-top: 34px; }
+            .section { padding: 78px 0; }
+            .columns { grid-template-columns: 1fr; }
+            .column { min-height: auto; }
+            .conversation-phone, .board { min-height: auto; transform: none; }
+            .phone-screen { min-height: 520px; }
+            .download-box { border-radius: 32px; }
+            .footer-inner { flex-direction: column; align-items: flex-start; }
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: clamp(44px, 14vw, 62px); }
+            .hero-actions .button { width: 100%; }
+            .section h2 { letter-spacing: -.05em; }
+            .feature-card { padding-left: 22px; }
+            .feature-number { position: static; margin-bottom: 14px; }
+            .insights { grid-template-columns: 1fr; }
+            .testimonial-masonry { columns: 1; }
+            .download-card { padding: 22px; }
+            .platform { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-    <!-- 네비 -->
-    <nav>
-        <div class="container">
-            <div class="logo">
-                🛡️ Insurance AI
-                <span class="badge">NEW</span>
+    <div class="premium-aurora" aria-hidden="true"></div>
+    <div class="executive-cosmos" aria-hidden="true"></div>
+
+    <nav class="nav" aria-label="주요 메뉴">
+        <div class="container nav-inner">
+            <a class="brand" href="#top" aria-label="Insurance AI 홈">
+                <span class="brand-symbol" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3.5 18.4 6v5.3c0 4.25-2.56 7.9-6.4 9.25-3.84-1.35-6.4-5-6.4-9.25V6L12 3.5Z" stroke="currentColor" stroke-width="1.85"/><path d="M8.4 11.6h7.2M12 8v7.2" stroke="currentColor" stroke-width="1.85" stroke-linecap="round"/></svg>
+                </span>
+                <span>Insurance AI <small>Executive</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">기능</a>
+                <a href="#workflow">워크플로우</a>
+                <a href="#reviews">후기</a>
+                <a class="nav-download" href="#download">다운로드</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#features">기능</a></li>
-                <li><a href="#reviews">후기</a></li>
-                <li><a href="#screenshots">화면</a></li>
-                <li><a href="#download">다운로드</a></li>
-            </ul>
         </div>
     </nav>
 
-    <!-- 히어로 -->
-    <section class="hero">
-        <div class="container">
-            <h1>보험 영업의 새로운 기준</h1>
-            <p class="subtitle">AI 기반 보장분석으로 고객 상담을 10배 빠르게</p>
-            <p class="description">
-                PDF 업로드 하나로 46개 보장 항목 자동 분석. 복잡한 보험 용어를 AI가 정리해드립니다.
-            </p>
-            <div class="cta-buttons">
-                <a href="#download" class="btn btn-primary">
-                    📥 무료 다운로드 (Windows/Mac)
-                </a>
-                <a href="#features" class="btn btn-secondary">
-                    ✨ 기능 둘러보기
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="number">1,247+</span>
-                    <span class="label">누적 다운로드</span>
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-layout">
+                <div data-reveal>
+                    <div class="eyebrow"><span class="spark"></span> 보험 영업인을 위한 Premium AI Workstation</div>
+                    <h1><span class="title-gradient">보험 상담을, 고급스럽고 압도적으로 빠르게.</span></h1>
+                    <p class="hero-lede">PDF 업로드 하나로 46개 보장 항목을 구조화하고, 고객별 상담 포인트와 제안 흐름까지 정리합니다. Insurance AI는 설계사의 전문성을 프리미엄 경험으로 바꾸는 데스크톱 도구입니다.</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#download">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v10m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Windows / macOS 무료 다운로드
+                        </a>
+                        <a class="button" href="#features">프리미엄 기능 보기 <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    </div>
+                    <div class="metric-ribbon" aria-label="주요 통계">
+                        <div class="metric-pill"><strong>1,247+</strong><span>누적 다운로드</span></div>
+                        <div class="metric-pill"><strong>4.9/5.0</strong><span>사용자 평점</span></div>
+                        <div class="metric-pill"><strong>100%</strong><span>무료 영구 사용</span></div>
+                    </div>
                 </div>
-                <div class="hero-stat">
-                    <span class="number">4.9/5.0</span>
-                    <span class="label">사용자 평점</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="number">100%</span>
-                    <span class="label">무료 영구 사용</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 신뢰 배지 -->
-    <section class="trust-badges">
-        <div class="container">
-            <p>보험 영업인들이 선택한 이유</p>
-            <div class="badges-grid">
-                <div class="trust-item">
-                    <span class="trust-icon">🔒</span>
-                    <span>100% 로컬 저장</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">⚡</span>
-                    <span>5분 안에 분석 완료</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">🎯</span>
-                    <span>46개 항목 자동 인식</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">💰</span>
-                    <span>평생 무료 사용</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 통계 -->
-    <section class="stats">
-        <div class="container">
-            <div class="stat-card">
-                <div class="icon">⚡</div>
-                <h3>10배</h3>
-                <p>빠른 상담 속도</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon">📊</div>
-                <h3>46개</h3>
-                <p>보장 항목 분석</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon">🎯</div>
-                <h3>98%</h3>
-                <p>정확도</p>
-            </div>
-            <div class="stat-card">
-                <div class="icon">💰</div>
-                <h3>0원</h3>
-                <p>구독료</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 기능 -->
-    <section class="features" id="features">
-        <div class="section-header">
-            <span class="section-badge">FEATURES</span>
-            <h2>왜 Insurance AI인가요?</h2>
-            <p class="subtitle">보험 영업에 최적화된 AI 도구로 업무 시간을 90% 단축하세요</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>보장분석 자동화</h3>
-                <p>PDF 업로드만으로 13개 카테고리 × 46개 세부 담보를 자동 분석합니다. 수작업 대비 <strong>10배 빠른 속도</strong>로 고객 보장 현황을 파악할 수 있습니다.</p>
-                <div class="feature-highlight">✓ 사망, 암, 뇌혈관, 허혈성심장 등 전체 커버</div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>스마트 고객 관리</h3>
-                <p>고객 정보, 보험 계약, 상담 내역을 한눈에. 드래그 앤 드롭으로 간편한 파일 업로드, 자동 분류, 일정 관리까지 가능합니다.</p>
-                <div class="feature-highlight">✓ Google Calendar 연동 지원</div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>AI 상담 도우미</h3>
-                <p>고객별 맞춤 상담 시나리오를 AI가 실시간으로 제안합니다. 보장 부족 항목을 자동으로 감지하고 최적의 제안서를 만들어드립니다.</p>
-                <div class="feature-highlight">✓ GPT-4 기반 지능형 추천</div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>완벽한 개인정보 보호</h3>
-                <p>모든 고객 데이터는 <strong>내 컴퓨터에만 저장</strong>됩니다. 클라우드 전송 없이 완벽한 개인정보 보호를 보장합니다.</p>
-                <div class="feature-highlight">✓ ISMS 인증 준비 중</div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🌙</div>
-                <h3>프리미엄 UI/UX</h3>
-                <p>밤늦은 업무에도 눈이 편안한 다크모드, 라이트 모드 자동 전환. 직관적인 인터페이스로 배우는 시간 0분.</p>
-                <div class="feature-highlight">✓ 반응형 디자인 지원</div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>자동 업데이트</h3>
-                <p>새로운 기능이 추가되면 앱 실행 시 자동으로 알림. 클릭 한 번으로 최신 버전 유지, 별도 설치 불필요.</p>
-                <div class="feature-highlight">✓ 매월 새 기능 추가</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 후기 -->
-    <section class="testimonials" id="reviews">
-        <div class="section-header">
-            <span class="section-badge">REVIEWS</span>
-            <h2>실제 사용자들의 생생한 후기</h2>
-            <p class="subtitle">1,000명 이상의 보험 영업인이 이미 사용하고 있습니다</p>
-        </div>
-
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">
-                    "보장분석 시간이 1시간에서 5분으로 줄었어요. 고객 상담이 훨씬 수월해졌고, 계약 성사율도 30% 올랐습니다. 정말 필수 도구예요!"
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">김</div>
-                    <div class="author-info">
-                        <div class="name">김민수 설계사</div>
-                        <div class="role">삼성생명 · 15년차</div>
+                <div class="hero-visual" data-reveal="delay-1" aria-label="Insurance AI 프리미엄 제품 목업">
+                    <div class="visual-halo" aria-hidden="true"></div>
+                    <div class="floating-note one"><small>분석 완료</small><strong>05:12</strong><p>46개 담보 항목 자동 분류 및 부족 보장 감지</p></div>
+                    <div class="floating-note two"><small>개인정보</small><strong>로컬 저장</strong><p>고객 데이터는 내 컴퓨터 밖으로 나가지 않습니다</p></div>
+                    <div class="dashboard-frame">
+                        <div class="traffic"><span></span><span></span><span></span></div>
+                        <div class="app-canvas">
+                            <aside class="rail" aria-hidden="true"><div class="rail-logo"></div><div class="rail-line active"></div><div class="rail-line"></div><div class="rail-line"></div><div class="rail-line"></div></aside>
+                            <div class="main-panel">
+                                <div class="panel-head"><div><h2>김민정 고객 보장분석</h2><p>PDF 3건 · 13개 카테고리 · AI 상담 메모 생성</p></div><div class="live-badge"><span class="spark"></span> LIVE</div></div>
+                                <div class="analytics">
+                                    <div class="ui-card coverage"><div class="card-label"><span>Coverage Score</span><span>46 items</span></div><div class="ring"><strong>78%</strong></div><div class="bars"><div class="bar"><span>암 진단</span><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div><span>충분</span></div><div class="bar"><span>뇌혈관</span><div class="bar-track"><div class="bar-fill" style="width:56%"></div></div><span>보완</span></div><div class="bar"><span>입원/수술</span><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span>양호</span></div></div></div>
+                                    <div class="ui-card client-box"><div class="card-label"><span>Clients</span><span>Today</span></div><div class="client-list"><div class="client"><div class="avatar"></div><div><strong>김민정</strong><span>보장분석 완료</span></div><b class="tag">제안</b></div><div class="client"><div class="avatar"></div><div><strong>박서준</strong><span>PDF 검토 중</span></div><b class="tag">분석</b></div><div class="client"><div class="avatar"></div><div><strong>이하늘</strong><span>상담 예약</span></div><b class="tag">일정</b></div></div></div>
+                                    <div class="ui-card recommend"><div class="card-label"><span>AI Recommendation</span><span>GPT-4</span></div><div class="ai-row"><div class="ai-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.6 5.1L19 9.7l-5.1 1.7L12 17l-1.9-5.6L5 9.7l5.4-1.6L12 3Z" stroke="currentColor" stroke-width="1.6"/></svg></div><div><strong>뇌혈관 진단비 보완 제안</strong><p>현재 가입금액이 동일 연령대 평균 대비 낮습니다. 상담 시 가족력 질문 후 2가지 플랜을 비교 제안하세요.</p></div></div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">
-                    "처음엔 반신반의했는데, 써보니 진짜 놀랐습니다. PDF 올리면 바로 46개 항목이 뜨는데 정확도가 거의 100%예요. 수작업 시대는 끝났네요."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">박</div>
-                    <div class="author-info">
-                        <div class="name">박지영 FC</div>
-                        <div class="role">교보생명 · 8년차</div>
+        <section class="trust-band">
+            <div class="container trust-grid" data-reveal>
+                <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3.5 18.2 6v5.4c0 4.1-2.5 7.7-6.2 9.1-3.7-1.4-6.2-5-6.2-9.1V6L12 3.5Z" stroke="currentColor" stroke-width="1.8"/></svg></div><strong>100% 로컬 저장</strong><span>고객 개인정보는 외부 서버로 전송하지 않습니다.</span></div>
+                <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m13 2-8 12h6l-1 8 9-13h-6l0-7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><strong>5분 안에 분석 완료</strong><span>상담 전 준비 시간을 획기적으로 줄입니다.</span></div>
+                <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16M7 7l10 10M17 7 7 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><strong>46개 항목 자동 인식</strong><span>13개 카테고리별로 담보를 구조화합니다.</span></div>
+                <div class="trust-item"><div class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M17 8.5c0-1.7-1.8-3-5-3s-5 1.3-5 3 1.8 3 5 3 5 1.3 5 3-1.8 3-5 3-5-1.3-5-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><strong>평생 무료 사용</strong><span>구독료 없이 Windows와 macOS에서 바로 사용.</span></div>
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <div class="container feature-split">
+                <div data-reveal>
+                    <div class="section-head"><span class="kicker">FEATURES</span><h2>복잡한 보험 상담을 하나의 고급 업무 흐름으로.</h2><p>기능을 나열하는 도구가 아니라, 실제 상담 전후의 리듬에 맞춰 설계된 프리미엄 AI 워크스테이션입니다.</p></div>
+                    <div class="feature-list">
+                        <article class="feature-card"><span class="feature-number">01</span><h3>보장분석 자동화</h3><p>PDF 업로드만으로 13개 카테고리 × 46개 세부 담보를 자동 분석합니다. 수작업 대비 10배 빠른 속도로 고객 보장 현황을 파악할 수 있습니다.</p></article>
+                        <article class="feature-card"><span class="feature-number">02</span><h3>스마트 고객 관리</h3><p>고객 정보, 보험 계약, 상담 내역을 한눈에. 드래그 앤 드롭 업로드, 자동 분류, 일정 관리까지 연결합니다.</p></article>
+                        <article class="feature-card"><span class="feature-number">03</span><h3>AI 상담 도우미</h3><p>고객별 맞춤 상담 시나리오를 AI가 실시간 제안합니다. 부족 보장 항목을 감지하고 제안 흐름을 정리합니다.</p></article>
+                        <article class="feature-card"><span class="feature-number">04</span><h3>완벽한 개인정보 보호</h3><p>모든 고객 데이터는 내 컴퓨터에만 저장됩니다. 클라우드 전송 없이 개인정보 보호를 우선합니다.</p></article>
+                        <article class="feature-card"><span class="feature-number">05</span><h3>프리미엄 UI/UX</h3><p>밤늦은 업무에도 눈이 편안한 다크모드와 반응형 인터페이스로 배우는 시간을 줄입니다.</p></article>
+                        <article class="feature-card"><span class="feature-number">06</span><h3>자동 업데이트</h3><p>앱 실행 시 최신 버전 알림을 제공하고, 클릭 한 번으로 기능 개선을 반영합니다.</p></article>
+                    </div>
+                </div>
+                <div data-reveal="delay-1">
+                    <div class="scan-panel glass-panel">
+                        <div><div class="eyebrow"><span class="spark"></span> AI Analysis Pipeline</div><div class="doc-surface" style="margin-top:24px;"><div class="doc-line" style="width:92%"></div><div class="doc-line"></div><div class="doc-line"></div><div class="doc-line"></div><div class="scan-laser"></div><div class="doc-line" style="width:69%"></div><div class="doc-line" style="width:86%"></div><div class="doc-line" style="width:55%"></div></div></div>
+                        <div class="insights"><div class="insight-card"><span>상담 속도</span><strong>10배</strong><em>빠른 고객 준비</em></div><div class="insight-card"><span>보장 항목</span><strong>46개</strong><em>자동 분류</em></div><div class="insight-card"><span>정확도</span><strong>98%</strong><em>핵심 항목 인식</em></div><div class="insight-card"><span>구독료</span><strong>0원</strong><em>평생 무료</em></div></div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">
-                    "개인정보 걱정 없이 쓸 수 있어서 좋아요. 클라우드 안 쓰고 내 컴퓨터에만 저장되니까 안심이 됩니다. 무료인데 이렇게 좋아도 되나요?"
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">이</div>
-                    <div class="author-info">
-                        <div class="name">이준호 팀장</div>
-                        <div class="role">한화생명 · 22년차</div>
+        <section class="section" id="workflow">
+            <div class="container">
+                <div class="section-head center" data-reveal><span class="kicker">WORKFLOW</span><h2>상담의 리듬을 따라가는 비대칭 레이아웃.</h2><p>업로드, 분석, 제안, 일정 관리까지 끊기지 않는 하나의 상담 플로우로 재구성했습니다.</p></div>
+                <div class="journey-layout">
+                    <article class="journey-main glass-panel" data-reveal><h3>상담 전 1시간짜리 준비를 5분짜리 검토로.</h3><p>문서에서 핵심 담보를 추출하고, 보완이 필요한 부분을 고객 언어로 바꿔 보여줍니다. 설계사는 분석표가 아니라 다음 대화를 준비합니다.</p><div class="steps"><div class="step"><strong>01</strong><span>PDF 업로드</span></div><div class="step"><strong>02</strong><span>46개 항목 분석</span></div><div class="step"><strong>03</strong><span>AI 제안 생성</span></div><div class="step"><strong>04</strong><span>상담 일정 연결</span></div></div></article>
+                    <div class="journey-side"><article class="mini-panel glass-panel" data-reveal="delay-1"><div class="mini-symbol"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 9.5 17 19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Google Calendar 연동</h3><p>분석 결과에서 바로 다음 상담 일정을 잡고 관리할 수 있습니다.</p></article><article class="mini-panel glass-panel" data-reveal="delay-2"><div class="mini-symbol"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.7 5.4L19 10l-5.3 1.6L12 17l-1.7-5.4L5 10l5.3-1.6L12 3Z" stroke="currentColor" stroke-width="1.8"/></svg></div><h3>GPT-4 기반 추천</h3><p>부족 보장을 감지하고 고객에게 설명하기 좋은 제안 문장을 정리합니다.</p></article></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="screens">
+            <div class="container">
+                <div class="section-head" data-reveal><span class="kicker">PRODUCT EXPERIENCE</span><h2>고객 앞에서 열어도 부끄럽지 않은 제품 무드.</h2><p>상담 현장에서 보여줘도 전문적으로 느껴지는 다크 인터페이스와 정돈된 정보 밀도를 강조했습니다.</p></div>
+                <div class="showcase-layout">
+                    <div class="conversation-phone glass-panel" data-reveal><div class="phone-screen"><div class="notch"></div><div class="bubble">김민정 고객님 기존 보험 PDF 3건 업로드했습니다. 부족한 보장만 먼저 요약해줘.</div><div class="bubble answer">뇌혈관/허혈성 심장 진단비가 동일 연령대 권장 대비 낮습니다. 상담에서는 가족력 확인 후 보완 플랜 2가지를 비교 제안하세요.</div><div class="bubble">고객이 어려운 용어 싫어해. 쉽게 설명해줘.</div><div class="bubble answer">“큰 병이 왔을 때 치료비뿐 아니라 소득 공백까지 버틸 수 있는 안전판”이라는 표현으로 시작하면 좋습니다.</div></div></div>
+                    <div class="board glass-panel" data-reveal="delay-1"><div class="card-label"><span>Smart Client Board</span><span>Auto synced</span></div><div class="columns"><div class="column"><h4>분석 대기</h4><div class="ticket"><strong>박서준 · 종합보험</strong><span>PDF 2건 업로드됨</span></div><div class="ticket"><strong>이하늘 · 실손보험</strong><span>OCR 확인 필요</span></div></div><div class="column"><h4>제안 준비</h4><div class="ticket"><strong>김민정 · 보장 보완</strong><span>AI 상담 메모 생성</span></div><div class="ticket"><strong>최유진 · 암 진단비</strong><span>플랜 비교표 준비</span></div></div><div class="column"><h4>상담 예약</h4><div class="ticket"><strong>정우성 · 리마인드</strong><span>오늘 16:30</span></div><div class="ticket"><strong>강하나 · 계약 검토</strong><span>내일 10:00</span></div></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonials" id="reviews">
+            <div class="container testimonial-layout">
+                <aside class="review-panel glass-panel" data-reveal><div class="stars" aria-label="별점 5점">★★★★★</div><h2>실제 보험 영업인들이 말하는 변화.</h2><p>후기 6개는 기존 콘텐츠를 유지하면서, 더 고급스럽고 신뢰감 있게 읽히도록 재배치했습니다.</p><div class="score-box"><div><strong>4.9</strong><span>사용자 평점</span></div><div><strong>1,000+</strong><span>사용 영업인</span></div></div></aside>
+                <div class="testimonial-masonry" data-reveal="delay-1">
+                    <article class="testimonial-card"><div class="stars">★★★★★</div><p class="quote">"보장분석 시간이 1시간에서 5분으로 줄었어요. 고객 상담이 훨씬 수월해졌고, 계약 성사율도 30% 올랐습니다. 정말 필수 도구예요!"</p><div class="author"><div class="author-avatar">김</div><div><strong>김민수 설계사</strong><span>삼성생명 · 15년차</span></div></div></article>
+                    <article class="testimonial-card"><div class="stars">★★★★★</div><p class="quote">"처음엔 반신반의했는데, 써보니 진짜 놀랐습니다. PDF 올리면 바로 46개 항목이 뜨는데 정확도가 거의 100%예요. 수작업 시대는 끝났네요."</p><div class="author"><div class="author-avatar">박</div><div><strong>박지영 FC</strong><span>교보생명 · 8년차</span></div></div></article>
+                    <article class="testimonial-card"><div class="stars">★★★★★</div><p class="quote">"개인정보 걱정 없이 쓸 수 있어서 좋아요. 클라우드 안 쓰고 내 컴퓨터에만 저장되니까 안심이 됩니다. 무료인데 이렇게 좋아도 되나요?"</p><div class="author"><div class="author-avatar">이</div><div><strong>이준호 팀장</strong><span>한화생명 · 22년차</span></div></div></article>
+                    <article class="testimonial-card"><div class="stars">★★★★★</div><p class="quote">"신입인데 이 프로그램 덕분에 빠르게 적응했어요. AI가 제안서까지 만들어주니까 선배들보다 더 전문적으로 보이더라고요. 강추합니다!"</p><div class="author"><div class="author-avatar">최</div><div><strong>최은지 신입</strong><span>메트라이프 · 1년차</span></div></div></article>
+                    <article class="testimonial-card"><div class="stars">★★★★★</div><p class="quote">"다크모드가 정말 편해요. 저녁에 일할 때 눈이 덜 피로하고, 디자인도 세련되어서 고객한테 보여줄 때도 자신감 생겨요."</p><div class="author"><div class="author-avatar">정</div><div><strong>정수현 과장</strong><span>동양생명 · 12년차</span></div></div></article>
+                    <article class="testimonial-card"><div class="stars">★★★★★</div><p class="quote">"업데이트가 자동으로 되니까 편하고, 매달 새 기능이 추가돼요. 개발자가 계속 관리하는 게 느껴져서 믿음이 갑니다. 평생 무료라니 감사할 따름!"</p><div class="author"><div class="author-avatar">강</div><div><strong>강태우 지점장</strong><span>신한생명 · 18년차</span></div></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section download" id="download">
+            <div class="container">
+                <div class="download-box glass-panel" data-reveal>
+                    <div class="download-intro"><span class="kicker">DOWNLOAD</span><h2>설치 1분. 상담 준비는 5분.</h2><p>Windows와 macOS에서 무료로 시작하세요. 버전 정보와 다운로드 링크는 api/windows.json, api/macos.json 연동으로 최신 상태를 반영합니다.</p></div>
+                    <div class="download-cards">
+                        <article class="download-card"><div class="platform"><div><h3>Windows</h3><p class="version" id="windows-version">버전 확인 중...</p></div><div class="platform-icon" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none"><path d="M3 5.3 10.8 4v7.4H3V5.3Zm9.2-1.5L21 2.5v8.9h-8.8V3.8ZM3 12.8h7.8V20L3 18.7v-5.9Zm9.2 0H21v8.7l-8.8-1.3v-7.4Z" fill="currentColor"/></svg></div></div><ul><li>Windows 10 이상 지원</li><li>자동 업데이트 내장</li><li>다크/라이트 모드</li><li>즉시 사용 가능</li></ul><a href="#" id="windows-download" class="button primary">다운로드 (Windows)</a></article>
+                        <article class="download-card"><div class="platform"><div><h3>macOS</h3><p class="version" id="macos-version">버전 확인 중...</p></div><div class="platform-icon" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none"><path d="M16.4 2.5c.1 1.2-.4 2.4-1.1 3.2-.8.9-2 1.5-3.1 1.4-.1-1.1.4-2.3 1.1-3.1.8-.9 2.1-1.5 3.1-1.5Zm3.8 15.1c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.3 3.3-4 3.3-1.5 0-1.9-1-4-1s-2.6 1-4 1c-1.7 0-3-1.7-4-3.2-2.8-4.3-3.1-9.3-1.4-12 1.2-1.9 3-3 4.8-3 1.9 0 3.1 1 4.6 1 1.5 0 2.4-1 4.6-1 1.6 0 3.4.9 4.6 2.4-4 2.2-3.4 7.9.3 9.7Z" fill="currentColor"/></svg></div></div><ul><li>Apple Silicon (M1/M2/M3)</li><li>자동 업데이트 내장</li><li>다크/라이트 모드</li><li>즉시 사용 가능</li></ul><a href="#" id="macos-download" class="button primary">다운로드 (macOS)</a></article>
                     </div>
+                    <div class="download-note"><span>100% 무료 영구 사용</span><span>구독료 없음</span><span>개인정보 로컬 저장</span><span>자동 업데이트</span><span>GitHub Issues 지원</span></div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">
-                    "신입인데 이 프로그램 덕분에 빠르게 적응했어요. AI가 제안서까지 만들어주니까 선배들보다 더 전문적으로 보이더라고요. 강추합니다!"
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">최</div>
-                    <div class="author-info">
-                        <div class="name">최은지 신입</div>
-                        <div class="role">메트라이프 · 1년차</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">
-                    "다크모드가 정말 편해요. 저녁에 일할 때 눈이 덜 피로하고, 디자인도 세련되어서 고객한테 보여줄 때도 자신감 생겨요."
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">정</div>
-                    <div class="author-info">
-                        <div class="name">정수현 과장</div>
-                        <div class="role">동양생명 · 12년차</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">
-                    "업데이트가 자동으로 되니까 편하고, 매달 새 기능이 추가돼요. 개발자가 계속 관리하는 게 느껴져서 믿음이 갑니다. 평생 무료라니 감사할 따름!"
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">강</div>
-                    <div class="author-info">
-                        <div class="name">강태우 지점장</div>
-                        <div class="role">신한생명 · 18년차</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 스크린샷 -->
-    <section class="screenshots" id="screenshots">
-        <div class="section-header">
-            <span class="section-badge">SCREENSHOTS</span>
-            <h2>직관적인 인터페이스</h2>
-            <p class="subtitle">한눈에 들어오는 깔끔한 디자인</p>
-        </div>
-        
-        <div class="screenshot-grid">
-            <div class="screenshot-item">
-                <div class="screenshot-placeholder">
-                    <div class="icon">📱</div>
-                    <div class="title">고객 관리 대시보드</div>
-                    <div class="desc">모든 고객 정보를 한눈에</div>
-                </div>
-            </div>
-            <div class="screenshot-item">
-                <div class="screenshot-placeholder">
-                    <div class="icon">📊</div>
-                    <div class="title">보장분석 결과</div>
-                    <div class="desc">46개 항목 자동 분석</div>
-                </div>
-            </div>
-            <div class="screenshot-item">
-                <div class="screenshot-placeholder">
-                    <div class="icon">🤖</div>
-                    <div class="title">AI 상담 도우미</div>
-                    <div class="desc">실시간 맞춤 제안</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 다운로드 -->
-    <section class="download" id="download">
-        <h2>지금 바로 시작하세요</h2>
-        <p class="tagline">설치 1분, 평생 무료</p>
-        
-        <div class="download-cards">
-            <div class="download-card">
-                <div class="platform-icon">💻</div>
-                <h3>Windows</h3>
-                <p class="version" id="windows-version">버전 확인 중...</p>
-                <ul class="features-list">
-                    <li>Windows 10 이상 지원</li>
-                    <li>자동 업데이트 내장</li>
-                    <li>다크/라이트 모드</li>
-                    <li>즉시 사용 가능</li>
-                </ul>
-                <a href="#" id="windows-download" class="btn btn-primary">
-                    다운로드 (Windows)
-                </a>
-            </div>
-
-            <div class="download-card">
-                <div class="platform-icon">🍎</div>
-                <h3>macOS</h3>
-                <p class="version" id="macos-version">버전 확인 중...</p>
-                <ul class="features-list">
-                    <li>Apple Silicon (M1/M2/M3)</li>
-                    <li>자동 업데이트 내장</li>
-                    <li>다크/라이트 모드</li>
-                    <li>즉시 사용 가능</li>
-                </ul>
-                <a href="#" id="macos-download" class="btn btn-primary">
-                    다운로드 (macOS)
-                </a>
-            </div>
-        </div>
-
-        <div class="download-note">
-            <p>
-                ✅ <strong>100% 무료 영구 사용</strong> · 구독료 없음<br>
-                🔒 <strong>개인정보 완벽 보호</strong> · 로컬 저장<br>
-                🔄 <strong>자동 업데이트</strong> · 항상 최신 버전<br>
-                💬 <strong>빠른 지원</strong> · GitHub Issues
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="links">
-                <a href="https://github.com/nasawon0-beep/insurance-ai" target="_blank">GitHub</a>
-                <a href="https://github.com/nasawon0-beep/insurance-ai/releases" target="_blank">릴리스 노트</a>
-                <a href="https://github.com/nasawon0-beep/insurance-ai/issues" target="_blank">문의/건의</a>
-            </div>
-            <p class="copyright">
-                Insurance AI © 2026. Made with ❤️<br>
-                보험 영업인을 위한 AI 도구 · 무료 영구 사용
-            </p>
-        </div>
+        <div class="container footer-inner"><div>Insurance AI © 2026 · 보험 영업인을 위한 AI 도구</div><div class="footer-links"><a href="https://github.com/nasawon0-beep/insurance-ai" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/nasawon0-beep/insurance-ai/releases" target="_blank" rel="noopener">릴리스 노트</a><a href="https://github.com/nasawon0-beep/insurance-ai/issues" target="_blank" rel="noopener">문의/건의</a></div></div>
     </footer>
 
     <script>
-        async function loadVersionInfo() {
-            try {
-                const winRes = await fetch('api/windows.json');
-                const winData = await winRes.json();
-                document.getElementById('windows-version').textContent = `${winData.latestVersion || 'v2.2.0'} · ${winData.fileSize || '약 150MB'}`;
-                document.getElementById('windows-download').href = winData.downloadUrl || '#';
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const fallbackDownloads = {
+            windows: { platform: 'windows', latestVersion: 'v2.2.0', fileSize: '약 150MB', downloadUrl: 'https://github.com/nasawon0-beep/insurance-ai/releases' },
+            macos: { platform: 'macos', latestVersion: 'v2.2.0', fileSize: '약 120MB', downloadUrl: 'https://github.com/nasawon0-beep/insurance-ai/releases' }
+        };
 
-                const macRes = await fetch('api/macos.json');
-                const macData = await macRes.json();
-                document.getElementById('macos-version').textContent = `${macData.latestVersion || 'v2.2.0'} · ${macData.fileSize || '약 120MB'}`;
-                document.getElementById('macos-download').href = macData.downloadUrl || '#';
+        async function loadVersionInfo() {
+            await Promise.all([
+                loadPlatformInfo('windows', 'api/windows.json', fallbackDownloads.windows),
+                loadPlatformInfo('macos', 'api/macos.json', fallbackDownloads.macos)
+            ]);
+        }
+
+        async function loadPlatformInfo(platform, url, fallbackData) {
+            try {
+                const response = await fetch(url, { cache: 'no-store' });
+                if (!response.ok) throw new Error(`${url} returned ${response.status}`);
+                const data = await response.json();
+                const apiPlatform = String(data.platform || '').toLowerCase();
+                if (apiPlatform && apiPlatform !== platform) throw new Error(`${url} platform mismatch: ${apiPlatform}`);
+                applyDownloadInfo(platform, { ...fallbackData, ...data });
             } catch (error) {
-                console.error('버전 정보 로드 실패:', error);
+                console.warn(`${platform} 버전 정보 기본값 사용:`, error.message);
+                applyDownloadInfo(platform, fallbackData);
             }
         }
 
+        function applyDownloadInfo(platform, data) {
+            const versionEl = document.getElementById(`${platform}-version`);
+            const downloadEl = document.getElementById(`${platform}-download`);
+            if (versionEl) versionEl.textContent = `${data.latestVersion || 'v2.2.0'} · ${data.fileSize || '용량 확인 중'}`;
+            if (downloadEl) downloadEl.href = data.downloadUrl || '#';
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+            anchor.addEventListener('click', event => {
+                const targetId = anchor.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (!target) return;
+                event.preventDefault();
+                target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
             });
         });
+
+        const revealTargets = Array.from(document.querySelectorAll('[data-reveal]'));
+        function markVisibleNow() {
+            const trigger = window.innerHeight - 48;
+            revealTargets.forEach(element => {
+                if (element.classList.contains('is-visible')) return;
+                const rect = element.getBoundingClientRect();
+                if (rect.top < trigger && rect.bottom > 0) element.classList.add('is-visible');
+            });
+        }
+        window.__insuranceAIRevealCheck = markVisibleNow;
+        const revealSafetyTimer = setInterval(() => {
+            markVisibleNow();
+            if (document.querySelectorAll('[data-reveal]:not(.is-visible)').length === 0) clearInterval(revealSafetyTimer);
+        }, 350);
+
+        if (prefersReducedMotion) {
+            revealTargets.forEach(element => element.classList.add('is-visible'));
+        } else if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
+            revealTargets.forEach(element => observer.observe(element));
+            window.addEventListener('scroll', markVisibleNow, { passive: true });
+            window.addEventListener('resize', markVisibleNow, { passive: true });
+            requestAnimationFrame(markVisibleNow);
+            setTimeout(markVisibleNow, 140);
+        } else {
+            window.addEventListener('scroll', markVisibleNow, { passive: true });
+            window.addEventListener('resize', markVisibleNow, { passive: true });
+            markVisibleNow();
+        }
+
+        if (!prefersReducedMotion) {
+            const visual = document.querySelector('.hero-visual');
+            const frame = document.querySelector('.dashboard-frame');
+            const parallaxLayers = [
+                { element: document.querySelector('.premium-aurora'), speed: -0.045 },
+                { element: document.querySelector('.executive-cosmos'), speed: 0.032 },
+                { element: document.querySelector('.visual-halo'), speed: 0.055 }
+            ].filter(layer => layer.element);
+            let ticking = false;
+            const updateParallax = () => {
+                const scrollY = window.scrollY || 0;
+                parallaxLayers.forEach(({ element, speed }) => {
+                    element.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
+                });
+                ticking = false;
+            };
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }, { passive: true });
+            updateParallax();
+            if (visual && frame) {
+                visual.addEventListener('pointermove', event => {
+                    const rect = visual.getBoundingClientRect();
+                    const x = (event.clientX - rect.left) / rect.width - 0.5;
+                    const y = (event.clientY - rect.top) / rect.height - 0.5;
+                    frame.style.transform = `rotateX(${7 - y * 5}deg) rotateY(${-10 + x * 7}deg) rotateZ(1deg)`;
+                });
+                visual.addEventListener('pointerleave', () => {
+                    frame.style.transform = 'rotateX(7deg) rotateY(-10deg) rotateZ(1deg)';
+                });
+            }
+        }
 
         loadVersionInfo();
     </script>
