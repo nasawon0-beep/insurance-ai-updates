@@ -1,23 +1,19 @@
 {
-  "platform": "macos",
-  "name": "macOS",
-  "status": "available",
+  "platform": "windows",
+  "name": "Windows",
+  "status": "coming_soon",
   "latestVersion": "v2.2.0",
   "releaseDate": "2026-09-25",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.0-macos/Insurance.AI_2.2.0_aarch64.dmg",
-  "fileName": "Insurance.AI_2.2.0_aarch64.dmg",
-  "fileSize": "약 120MB",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases",
+  "fileName": null,
+  "fileSize": "약 150MB",
   "minimumVersion": "v2.0.0",
   "checksum": {
     "sha256": ""
   },
   "changelog": [
-    "보장분석 기능 추가 (13개 카테고리 × 46개 담보)",
-    "consultations.coverage_json 통합",
-    "인라인 수정 기능",
-    "충족률 자동 계산",
-    "자동 업데이트 지원",
-    "100개 테스트 통과"
+    "Windows 빌드 준비 중",
+    "GitHub Actions 권한 이슈 해결 중"
   ],
-  "notes": "macOS Apple Silicon (M1/M2/M3) 전용입니다."
+  "notes": "Windows 버전은 현재 준비 중입니다. macOS 버전을 먼저 사용해주세요!"
 }

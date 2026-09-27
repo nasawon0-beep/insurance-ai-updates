@@ -1,0 +1,23 @@
+{
+  "platform": "macos",
+  "name": "macOS",
+  "status": "available",
+  "latestVersion": "v2.2.0",
+  "releaseDate": "2026-09-25",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.0-macos/Insurance.AI_2.2.0_aarch64.dmg",
+  "fileName": "Insurance.AI_2.2.0_aarch64.dmg",
+  "fileSize": "약 120MB",
+  "minimumVersion": "v2.0.0",
+  "checksum": {
+    "sha256": ""
+  },
+  "changelog": [
+    "보장분석 기능 추가 (13개 카테고리 × 46개 담보)",
+    "consultations.coverage_json 통합",
+    "인라인 수정 기능",
+    "충족률 자동 계산",
+    "자동 업데이트 지원",
+    "100개 테스트 통과"
+  ],
+  "notes": "macOS Apple Silicon (M1/M2/M3) 전용입니다."
+}
