@@ -6,20 +6,20 @@
   "releaseDate": "2026-09-30",
   "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.8-windows",
   "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe",
-  "fileName": "Insurance AI_2.2.8_x64-setup.exe",
-  "fileSize": "219MB",
-  "fileSizeBytes": 230608607,
+  "fileName": "Insurance.AI_2.2.8_x64-setup.exe",
+  "fileSize": "222MB",
+  "fileSizeBytes": 232776178,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "18e6d333343b1550d77242e7c149d362ffa98652e25a2be629d57357187989d6"
+    "sha256": "deb4047f3cb901df9c0444b408cd3c256f2b4d12fe5bd223db283daf75c5e514"
   },
   "alternateDownloads": [
     {
       "type": "msi",
-      "fileName": "Insurance AI_2.2.8_x64_ko-KR.msi",
-      "fileSize": "221MB",
-      "fileSizeBytes": 231849984,
-      "sha256": "3947513b63e4be5e46b163678dc97f133f7837ac379b00421cc0e6f46b570771",
+      "fileName": "Insurance.AI_2.2.8_x64_ko-KR.msi",
+      "fileSize": "223MB",
+      "fileSizeBytes": 234008576,
+      "sha256": "5a673a16dcab95c49072c02e7615af956016f8eb68715fdcb7df3129c0d0ab29",
       "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64_ko-KR.msi"
     }
   ],
@@ -27,13 +27,13 @@
     "실행파일명 Insurance AI.exe로 수정",
     "자동 업데이트 확인 주소를 GitHub Pages로 변경",
     "import_data.py 번들 포함으로 UnicodeDecodeError 크래시 수정",
-    "NSIS 설치 폴더에 Insurance AI.exe, control-server.exe, local-engine.exe 포함 확인"
+    "Windows 서명 빌드 산출물(.sig) Release 업로드 및 updater manifest 반영"
   ],
   "notes": "Windows 10/11 64-bit 지원 · NSIS setup 권장",
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
-    "signatureAvailable": false,
-    "status": "pending-signature",
-    "notes": ".sig 파일이 없어 자동 설치 업데이트는 다음 서명 포함 빌드에서 안정화 예정"
+    "signatureAvailable": true,
+    "status": "ready",
+    "notes": "Release v2.2.8-windows .sig 파일 반영 완료"
   }
 }
