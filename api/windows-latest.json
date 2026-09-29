@@ -1,0 +1,11 @@
+{
+  "version": "2.2.8",
+  "notes": "실행파일명 Insurance AI.exe 적용, updater endpoint GitHub Pages 변경, import_data.py 번들 포함. 참고: 이번 Release에는 .sig 파일이 없어 자동 설치 업데이트는 다음 서명 포함 빌드에서 안정화 예정입니다.",
+  "pub_date": "2026-09-29T15:06:38Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe"
+    }
+  }
+}

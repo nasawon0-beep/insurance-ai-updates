@@ -2,22 +2,38 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.3",
-  "releaseDate": "2026-09-27",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.3-windows/Insurance.AI_2.2.0_x64_en-US.msi",
-  "fileName": "Insurance.AI_2.2.0_x64_en-US.msi",
-  "fileSize": "약 150MB",
+  "latestVersion": "v2.2.8",
+  "releaseDate": "2026-09-30",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.8-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe",
+  "fileName": "Insurance AI_2.2.8_x64-setup.exe",
+  "fileSize": "219MB",
+  "fileSizeBytes": 230608607,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": ""
+    "sha256": "18e6d333343b1550d77242e7c149d362ffa98652e25a2be629d57357187989d6"
   },
-  "changelog": [
-    "보장분석 기능 추가 (13개 카테고리 × 46개 담보)",
-    "consultations.coverage_json 통합",
-    "인라인 수정 기능",
-    "충족률 자동 계산",
-    "자동 업데이트 지원",
-    "100개 테스트 통과"
+  "alternateDownloads": [
+    {
+      "type": "msi",
+      "fileName": "Insurance AI_2.2.8_x64_ko-KR.msi",
+      "fileSize": "221MB",
+      "fileSizeBytes": 231849984,
+      "sha256": "3947513b63e4be5e46b163678dc97f133f7837ac379b00421cc0e6f46b570771",
+      "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64_ko-KR.msi"
+    }
   ],
-  "notes": "Windows 10/11 64-bit 지원"
+  "changelog": [
+    "실행파일명 Insurance AI.exe로 수정",
+    "자동 업데이트 확인 주소를 GitHub Pages로 변경",
+    "import_data.py 번들 포함으로 UnicodeDecodeError 크래시 수정",
+    "NSIS 설치 폴더에 Insurance AI.exe, control-server.exe, local-engine.exe 포함 확인"
+  ],
+  "notes": "Windows 10/11 64-bit 지원 · NSIS setup 권장",
+  "autoUpdate": {
+    "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
+    "signatureAvailable": false,
+    "status": "pending-signature",
+    "notes": ".sig 파일이 없어 자동 설치 업데이트는 다음 서명 포함 빌드에서 안정화 예정"
+  }
 }
