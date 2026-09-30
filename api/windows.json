@@ -2,32 +2,33 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.10",
+  "latestVersion": "v2.2.11",
   "releaseDate": "2026-09-30",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.10-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.10-windows/Insurance.AI_2.2.10_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.10_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.11-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.11-windows/Insurance.AI_2.2.11_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.11_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232812886,
+  "fileSizeBytes": 232812550,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "cd1bbdfac99225b3bb85061bbb1d15e1801a3c4128128b2736e592c8d38913fe"
+    "sha256": "3499f114c7cd0e090cf3a8f3c0bfe41d7404a99c26bbd8eb95a749779c30a76a"
   },
-  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEI4eHl6b0pxQ25mclZGdVVwYUo0Y3F1R1dLWklaZHM5WW40emFEMG14UXhJRHlpV3N1c1BjV25IcWMwdW9yNjJ1clRJZFFDbnp5RjZ0RkdCMGtPVlFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzY0MzcyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NC1zZXR1cC5leGUKQzE3MGZvT1BIYXNZdXhDVjZmZFVtRlpOeVRGcjEwNnFkaDBmeTF0QTQxeUo4Yjc0b01Fc1BWdnBZQ2Ridit6M296VkFvdkZZZWxWOWhmUVBzY0s5Q2c9PQo=",
-  "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.10-windows/Insurance.AI_2.2.10_x64-setup.exe.sig",
+  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEg2SEJabE9CeGxqaytHZVpqTHhoQzBnSG5saVRsK1FiRzd3cUdpdjhub2x5blltUG5YbjhxSlFNYy9ibXN6Nzh0ZllGdXhhdVlOaW9PYjB4T015MEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzc5MzEwCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xMV94NjQtc2V0dXAuZXhlCktRTGRrNkZqKzJtTmc3d2lMYWh1MndHejdDR0RhV21BS1k2c0hiTjk1Q01Pc0VqblVyUExaSWJrdWR6Z21qWUg5MlRIZzFZa0RoWGxCNDdDbEtsNkRBPT0K",
+  "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.11-windows/Insurance.AI_2.2.11_x64-setup.exe.sig",
   "alternateDownloads": [
     {
       "type": "msi",
-      "fileName": "Insurance.AI_2.2.10_x64_ko-KR.msi",
+      "fileName": "Insurance.AI_2.2.11_x64_ko-KR.msi",
       "fileSize": "223MB",
       "fileSizeBytes": 234049536,
-      "sha256": "9c232b76004acb5b0d3e900f5bd345ed861e99832504fb8131cf900c26126df3",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEhaSW5ralZZVW1GaWo0VWlubFdtVUwwTE82bjVoMGZ6V2VKUEQ1NzQxbVlsQkZLM21kOUpVaVVXZi9Jc0diTk1jT1NBcWtxRzNjMWtTVGdWTUh5RWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzY0MzcyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NF9rby1LUi5tc2kKYUFsTVpPcHZkTmYrZTkxMjdyL3hQS1hxOEQ5TDI1bVJmNDFIdXZQQzNWaU5ocE9ZSzRLODVtUU83M0dPcmpjbmNCSE1zZXlFRW9vc1Fpd25OMlN4RHc9PQo=",
-      "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.10-windows/Insurance.AI_2.2.10_x64_ko-KR.msi.sig",
-      "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.10-windows/Insurance.AI_2.2.10_x64_ko-KR.msi"
+      "sha256": "94757a57a9b80730e2d7ecdf6bba51bccb6dd36c99d777efdb78cb3a3af67519",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEM4em1ibGpPNUpYV0YvMTdybVhuQXVrRmtCMytlT3MzQTJqU3RmaWhjS0JWVGpXYzhzbzRmMnE4U0l5eWFlYVBXaGdsbGdzeWZqYVk5V2JRMGJPT2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzc5MzEwCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xMV94NjRfa28tS1IubXNpCkRWelJpVHBYRTdDYzk0aVVqWDhoSnhYSmltOC9Ja0h2NEszZlQ0UjJBWGlVNVp4dWNRNTBNQnNobzljQnlSaWNGVXcvRmFDdFdvN2FlRy9zSEdzaVBBPT0K",
+      "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.11-windows/Insurance.AI_2.2.11_x64_ko-KR.msi.sig",
+      "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.11-windows/Insurance.AI_2.2.11_x64_ko-KR.msi"
     }
   ],
   "changelog": [
+    "오프라인 모드일 때도 로컬 기능 작동 (PDF 분석, AI 문의, 파일 분석) — Tauri secret bridge 추가",
     "주민번호 포함 텍스트 분석 500 오류 수정 (이름+주민번호, 이름+전화+주민번호 fallback 지원)",
     "오프라인 모드일 때 PDF 파일 분석 인증 실패 수정 (Windows WebView Origin 허용)",
     "새 고객 빠른 등록에서 xlsx 선택 시 안내 메시지 개선",
@@ -47,6 +48,6 @@
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
     "signatureAvailable": true,
     "status": "ready",
-    "notes": "Release v2.2.10-windows 긴급 수정 완료 · 자동업데이트 지원"
+    "notes": "Release v2.2.11-windows 오프라인 모드 수정 완료 · 자동업데이트 지원"
   }
 }
