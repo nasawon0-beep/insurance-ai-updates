@@ -8,22 +8,27 @@
   "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe",
   "fileName": "Insurance.AI_2.2.8_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232776178,
+  "fileSizeBytes": 232800671,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "deb4047f3cb901df9c0444b408cd3c256f2b4d12fe5bd223db283daf75c5e514"
+    "sha256": "dc7b8816f50d1934c4a89dbcd87124ddbd1218236a30705d95543008bbdd387b"
   },
+  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEtCMHVHR3Z5QjQ2TE1Wc0VxaUdlaFZEZ2tsRytQalBLc2trdFJHR1haMUJJRUNOTCt4cThsUjJxeUpoZEk1cXBmTFR3QjVzWXJPZ3BYYjE0Ym1tT1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzQ5ODEzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NC1zZXR1cC5leGUKcmZWeFZvWnlMS21RbEZLM21aN0l4VVptT1lpeDUrdlVqSHk5eHEyNXVQSEQwYUsyQlFmb3N4aXN6V0dyeEF4aGN1b3pqeVg0N2xaZzFrUUNrNWV4REE9PQo=",
+  "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe.sig",
   "alternateDownloads": [
     {
       "type": "msi",
       "fileName": "Insurance.AI_2.2.8_x64_ko-KR.msi",
       "fileSize": "223MB",
-      "fileSizeBytes": 234008576,
-      "sha256": "5a673a16dcab95c49072c02e7615af956016f8eb68715fdcb7df3129c0d0ab29",
+      "fileSizeBytes": 234033152,
+      "sha256": "b5980ee7d756b4eff2df6ab7c5df53bbb7afef89a67acf33c06c801a7a6796ce",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEVWOTQxZVZOU1BtdU9PVHJkbjlOOEtjbllpK1F4T2VBM3hzNjdLdElXNHFPN1VTcmZWSmJOTG1wSHNIZzFiVVplb3pua01iUy9hUXhCQThCYjdUR2dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzQ5ODEzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NF9rby1LUi5tc2kKVExXdTNRejZ3ZEUraE1MZEFWcVlOclJHZFBsZjNVTXhoelYxZG9GRFJoQkdGQ1ZkTEdWVkJxa0RDTXdDZmFHZWdLalpidEc0Mk1yVTNXWXpLMXh1QXc9PQo=",
+      "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64_ko-KR.msi.sig",
       "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64_ko-KR.msi"
     }
   ],
   "changelog": [
+    "Windows 신규 설치 PC용 Ollama/모델 온보딩 개선",
     "실행파일명 Insurance AI.exe로 수정",
     "자동 업데이트 확인 주소를 GitHub Pages로 변경",
     "import_data.py 번들 포함으로 UnicodeDecodeError 크래시 수정",
