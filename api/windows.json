@@ -8,30 +8,31 @@
   "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe",
   "fileName": "Insurance.AI_2.2.8_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232800671,
+  "fileSizeBytes": 232808666,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "dc7b8816f50d1934c4a89dbcd87124ddbd1218236a30705d95543008bbdd387b"
+    "sha256": "9d71fd72820a0d2225ebddba1dba39d95501254fbae6914eeaa9e92697fd8994"
   },
-  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEtCMHVHR3Z5QjQ2TE1Wc0VxaUdlaFZEZ2tsRytQalBLc2trdFJHR1haMUJJRUNOTCt4cThsUjJxeUpoZEk1cXBmTFR3QjVzWXJPZ3BYYjE0Ym1tT1E0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzQ5ODEzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NC1zZXR1cC5leGUKcmZWeFZvWnlMS21RbEZLM21aN0l4VVptT1lpeDUrdlVqSHk5eHEyNXVQSEQwYUsyQlFmb3N4aXN6V0dyeEF4aGN1b3pqeVg0N2xaZzFrUUNrNWV4REE9PQo=",
+  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJ2cW9NczZFRCt6cGhqOUV1OVRUS1NMNGszZ0VxT1hGOW9CcEhKRlE4cTJITkVQRjVuWkJQMEtWR3FBUkw0Q2pNejF1ZDgrOVJoZ21GQWkxTG0xSndjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzYwMzUyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NC1zZXR1cC5leGUKVyszdENNU1UzQUVlUkNBcmZTb0xlYjd3MU1FTFFvYnhlUjlSUTh2bjBJOUdzb0dwOFU3VW14dVYwcU5pWWowR2hjNUxSUFB0cHZSaDZ2ZlNjbWFLQ1E9PQo=",
   "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe.sig",
   "alternateDownloads": [
     {
       "type": "msi",
       "fileName": "Insurance.AI_2.2.8_x64_ko-KR.msi",
       "fileSize": "223MB",
-      "fileSizeBytes": 234033152,
-      "sha256": "b5980ee7d756b4eff2df6ab7c5df53bbb7afef89a67acf33c06c801a7a6796ce",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEVWOTQxZVZOU1BtdU9PVHJkbjlOOEtjbllpK1F4T2VBM3hzNjdLdElXNHFPN1VTcmZWSmJOTG1wSHNIZzFiVVplb3pua01iUy9hUXhCQThCYjdUR2dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzQ5ODEzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NF9rby1LUi5tc2kKVExXdTNRejZ3ZEUraE1MZEFWcVlOclJHZFBsZjNVTXhoelYxZG9GRFJoQkdGQ1ZkTEdWVkJxa0RDTXdDZmFHZWdLalpidEc0Mk1yVTNXWXpLMXh1QXc9PQo=",
+      "fileSizeBytes": 234045440,
+      "sha256": "bf2c9c2cb05bff2d568e80bc2c0e6abd8c1cae097b2333c9c481a878e60a581c",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEhqUzBkdDBZTFY0VVhadGJPZWVuNkVxVGZHUkkwSlVCdEV1VnJmMlIxZ0NRN09YWlNmK3FBTk56TkQ2UnJkaUI5SmpvVWZsbWdBMTZ3YkpjcW9lQndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzYwMzUyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NF9rby1LUi5tc2kKTjVDRHNKYVdwdXNRbHB1MTZ0UEROcGJYcTFISG5ycDc4a2hOSnZ0WHFuTTg4WGhqUE5zOEE5VURDMkNZQUFhTHNQaWpmUmp1U0dwd01CUXVqcFFFRFE9PQo=",
       "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64_ko-KR.msi.sig",
       "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64_ko-KR.msi"
     }
   ],
   "changelog": [
+    "고객자료 XLSX 자동 해석 및 등록 전 검수 요약 추가",
+    "온보딩 완료 후 local-engine 자동 연결/재기동 로직 추가",
     "Windows 신규 설치 PC용 Ollama/모델 온보딩 개선",
     "실행파일명 Insurance AI.exe로 수정",
     "자동 업데이트 확인 주소를 GitHub Pages로 변경",
-    "import_data.py 번들 포함으로 UnicodeDecodeError 크래시 수정",
     "Windows 서명 빌드 산출물(.sig) Release 업로드 및 updater manifest 반영"
   ],
   "notes": "Windows 10/11 64-bit 지원 · NSIS setup 권장",
