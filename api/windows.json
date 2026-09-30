@@ -2,32 +2,34 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.8",
+  "latestVersion": "v2.2.9",
   "releaseDate": "2026-09-30",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.8-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.8_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.9-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.9-windows/Insurance.AI_2.2.9_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.9_x64-setup.exe",
   "fileSize": "222MB",
   "fileSizeBytes": 232812886,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "5d9ca874cc35b23aaf1344757aa219e4f3fbbd10a67f1a4806561c83810de411"
+    "sha256": "ade3439b8078ddf12fdcbfe3e099643feef1a1d475f498ad823dfc951fbb599c"
   },
   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEI4eHl6b0pxQ25mclZGdVVwYUo0Y3F1R1dLWklaZHM5WW40emFEMG14UXhJRHlpV3N1c1BjV25IcWMwdW9yNjJ1clRJZFFDbnp5RjZ0RkdCMGtPVlFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzY0MzcyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NC1zZXR1cC5leGUKQzE3MGZvT1BIYXNZdXhDVjZmZFVtRlpOeVRGcjEwNnFkaDBmeTF0QTQxeUo4Yjc0b01Fc1BWdnBZQ2Ridit6M296VkFvdkZZZWxWOWhmUVBzY0s5Q2c9PQo=",
-  "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64-setup.exe.sig",
+  "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.9-windows/Insurance.AI_2.2.9_x64-setup.exe.sig",
   "alternateDownloads": [
     {
       "type": "msi",
-      "fileName": "Insurance.AI_2.2.8_x64_ko-KR.msi",
+      "fileName": "Insurance.AI_2.2.9_x64_ko-KR.msi",
       "fileSize": "223MB",
       "fileSizeBytes": 234049536,
       "sha256": "9c232b76004acb5b0d3e900f5bd345ed861e99832504fb8131cf900c26126df3",
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEhaSW5ralZZVW1GaWo0VWlubFdtVUwwTE82bjVoMGZ6V2VKUEQ1NzQxbVlsQkZLM21kOUpVaVVXZi9Jc0diTk1jT1NBcWtxRzNjMWtTVGdWTUh5RWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwNzY0MzcyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi44X3g2NF9rby1LUi5tc2kKYUFsTVpPcHZkTmYrZTkxMjdyL3hQS1hxOEQ5TDI1bVJmNDFIdXZQQzNWaU5ocE9ZSzRLODVtUU83M0dPcmpjbmNCSE1zZXlFRW9vc1Fpd25OMlN4RHc9PQo=",
-      "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64_ko-KR.msi.sig",
-      "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.8-windows/Insurance.AI_2.2.8_x64_ko-KR.msi"
+      "signatureUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.9-windows/Insurance.AI_2.2.9_x64_ko-KR.msi.sig",
+      "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.9-windows/Insurance.AI_2.2.9_x64_ko-KR.msi"
     }
   ],
   "changelog": [
+    "오프라인/라이선스 서버 오류와 local-engine API 오류 메시지 분리",
+    "새 고객 빠른 등록 분석/파일 선택 버튼 UI 복구 (명확한 버튼 스타일)",
     "홈 던져넣기/새 고객 등록 분석 버튼의 단순 이름+전화번호 fallback 추가",
     "local-engine 미연결/AI 실패 시 사용자 친화 오류 메시지 개선",
     "고객자료 XLSX 자동 해석 및 등록 전 검수 요약 추가",
@@ -42,6 +44,6 @@
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
     "signatureAvailable": true,
     "status": "ready",
-    "notes": "Release v2.2.8-windows .sig 파일 반영 완료"
+    "notes": "Release v2.2.9-windows .sig 파일 반영 완료 · 자동업데이트 지원"
   }
 }
