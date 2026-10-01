@@ -2,33 +2,21 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.12",
+  "latestVersion": "v2.2.13",
   "releaseDate": "2026-10-01",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.12-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.12-windows/Insurance.AI_2.2.12_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.12_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.13-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.13-windows/Insurance.AI_2.2.13_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.13_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232817120,
+  "fileSizeBytes": 232817500,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "f5be5539f6d64040723c3d18a2b880b39683c7da5b85667b539edb60fb190deb"
+    "sha256": "dfc79e21649ed17e1720eac418935cbb8f3e327e3b7c707fb685d5d8b595c14e"
   },
-  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFBTVVlWYmhSUG9YUTlHcGlLU1NZTVBnLzAxY3poUU96U1pLam1tbSt2OS9mdU84T3NLaVo1MlMwNG1PK0RiOGlKRno5bGN6MmxRb3E2a2dCbUphY1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODE1NDgxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xMl94NjQtc2V0dXAuZXhlClVhcEFkQ1RKVGluWjBjcHlqQUJVOW9FMkxMR2xLVDh4cFNYRVpRWEp2MzFURTVhdEJYWTVxcUd0WW1ZdS9QRHU4RUhCWUUxV25WZE1lcldvYjBaRUFBPT0K",
-  "alternateDownloads": [
-    {
-      "type": "msi",
-      "fileName": "Insurance.AI_2.2.12_x64_ko-KR.msi",
-      "fileSize": "223MB",
-      "sha256": "38b28c3d564fc62d57134215f1a4e82001cc0abea300f1549447dffa14881d2f",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEtNaGZKdThIQWRGZW9PcW40bGU3b1J2ZEdYSTJDTzc2ZWFVSVBLV01hbUtidHB4Y3BTOTBQcUhyLzFCSnJiQ3dOaTBKa0pqNnhWcnRkUXN4S2F3VHdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODE1NDgxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xMl94NjRfa28tS1IubXNpCmJLRWZ4QUR5NFRrQjZFYnZlTHRLd2llTFp1cVdmZ2hBNVV2NWlLWkQxWUoxOE1rWW1OMkx6YzA1a2VKVXZSb2lUcjhlNlRma3lIUWQyUy9zeGVONERRPT0K",
-      "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.12-windows/Insurance.AI_2.2.12_x64_ko-KR.msi"
-    }
-  ],
   "changelog": [
-    "Ollama 완전 불능 상태에서도 작동 — 규칙 기반 fallback으로 이름/전화/주민번호 정확히 추출",
-    "오프라인 모드일 때도 로컬 기능 작동",
-    "주민번호 포함 텍스트 분석 수정",
-    "Windows WebView Origin 허용"
+    "일괄 등록 탭 추가 — 고객 목록 화면에 명확한 탭으로 표시",
+    "Ollama 완전 불능 상태에서도 작동 — 규칙 기반 fallback",
+    "오프라인 모드일 때도 로컬 기능 작동"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",

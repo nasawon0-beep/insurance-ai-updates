@@ -1,11 +1,11 @@
 {
-  "version": "2.2.12",
-  "notes": "Ollama 완전 불능 상태에서도 작동 — 규칙 기반 fallback",
-  "pub_date": "2026-10-01T08:00:00Z",
+  "version": "2.2.13",
+  "notes": "일괄 등록 탭 추가 + Ollama fallback",
+  "pub_date": "2026-10-01T11:30:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFBTVVlWYmhSUG9YUTlHcGlLU1NZTVBnLzAxY3poUU96U1pLam1tbSt2OS9mdU84T3NLaVo1MlMwNG1PK0RiOGlKRno5bGN6MmxRb3E2a2dCbUphY1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODE1NDgxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xMl94NjQtc2V0dXAuZXhlClVhcEFkQ1RKVGluWjBjcHlqQUJVOW9FMkxMR2xLVDh4cFNYRVpRWEp2MzFURTVhdEJYWTVxcUd0WW1ZdS9QRHU4RUhCWUUxV25WZE1lcldvYjBaRUFBPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.12-windows/Insurance.AI_2.2.12_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEZYY2p4ZlBydVM4eFNPem9Nak5rRTlmUUVWeEtKM1R2NmdaM2dIaGpWV2JibnhITm43YjBGSWdBMlh2eHBiK3ZyWVFuREQzYmtDcnN0MUQ2VWJhZ1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODMwMjA1CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xM194NjQtc2V0dXAuZXhlCmQyTmEyV3BJcVZFTXo5NjE4ZWhvQVBWaURscE5wQ05BWEpqOHpjUUJlaTVXRUYrV3RxNWxSSTZlWFAxMld5UlNDM3hpZmZva1hhN3dIVlJkQk44WURRPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.13-windows/Insurance.AI_2.2.13_x64-setup.exe"
     }
   }
 }
