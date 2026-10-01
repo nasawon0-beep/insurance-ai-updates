@@ -1,11 +1,11 @@
 {
-  "version": "2.2.16",
-  "notes": "주민번호 토글 제거 + UI 개선",
-  "pub_date": "2026-10-01T14:30:00Z",
+  "version": "2.2.17",
+  "notes": "AI 문의 고객 DB 조회 + UI 개선",
+  "pub_date": "2026-10-01T16:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEUyQWlyTkFSODhXZzV1YlVYMGlsTnFZMm1QUDNnb0pqVVRsTWluK2NnSmNoOHplUjduVndMYjRZVzZQMWpIeXNKUm0xeEQzR3ZoR2Nuc293WkVHZEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODYyNTA4CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xNl94NjQtc2V0dXAuZXhlCmhvZmJjODZlL2h1UDVmRS9Cdmk5NU05T2lpaHNRMmFhYkczZTZkQVFqeE5rY3cvRDJKeVplWHhBcEVpOHRYWVdqelpYdmNoOXdHOTBaUGk3aWpyekNRPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.16-windows/Insurance.AI_2.2.16_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEdwT0hJaEFteUZRTVpnWlJhQ294SlhySnh4NDY2Uk1aTjlHaHNJbldkVEwzRnRhbHlKVERRQnFna0VlbmtPRTl4TElvRmNyQ2xLS3laMi9PQ1RxZWdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODY2NDgyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xN194NjQtc2V0dXAuZXhlClNHUHB2WnBRLzVBNjlvaDB3WW02V0R4eUZnSGN6Ynd2Q1FmbnI2Ymo4anhlUkZUQW1mWndoS1UrSmlaY3c2R3BnTzFkaDVPVWEwZ1FPbCsxZEE0MEJRPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.17-windows/Insurance.AI_2.2.17_x64-setup.exe"
     }
   }
 }
