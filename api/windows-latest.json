@@ -1,11 +1,11 @@
 {
-  "version": "2.2.11",
-  "notes": "주민번호 포함 텍스트 분석 500 오류 수정 (이름+주민번호, 이름+전화+주민번호 fallback 지원), 오프라인 모드일 때 PDF 파일 분석 인증 실패 수정 (Windows WebView Origin 허용), 새 고객 빠른 등록에서 xlsx 선택 시 안내 메시지 개선, 오프라인/라이선스 서버 오류와 local-engine API 오류 메시지 분리, 새 고객 빠른 등록 분석/파일 선택 버튼 UI 복구, 홈 던져넣기/새 고객 등록 분석 버튼의 단순 이름+전화번호 fallback, local-engine 미연결/AI 실패 시 사용자 친화 오류 메시지 개선, 고객자료 XLSX 자동 해석 및 등록 전 검수 요약, 온보딩 완료 후 local-engine 자동 연결/재기동, Windows 신규 설치 PC용 Ollama/모델 온보딩 개선.",
-  "pub_date": "2026-09-30T22:22:06Z",
+  "version": "2.2.12",
+  "notes": "Ollama 완전 불능 상태에서도 작동 — 규칙 기반 fallback",
+  "pub_date": "2026-10-01T08:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEg2SEJabE9CeGxqbWdJbnQvUVNiekN4TkRod1VoOFl6WWNVdkljQjAyVDRaK3IrVTNHaHpYNTZFZm1SR2hXRlJjSDIrWk5TUjg4UDhDb2ZhaGdtYUFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODA2ODkxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xMV94NjQtc2V0dXAuZXhlCmNFRWxXbTZjcnhXeTlMNFNWdUdaNk1tdkc4ajRoSEF4N2FqSjlEZFpFOFBRbDFXcWlZMStMeklKcnZ6MkNabm5ROUxhdHpVN1VlTWxCWUt5OXNHK0NBPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.11-windows/Insurance.AI_2.2.11_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFBTVVlWYmhSUG9YUTlHcGlLU1NZTVBnLzAxY3poUU96U1pLam1tbSt2OS9mdU84T3NLaVo1MlMwNG1PK0RiOGlKRno5bGN6MmxRb3E2a2dCbUphY1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODE1NDgxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xMl94NjQtc2V0dXAuZXhlClVhcEFkQ1RKVGluWjBjcHlqQUJVOW9FMkxMR2xLVDh4cFNYRVpRWEp2MzFURTVhdEJYWTVxcUd0WW1ZdS9QRHU4RUhCWUUxV25WZE1lcldvYjBaRUFBPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.12-windows/Insurance.AI_2.2.12_x64-setup.exe"
     }
   }
 }
