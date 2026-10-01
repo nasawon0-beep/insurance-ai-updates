@@ -1,11 +1,11 @@
 {
-  "version": "2.2.13",
-  "notes": "일괄 등록 탭 추가 + Ollama fallback",
-  "pub_date": "2026-10-01T11:30:00Z",
+  "version": "2.2.14",
+  "notes": "UI 개선 + 드래그앤드롭",
+  "pub_date": "2026-10-01T12:30:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEZYY2p4ZlBydVM4eFNPem9Nak5rRTlmUUVWeEtKM1R2NmdaM2dIaGpWV2JibnhITm43YjBGSWdBMlh2eHBiK3ZyWVFuREQzYmtDcnN0MUQ2VWJhZ1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODMwMjA1CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xM194NjQtc2V0dXAuZXhlCmQyTmEyV3BJcVZFTXo5NjE4ZWhvQVBWaURscE5wQ05BWEpqOHpjUUJlaTVXRUYrV3RxNWxSSTZlWFAxMld5UlNDM3hpZmZva1hhN3dIVlJkQk44WURRPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.13-windows/Insurance.AI_2.2.13_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEVGT2J6WHVDZXpENmtSZ0w5SUxGYzEwOWFEYWV4QXdVc0tOR0pTem9FT3p3KzBtdnRHNFFGWWNNQmFtSGJreHZmdmFOdW9qeXl6Qk5jck0rTk55bndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODM1MDc3CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xNF94NjQtc2V0dXAuZXhlCjEvV0lLZWpzdWsyT2graVdYMWtZaExVdm9kZEExSEMrSXlUOUJNVTBicHFzTVlXSjFpbVZobEE3ZDVnUzZjWVhrZVBDV3hpK3M0OFBvWHYxS2xJeEJ3PT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.14-windows/Insurance.AI_2.2.14_x64-setup.exe"
     }
   }
 }
