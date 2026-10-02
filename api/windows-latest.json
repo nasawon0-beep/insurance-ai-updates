@@ -1,11 +1,11 @@
 {
-  "version": "2.2.17",
-  "notes": "AI 문의 고객 DB 조회 + UI 개선",
-  "pub_date": "2026-10-01T16:00:00Z",
+  "version": "2.2.18",
+  "notes": "AI 문의 고객명 자동 인식 + 고객 DB 조회 안정화",
+  "pub_date": "2026-10-02T14:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEdwT0hJaEFteUZRTVpnWlJhQ294SlhySnh4NDY2Uk1aTjlHaHNJbldkVEwzRnRhbHlKVERRQnFna0VlbmtPRTl4TElvRmNyQ2xLS3laMi9PQ1RxZWdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwODY2NDgyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xN194NjQtc2V0dXAuZXhlClNHUHB2WnBRLzVBNjlvaDB3WW02V0R4eUZnSGN6Ynd2Q1FmbnI2Ymo4anhlUkZUQW1mWndoS1UrSmlaY3c2R3BnTzFkaDVPVWEwZ1FPbCsxZEE0MEJRPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.17-windows/Insurance.AI_2.2.17_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEd0VVBodUpadm4zUE1NN2hyanVwSENRN2kwYVAxcWE1MXdnUGVzSGhRLzh5RmdTaWcwNlRWVjBFaW84N1pPVXowUlVoVWxwUjZiYmVjZG9WcDJEbUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwOTAyMjMzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4xOF94NjQtc2V0dXAuZXhlClpnckFvaWI0QTliek0wTW1WOE5DWkdBOFBoNVBHWk1iYTJsRlJpOWpnbEM0RG0zOWY1d1hHY21jTE85TnA1cXBoUHJ5enBqNFZCN2ZnNG5zOEpIZkN3PT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.18-windows/Insurance.AI_2.2.18_x64-setup.exe"
     }
   }
 }

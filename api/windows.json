@@ -2,23 +2,22 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.17",
-  "releaseDate": "2026-10-01",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.17-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.17-windows/Insurance.AI_2.2.17_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.17_x64-setup.exe",
+  "latestVersion": "v2.2.18",
+  "releaseDate": "2026-10-02",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.18-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.18-windows/Insurance.AI_2.2.18_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.18_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232820000,
+  "fileSizeBytes": 232816283,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "c2de11fb4ee1705b4f5b201a01f5d1bcee70175dcb708433d03ea5b49f2aba28"
+    "sha256": "1fa7fc88dc2e706c1c3e33a4992b664b25384232141cf44b855aed7218df0604"
   },
   "changelog": [
-    "AI 문의 고객 DB 직접 조회 (고객명+보장 질문 처리)",
-    "주민번호 설정 토글 제거 (항상 저장)",
-    "다크모드 배경 밝게 (#18181B)",
-    "버튼 테두리 + 파란색 강조",
-    "하드코딩 색상 제거"
+    "AI 문의 탭 고객명 자동 인식 기능 추가",
+    "고객 선택/문맥 기반 customer id 전달",
+    "고객명+보장항목 질문 시 고객 DB 직접 조회 안정화",
+    "Windows 실기동 테스트 통과"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
