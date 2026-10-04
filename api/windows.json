@@ -2,22 +2,24 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.18",
-  "releaseDate": "2026-10-02",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.18-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.18-windows/Insurance.AI_2.2.18_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.18_x64-setup.exe",
+  "latestVersion": "v2.2.19",
+  "releaseDate": "2026-10-04",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.19-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.19-windows/Insurance.AI_2.2.19_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.19_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232816283,
+  "fileSizeBytes": 232834325,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "1fa7fc88dc2e706c1c3e33a4992b664b25384232141cf44b855aed7218df0604"
+    "sha256": "f036d9c535c43dd7c0f8625c72083dc015e4e73b454cb07c5de185d3f8b01e89"
   },
   "changelog": [
-    "AI 문의 탭 고객명 자동 인식 기능 추가",
-    "고객 선택/문맥 기반 customer id 전달",
-    "고객명+보장항목 질문 시 고객 DB 직접 조회 안정화",
-    "Windows 실기동 테스트 통과"
+    "고객 DB 질문 LLM 스킵으로 1~2초 응답 최적화",
+    "AI 문의 질문 라우팅 분리",
+    "약관 RAG 기본 모델 14B에서 7B로 경량화",
+    "PDF 중복 임베딩 스킵 및 캐싱 개선",
+    "Ollama 런타임 옵션 최적화",
+    "Windows Ollama AMD 진단 도구 추가"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
