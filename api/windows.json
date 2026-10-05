@@ -2,24 +2,23 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.19",
+  "latestVersion": "v2.2.22",
   "releaseDate": "2026-10-04",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.19-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.19-windows/Insurance.AI_2.2.19_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.19_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.22-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.22-windows/Insurance.AI_2.2.22_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.22_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232834325,
+  "fileSizeBytes": 232839056,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "f036d9c535c43dd7c0f8625c72083dc015e4e73b454cb07c5de185d3f8b01e89"
+    "sha256": "a112efa5182dc5a5e50ee7d5fd1b7370d5f0a6c18b0ea9a898d1abc39914e46b"
   },
   "changelog": [
-    "고객 DB 질문 LLM 스킵으로 1~2초 응답 최적화",
-    "AI 문의 질문 라우팅 분리",
-    "약관 RAG 기본 모델 14B에서 7B로 경량화",
-    "PDF 중복 임베딩 스킵 및 캐싱 개선",
-    "Ollama 런타임 옵션 최적화",
-    "Windows Ollama AMD 진단 도구 추가"
+    "AI 문의 속도 개선 1차",
+    "DB 직접 조회 질문 LLM 스킵",
+    "질문 전송 즉시 진행 표시",
+    "응답 시간 로그 추가 (route/ms/model)",
+    "암·뇌·심장·수술·보험료·만기 질문 즉답 개선"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
