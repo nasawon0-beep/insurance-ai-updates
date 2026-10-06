@@ -2,22 +2,23 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.30",
+  "latestVersion": "v2.2.31",
   "releaseDate": "2026-10-06",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.30-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.30-windows/Insurance.AI_2.2.30_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.30_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.31-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.31-windows/Insurance.AI_2.2.31_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.31_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232875760,
+  "fileSizeBytes": 232923882,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "de09f2da730d1ad46c14a0edeb81bd303d38855d98c9a256c0b09fa3802dfe65"
+    "sha256": "786833e78453a9ddb387b854003c22209f36b6e45aaa715ed49434970e04ab40"
   },
   "changelog": [
-    "WebView2의 Private Network Access preflight 응답에 Access-Control-Allow-Private-Network 헤더 추가",
-    "앱에서는 Failed to fetch가 뜨지만 curl에서는 local-engine이 정상인 케이스 대응",
-    "127.0.0.1:8420 로컬 엔진 접근 안정화",
-    "v2.2.29의 자동 복구 루프 완화 유지"
+    "WebView fetch 실패 시 Tauri native bridge fallback 적용",
+    "FormData/파일 업로드와 binary response 경로 보존",
+    "앱 시작 직후 local-engine 준비 전 대시보드 오류가 영구 노출되는 race 수정",
+    "대시보드 성공 응답 시 이전 오류 상태 clear",
+    "장시간 분석 요청 중 자동 재시작이 걸리지 않도록 ordinary request failure와 recovery 분리"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",

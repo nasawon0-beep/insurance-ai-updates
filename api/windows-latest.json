@@ -1,11 +1,11 @@
 {
-  "version": "2.2.30",
-  "notes": "WebView2 로컬 엔진 연결 보강: Private Network Access preflight 허용",
-  "pub_date": "2026-10-06T14:50:08Z",
+  "version": "2.2.31",
+  "notes": "WebView fetch 우회 native bridge와 대시보드 시작 race 오류 정리",
+  "pub_date": "2026-10-06T16:45:12Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbExoSytjZFJjeEkzNjViZ1hYMUZmdmIxTnltUXExWVZ6cXQ1VFk0dnB5QStPMW5yUFBaaUNQMlNVcDRhb0RCY0JiRWh6emtrSFN6WkxJWmthYUk1dFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjk4MTk2CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zMF94NjQtc2V0dXAuZXhlCi9BTGoxZkgveFRKa0ptcmxVd0Fya3VQejA5aVl1WHo3dks5Qmk2UGhNL1BpNHE0TXdqdFhZNDhFeTJDVDVSeDN0UWNUV0F5cmlFSmk2MkxrYzZwdkNRPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.30-windows/Insurance.AI_2.2.30_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbERXdEZId2dZRnRNc3FQRXBwelk1MHFDTngwaWQ4c1d4UndmQmNaZ1BEZ0NUc1VUM1hXNkhJdG5reG1NV2p1RkFNR1MxTlQyanhHdGxxNHEzT2tHT0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMzA1MDQ1CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zMV94NjQtc2V0dXAuZXhlClBXSXlrbnoxUzBjWTNFYnpJVnQ2cHdILzZnRzdEWkNOckJQdnAxNngvbElCWGVEeTIvSmFqSUg2MnJVdHZsNFRoVTJOemoxeU0ybjNPWFA1WEZJRURnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.31-windows/Insurance.AI_2.2.31_x64-setup.exe"
     }
   }
 }
