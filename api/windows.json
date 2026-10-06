@@ -2,22 +2,22 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.28",
+  "latestVersion": "v2.2.29",
   "releaseDate": "2026-10-06",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.28-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.28-windows/Insurance.AI_2.2.28_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.28_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.29-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.29-windows/Insurance.AI_2.2.29_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.29_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232881394,
+  "fileSizeBytes": 232885313,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "0efa9e914d6752349eeb06b7eda44242c2f25833960e2cd143fadd7468e3341e"
+    "sha256": "51ca8766c88975fe5b6472e1ca6d606814328257787f864f57e1343918f97131"
   },
   "changelog": [
-    "PDF/자료분석/일괄등록 같은 긴 요청 timeout을 5초에서 180초로 확장",
-    "긴 분석 요청은 AbortError 발생 시 local-engine 복구 루프로 오판하지 않도록 변경",
-    "v2.2.27의 /health 경량화 유지",
-    "자료분석 중 'signal is aborted without reason' 오류 완화"
+    "로그인 후 local-engine 자동 재시작을 하지 않고 health 확인만 수행",
+    "일반 요청 실패 시 local-engine 자동 재시작 루프 제거",
+    "분석 중 재시작으로 인한 버벅임/요청 끊김 완화",
+    "오류 메시지를 자동 복구 중이 아니라 수동 재시작 안내로 변경"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",

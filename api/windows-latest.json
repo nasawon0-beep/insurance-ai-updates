@@ -1,11 +1,11 @@
 {
-  "version": "2.2.28",
-  "notes": "긴 분석 요청 timeout 확장: PDF/자료분석 요청이 5초 만에 abort되던 문제 수정",
-  "pub_date": "2026-10-06T13:53:35Z",
+  "version": "2.2.29",
+  "notes": "자동 local-engine 복구 루프 완화: 분석 중 재시작/버벅임을 줄이고 수동 재시작으로 전환",
+  "pub_date": "2026-10-06T14:24:35Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJ2QnRFeHZKZERJMngraldzamJVSUlsSS9qVk53WFR1YTlLSWhYY3pOeHBsTStpNlFvSjJoa2NZc0NMd3dKMjRwSXNQNTM5WXZXVXJDS1RyRm9FU2dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjk0ODAyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yOF94NjQtc2V0dXAuZXhlCndhYzhNZkpjT3NLSkxhTGp2U3ZRS1dlbGNBZlhHVUFGVlEwdks3eGdwZFBONGhCT0gyUjZyZFdsTkpDa0R0Njk1WU0vOVZvS0k1WnVvTnFjVG12SENnPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.28-windows/Insurance.AI_2.2.28_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEZvS1JzS09OZ2NoVnFwdWVyaGgwb0llbmdnNmo3cENGL0lxTEsyYVZnT0d5UUxXU3RtU0xKZGlhamN0eHZiWW9OeVQzK3NOWnpqT0NjUTdleHd3N2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjk2NjY0CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yOV94NjQtc2V0dXAuZXhlCkluSjUzbGpGMDdUaGVFckRzQXNMZW9LYlhCd0FMZUttR0YzRzNYem1MMmxUeHlzSTlGT2RpTEpXNXJoOXl5UnB3cEthTTk1aHRvbTBsU0VFVXFiRkJnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.29-windows/Insurance.AI_2.2.29_x64-setup.exe"
     }
   }
 }
