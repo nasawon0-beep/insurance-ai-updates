@@ -1,11 +1,11 @@
 {
-  "version": "2.2.22",
-  "notes": "AI 문의 속도 개선: DB 직접 조회 질문 LLM 스킵, 즉시 진행 표시, 응답 시간 로그 추가",
-  "pub_date": "2026-10-04T01:00:00Z",
+  "version": "2.2.24",
+  "notes": "보장상세 PDF 파싱 개선, 증권별 보장 원장 추가, 캡처 단계 보장 추출 실패 처리 개선",
+  "pub_date": "2026-10-06T01:35:18Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbExaMzNTUERDKzZUeTNuSm9laFptRklCdnRkRTdQL092dFNGemM4Y3ZhVERGSWFxSmtROERMc3BTd0kwNDJtOTZHSXZkeXE5ZWhoQXhwellONnJOeEFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjA3ODExCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yMl94NjQtc2V0dXAuZXhlClBKeHlKZ2paYWhhNUUybiszM29uOW85TVN0WXYvdDZyY0VuSW1RV1NmNlFCUXAzTFA5Z2FiUmVOVkJpenFWMVRhckNzQ0EzQ01pcW1LcFdJQ0NUWEFnPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.22-windows/Insurance.AI_2.2.22_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEErWnZGM0RWRDJrdFZ0bEZ6M2xBNW4wVGQwUXp2M2hxeE1nZThVUHJ1MGZJMGZ2eHZaR3Ird1dWNEVuY1QvWmlDRUkrYUc4M2VNRFpxMU9PVWh5WWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjUwNTAxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yNF94NjQtc2V0dXAuZXhlCnd6UDBPUUNkWUY3d0pxRmdRMFVVSE1CRHQ3STlUS2RYcG9SYzI1ZklOR3ZvcXQ4SkJ1NG0wRlN2RlFZcjhYaGhQUHNzSXhvcFBSeVBaQmFrSE9tSkJnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.24-windows/Insurance.AI_2.2.24_x64-setup.exe"
     }
   }
 }
