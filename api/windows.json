@@ -2,22 +2,22 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.27",
+  "latestVersion": "v2.2.28",
   "releaseDate": "2026-10-06",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.27-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.27-windows/Insurance.AI_2.2.27_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.27_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.28-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.28-windows/Insurance.AI_2.2.28_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.28_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232882089,
+  "fileSizeBytes": 232881394,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "341312ded9e759c97e730317d47d09775b15717efdec27953f64a3053507cb03"
+    "sha256": "0efa9e914d6752349eeb06b7eda44242c2f25833960e2cd143fadd7468e3341e"
   },
   "changelog": [
-    "local-engine /health 경량화: liveness 확인은 즉시 응답",
-    "Ollama/DB/백업 상세 진단은 /health/details 및 /diagnostics로 분리",
-    "Ollama runtime 진단 timeout 처리로 설정·진단 화면 멈춤 완화",
-    "자료분석/보장분석에서 /health hang 때문에 로컬 엔진 복구 실패로 오판하던 문제 수정"
+    "PDF/자료분석/일괄등록 같은 긴 요청 timeout을 5초에서 180초로 확장",
+    "긴 분석 요청은 AbortError 발생 시 local-engine 복구 루프로 오판하지 않도록 변경",
+    "v2.2.27의 /health 경량화 유지",
+    "자료분석 중 'signal is aborted without reason' 오류 완화"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",

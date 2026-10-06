@@ -1,11 +1,11 @@
 {
-  "version": "2.2.27",
-  "notes": "Windows local-engine /health 경량화: 엔진 liveness 즉시 응답, 상세 진단 분리, Ollama 진단 timeout 처리",
-  "pub_date": "2026-10-06T11:16:43Z",
+  "version": "2.2.28",
+  "notes": "긴 분석 요청 timeout 확장: PDF/자료분석 요청이 5초 만에 abort되던 문제 수정",
+  "pub_date": "2026-10-06T13:53:35Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEUrRWJVd0NXZTArbkg3dlN5aWUycjhvSThpSlhQczUyREdUNEkzQ284ajNNaEZJSjZQdVhWTkZNTDVwQkwzWGVSVFZ2U0xQcC9LNngvbXZkeEJlakE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjg1MzkyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yN194NjQtc2V0dXAuZXhlCm5qM21ibDBMdEFkb2JsTVQyTTU1bG1tekhsTzZuNG1BRUlHRXpYSjhpMVl3aXdsSEN2SVNoMUJMMkVlekVJQUVlVnVoK2pFQTFnQW42WHJTUHJjaUJRPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.27-windows/Insurance.AI_2.2.27_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJ2QnRFeHZKZERJMngraldzamJVSUlsSS9qVk53WFR1YTlLSWhYY3pOeHBsTStpNlFvSjJoa2NZc0NMd3dKMjRwSXNQNTM5WXZXVXJDS1RyRm9FU2dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjk0ODAyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yOF94NjQtc2V0dXAuZXhlCndhYzhNZkpjT3NLSkxhTGp2U3ZRS1dlbGNBZlhHVUFGVlEwdks3eGdwZFBONGhCT0gyUjZyZFdsTkpDa0R0Njk1WU0vOVZvS0k1WnVvTnFjVG12SENnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.28-windows/Insurance.AI_2.2.28_x64-setup.exe"
     }
   }
 }
