@@ -2,23 +2,22 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.31",
+  "latestVersion": "v2.2.32",
   "releaseDate": "2026-10-06",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.31-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.31-windows/Insurance.AI_2.2.31_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.31_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.32-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.32-windows/Insurance.AI_2.2.32_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.32_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232923882,
+  "fileSizeBytes": 232816958,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "786833e78453a9ddb387b854003c22209f36b6e45aaa715ed49434970e04ab40"
+    "sha256": "b63e71e4d8b3919cdfffdac83de642399c9bfe8ca5d390bf3dbe1492f818539b"
   },
   "changelog": [
-    "WebView fetch 실패 시 Tauri native bridge fallback 적용",
-    "FormData/파일 업로드와 binary response 경로 보존",
-    "앱 시작 직후 local-engine 준비 전 대시보드 오류가 영구 노출되는 race 수정",
-    "대시보드 성공 응답 시 이전 오류 상태 clear",
-    "장시간 분석 요청 중 자동 재시작이 걸리지 않도록 ordinary request failure와 recovery 분리"
+    "앱 시작 직후 local-engine 준비될 때까지 자동 대기/재시도 (250ms → 2500ms)",
+    "초기 GET 요청(/customers, /diagnostics 등) connect refused 시 readiness wait 후 재요청",
+    "설정·진단 탭: '로컬 엔진 준비 중…' 상태 표시 추가",
+    "stale connect refused 오류가 화면에 고정으로 남지 않도록 수정"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",

@@ -1,11 +1,11 @@
 {
-  "version": "2.2.31",
-  "notes": "WebView fetch 우회 native bridge와 대시보드 시작 race 오류 정리",
-  "pub_date": "2026-10-06T16:45:12Z",
+  "version": "2.2.32",
+  "notes": "앱 시작 직후 local-engine 준비 대기 및 재시도 로직 추가: connect refused stale error 해결",
+  "pub_date": "2026-10-06T23:36:10Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbERXdEZId2dZRnRNc3FQRXBwelk1MHFDTngwaWQ4c1d4UndmQmNaZ1BEZ0NUc1VUM1hXNkhJdG5reG1NV2p1RkFNR1MxTlQyanhHdGxxNHEzT2tHT0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMzA1MDQ1CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zMV94NjQtc2V0dXAuZXhlClBXSXlrbnoxUzBjWTNFYnpJVnQ2cHdILzZnRzdEWkNOckJQdnAxNngvbElCWGVEeTIvSmFqSUg2MnJVdHZsNFRoVTJOemoxeU0ybjNPWFA1WEZJRURnPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.31-windows/Insurance.AI_2.2.31_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJoTXFxalVXNnVaSVpWcE9HcWhVM3ZWYk1HTE9PcWJYaTJyb1J2WVJiQ0ZIS0xCQUhhUE52NWpudE9vZjNLUjlsaWNSSFpYWnNSMjlHVHY1UzRXelE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMzI5NzYyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zMl94NjQtc2V0dXAuZXhlCk9kUTkzYnNJYkdTTHFwZXRNRVNvN0dFMlNPb0RqUW5zOXdybWZjVC9NM1BDVTFiVWhYdW9zT1NWRjMxWi9VWENiaDVNVmkwSkE1OFJIUzZKK1ZDZkJnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.32-windows/Insurance.AI_2.2.32_x64-setup.exe"
     }
   }
 }
