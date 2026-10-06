@@ -2,22 +2,22 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.29",
+  "latestVersion": "v2.2.30",
   "releaseDate": "2026-10-06",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.29-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.29-windows/Insurance.AI_2.2.29_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.29_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.30-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.30-windows/Insurance.AI_2.2.30_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.30_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232885313,
+  "fileSizeBytes": 232875760,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "51ca8766c88975fe5b6472e1ca6d606814328257787f864f57e1343918f97131"
+    "sha256": "de09f2da730d1ad46c14a0edeb81bd303d38855d98c9a256c0b09fa3802dfe65"
   },
   "changelog": [
-    "로그인 후 local-engine 자동 재시작을 하지 않고 health 확인만 수행",
-    "일반 요청 실패 시 local-engine 자동 재시작 루프 제거",
-    "분석 중 재시작으로 인한 버벅임/요청 끊김 완화",
-    "오류 메시지를 자동 복구 중이 아니라 수동 재시작 안내로 변경"
+    "WebView2의 Private Network Access preflight 응답에 Access-Control-Allow-Private-Network 헤더 추가",
+    "앱에서는 Failed to fetch가 뜨지만 curl에서는 local-engine이 정상인 케이스 대응",
+    "127.0.0.1:8420 로컬 엔진 접근 안정화",
+    "v2.2.29의 자동 복구 루프 완화 유지"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",

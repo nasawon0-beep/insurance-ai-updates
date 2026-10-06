@@ -1,11 +1,11 @@
 {
-  "version": "2.2.29",
-  "notes": "자동 local-engine 복구 루프 완화: 분석 중 재시작/버벅임을 줄이고 수동 재시작으로 전환",
-  "pub_date": "2026-10-06T14:24:35Z",
+  "version": "2.2.30",
+  "notes": "WebView2 로컬 엔진 연결 보강: Private Network Access preflight 허용",
+  "pub_date": "2026-10-06T14:50:08Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEZvS1JzS09OZ2NoVnFwdWVyaGgwb0llbmdnNmo3cENGL0lxTEsyYVZnT0d5UUxXU3RtU0xKZGlhamN0eHZiWW9OeVQzK3NOWnpqT0NjUTdleHd3N2dZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjk2NjY0CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yOV94NjQtc2V0dXAuZXhlCkluSjUzbGpGMDdUaGVFckRzQXNMZW9LYlhCd0FMZUttR0YzRzNYem1MMmxUeHlzSTlGT2RpTEpXNXJoOXl5UnB3cEthTTk1aHRvbTBsU0VFVXFiRkJnPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.29-windows/Insurance.AI_2.2.29_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbExoSytjZFJjeEkzNjViZ1hYMUZmdmIxTnltUXExWVZ6cXQ1VFk0dnB5QStPMW5yUFBaaUNQMlNVcDRhb0RCY0JiRWh6emtrSFN6WkxJWmthYUk1dFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjk4MTk2CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zMF94NjQtc2V0dXAuZXhlCi9BTGoxZkgveFRKa0ptcmxVd0Fya3VQejA5aVl1WHo3dks5Qmk2UGhNL1BpNHE0TXdqdFhZNDhFeTJDVDVSeDN0UWNUV0F5cmlFSmk2MkxrYzZwdkNRPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.30-windows/Insurance.AI_2.2.30_x64-setup.exe"
     }
   }
 }
