@@ -1,11 +1,11 @@
 {
-  "version": "2.2.26",
-  "notes": "보장분석 PDF 정확도 개선, 계약별 담보 원장 추가, 캡처 실패 방지, Windows local-engine /health hang 복구 강화",
-  "pub_date": "2026-10-06T07:08:30Z",
+  "version": "2.2.27",
+  "notes": "Windows local-engine /health 경량화: 엔진 liveness 즉시 응답, 상세 진단 분리, Ollama 진단 timeout 처리",
+  "pub_date": "2026-10-06T11:16:43Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbE5NQlFOU05jSmU2ZllpcWloQk9heTJ0bW1ZNEg2SWU3cjF3VDZVUk9GYmJud3haK01nK3hDTmRTTzB0Mld5alVnTzJRWUVjQitCZlJ0VVA4ZWloRlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjcwNDMzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yNl94NjQtc2V0dXAuZXhlCkl0SlNxck04ejkwTi9zWjhJVzAyVUg1TjU3TXNVT2JaTDFBS29VOGFCbDRjZHBNUkRpSjF3NEJ3RW5CZmliaml1dHZlN1Ixd3hPRCt0TjJaRzAra0RBPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.26-windows/Insurance.AI_2.2.26_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEUrRWJVd0NXZTArbkg3dlN5aWUycjhvSThpSlhQczUyREdUNEkzQ284ajNNaEZJSjZQdVhWTkZNTDVwQkwzWGVSVFZ2U0xQcC9LNngvbXZkeEJlakE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMjg1MzkyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4yN194NjQtc2V0dXAuZXhlCm5qM21ibDBMdEFkb2JsTVQyTTU1bG1tekhsTzZuNG1BRUlHRXpYSjhpMVl3aXdsSEN2SVNoMUJMMkVlekVJQUVlVnVoK2pFQTFnQW42WHJTUHJjaUJRPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.27-windows/Insurance.AI_2.2.27_x64-setup.exe"
     }
   }
 }

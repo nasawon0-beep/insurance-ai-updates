@@ -2,22 +2,22 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.26",
+  "latestVersion": "v2.2.27",
   "releaseDate": "2026-10-06",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.26-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.26-windows/Insurance.AI_2.2.26_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.26_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.27-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.27-windows/Insurance.AI_2.2.27_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.27_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232879907,
+  "fileSizeBytes": 232882089,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "049b8b80b09b36f866d4cb7cd4906dced5f1973f450658cf7563fbbd0074cded"
+    "sha256": "341312ded9e759c97e730317d47d09775b15717efdec27953f64a3053507cb03"
   },
   "changelog": [
-    "보장분석 PDF 정확도 개선: 50개 보장 카탈로그, 상세표 자동 감지, 저장 전 검수 화면",
-    "계약별 담보 원장 추가: 고객 상세 가입목록에서 담보 보기, policy_coverages 저장",
-    "계약별 담보 파싱 실패 시 /capture 전체 실패 방지",
-    "Windows local-engine 자동복구 강화: /health hang 시 복구, stale 프로세스 종료/재시작, Failed to fetch 자동 재시도"
+    "local-engine /health 경량화: liveness 확인은 즉시 응답",
+    "Ollama/DB/백업 상세 진단은 /health/details 및 /diagnostics로 분리",
+    "Ollama runtime 진단 timeout 처리로 설정·진단 화면 멈춤 완화",
+    "자료분석/보장분석에서 /health hang 때문에 로컬 엔진 복구 실패로 오판하던 문제 수정"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
