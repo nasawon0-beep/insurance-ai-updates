@@ -2,21 +2,22 @@
   "platform": "windows",
   "name": "Windows",
   "status": "available",
-  "latestVersion": "v2.2.24",
+  "latestVersion": "v2.2.25",
   "releaseDate": "2026-10-06",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.24-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.24-windows/Insurance.AI_2.2.24_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.24_x64-setup.exe",
+  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.25-windows",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.25-windows/Insurance.AI_2.2.25_x64-setup.exe",
+  "fileName": "Insurance.AI_2.2.25_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232862572,
+  "fileSizeBytes": 232875653,
   "minimumVersion": "v2.0.0",
   "checksum": {
-    "sha256": "becad5d7baa6eeca40708c0bbf73a27ff81fce677c3a164b69dadb2742599df1"
+    "sha256": "54bd245733d69219a193995de1ed0b0cd249b6ce15ab6eef16571166d1192769"
   },
   "changelog": [
-    "보장상세 PDF 파싱 개선",
-    "증권별 보장 원장 추가",
-    "캡처 단계 보장 추출 실패 처리 개선"
+    "보장분석 PDF 정확도 개선: 50개 보장 카탈로그, 상세표 자동 감지, 저장 전 검수 화면",
+    "계약별 담보 원장 추가: 고객 상세 가입목록에서 담보 보기, policy_coverages 저장",
+    "계약별 담보 파싱 실패 시 /capture 전체 실패 방지",
+    "Windows local-engine 자동복구: stale 프로세스 종료/재시작, Failed to fetch 자동 재시도"
   ],
   "autoUpdate": {
     "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
