@@ -1,11 +1,11 @@
 {
-  "version": "2.2.32",
-  "notes": "앱 시작 직후 local-engine 준비 대기 및 재시도 로직 추가: connect refused stale error 해결",
-  "pub_date": "2026-10-06T23:36:10Z",
+  "version": "2.2.33",
+  "notes": "백엔드 카탈로그 복구, 입원일당 policy_coverages 활용, 계약 중복 정리",
+  "pub_date": "2026-10-07T04:23:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJoTXFxalVXNnVaSVpWcE9HcWhVM3ZWYk1HTE9PcWJYaTJyb1J2WVJiQ0ZIS0xCQUhhUE52NWpudE9vZjNLUjlsaWNSSFpYWnNSMjlHVHY1UzRXelE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMzI5NzYyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zMl94NjQtc2V0dXAuZXhlCk9kUTkzYnNJYkdTTHFwZXRNRVNvN0dFMlNPb0RqUW5zOXdybWZjVC9NM1BDVTFiVWhYdW9zT1NWRjMxWi9VWENiaDVNVmkwSkE1OFJIUzZKK1ZDZkJnPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.32-windows/Insurance.AI_2.2.32_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEFxdU5OdFBJVDBGbFhGdUVNblE2VHZIYmpxdTdmL01Wd21oWkpJcVJuK2J0NlZYQy9ONDdQOW9iSjRsYUhBY28xMmFWdGdBWHI1ODJDUVoxM3NoREFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMzQ0MTgwCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zM194NjQtc2V0dXAuZXhlCnMzR3FTa25YbGV3bGRsSExJL0hKRk5xVkw0aWY4bFlMWDZweVoyK0ZlTDF1Q0M2bGpweEdQeUtiU2N0bWFYVmVGYUt6MXVqWTN1RnlZcEppSDlGM0FCUT09Cg==",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.33-windows/Insurance.AI_2.2.33_x64-setup.exe"
     }
   }
 }

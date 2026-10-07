@@ -1,27 +1,8 @@
 {
-  "platform": "windows",
-  "name": "Windows",
-  "status": "available",
-  "latestVersion": "v2.2.32",
-  "releaseDate": "2026-10-06",
-  "releaseUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/tag/v2.2.32-windows",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.32-windows/Insurance.AI_2.2.32_x64-setup.exe",
-  "fileName": "Insurance.AI_2.2.32_x64-setup.exe",
-  "fileSize": "222MB",
-  "fileSizeBytes": 232816958,
-  "minimumVersion": "v2.0.0",
-  "checksum": {
-    "sha256": "b63e71e4d8b3919cdfffdac83de642399c9bfe8ca5d390bf3dbe1492f818539b"
-  },
-  "changelog": [
-    "앱 시작 직후 local-engine 준비될 때까지 자동 대기/재시도 (250ms → 2500ms)",
-    "초기 GET 요청(/customers, /diagnostics 등) connect refused 시 readiness wait 후 재요청",
-    "설정·진단 탭: '로컬 엔진 준비 중…' 상태 표시 추가",
-    "stale connect refused 오류가 화면에 고정으로 남지 않도록 수정"
-  ],
-  "autoUpdate": {
-    "manifestUrl": "https://nasawon0-beep.github.io/insurance-ai-updates/api/windows-latest.json",
-    "signatureAvailable": true,
-    "status": "ready"
-  }
+  "latestVersion": "v2.2.33",
+  "releaseDate": "2026-10-07",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.33-windows/Insurance.AI_2.2.33_x64-setup.exe",
+  "fileSize": "223MB",
+  "fileSizeBytes": 233832448,
+  "releaseNotes": "백엔드 카탈로그 복구, 입원일당 policy_coverages 활용, 계약 중복 정리"
 }
