@@ -1,11 +1,11 @@
 {
-  "version": "2.2.33",
-  "notes": "백엔드 카탈로그 복구, 입원일당 policy_coverages 활용, 계약 중복 정리",
-  "pub_date": "2026-10-07T04:23:00Z",
+  "version": "2.2.34",
+  "notes": "UI 개선: 레이아웃, 담보보기, AI탭 일관성, 출처 삭제, 중복필터 제거",
+  "pub_date": "2026-10-07T06:34:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEszcTEzVDdNSVp3UzVWOXBDRzBKa3NJOS9nWTg2NzlCYlFVTTRmOTB4ZUExRWlDQzN4WE9QTkw3T0hNbWwxQjQzK0tHLzdmSWdyaUk5K0dxbnBUNUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMzQ2OTEyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zM194NjQtc2V0dXAuZXhlClJxWWJHcTlQNDIyWERrQ0JOaDBoOTJTU1ZXZlBLUmpvY2czSFRoRFB5LzVSbjBITElPaGtaSFI5THVEL0tNTnJDdkF2ZDdYcVdBVUdiL29PMFVUb0NRPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.33-windows/Insurance.AI_2.2.33_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbE4zWGI0MVIveVZpUnlLWDRWRzh3ZHcxM3NCUG9tUlp6VGdXWXlEcGdpMHBGZ3NZZXdoVVEzNUl6K2R0UTQ2QmRNdmxkMTlEQUhHdFN1ZHdJeit3S0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMzU1Mjc2CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zNF94NjQtc2V0dXAuZXhlCkN0cXllNnFMWENVTkFlTm5vdmdkVXRhM3ZMMWJjTWdDZ2ZSakxiUVJmKzF6cDd6U0hWc1JRRmdnc1ZNa1VUUGZKclBLTmU4MU5wWHN6RExBSWlBMENBPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.34-windows/Insurance.AI_2.2.34_x64-setup.exe"
     }
   }
 }
