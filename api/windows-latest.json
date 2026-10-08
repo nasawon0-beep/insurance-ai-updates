@@ -1,11 +1,11 @@
 {
-  "version": "2.2.34",
-  "notes": "UI 개선: 레이아웃, 담보보기, AI탭 일관성, 출처 삭제, 중복필터 제거",
-  "pub_date": "2026-10-07T06:34:00Z",
+  "version": "2.2.35",
+  "notes": "보장분석 병목 추적: 진행률 표시, 단계별 로깅 추가",
+  "pub_date": "2026-10-08T12:21:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbE4zWGI0MVIveVZpUnlLWDRWRzh3ZHcxM3NCUG9tUlp6VGdXWXlEcGdpMHBGZ3NZZXdoVVEzNUl6K2R0UTQ2QmRNdmxkMTlEQUhHdFN1ZHdJeit3S0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxMzU1Mjc2CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zNF94NjQtc2V0dXAuZXhlCkN0cXllNnFMWENVTkFlTm5vdmdkVXRhM3ZMMWJjTWdDZ2ZSakxiUVJmKzF6cDd6U0hWc1JRRmdnc1ZNa1VUUGZKclBLTmU4MU5wWHN6RExBSWlBMENBPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.34-windows/Insurance.AI_2.2.34_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEplR2ZKNmkwR3BYd3B3eTBRRU1TSk1DMUNsaGVjZnpCcThCS1E5U1VkeGkweW5VUUZLa1lVY1g5L1VmcDhJeUVZUVlnSmo1NkJvbVU1R3lnTUxyalFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNDMyOTAwCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zNV94NjQtc2V0dXAuZXhlCjk2UGl6TGZvdUpPTTlEczhKYm9wOW5sY2U3emdhZ0hNdFM5Vy9rR09yMnl4SnNXcTkvYk1yYVphelZpR1RCRjBzUjJHM25CdE5JSVNXNytJc3NUc0RRPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.35-windows/Insurance.AI_2.2.35_x64-setup.exe"
     }
   }
 }

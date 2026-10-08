@@ -1,8 +1,8 @@
 {
-  "latestVersion": "v2.2.34",
-  "releaseDate": "2026-10-07",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.34-windows/Insurance.AI_2.2.34_x64-setup.exe",
+  "latestVersion": "v2.2.35",
+  "releaseDate": "2026-10-08",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.35-windows/Insurance.AI_2.2.35_x64-setup.exe",
   "fileSize": "222MB",
-  "fileSizeBytes": 232817132,
-  "releaseNotes": "UI 개선: 레이아웃, 담보보기, AI탭 일관성, 출처 삭제, 중복필터 제거"
+  "fileSizeBytes": 232903030,
+  "releaseNotes": "보장분석 병목 추적: 진행률 표시, 단계별 로깅 추가"
 }
