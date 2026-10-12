@@ -1,11 +1,11 @@
 {
-  "version": "2.2.37",
-  "notes": "새 기능: 7페이지 짧은 보장분석 PDF 지원 (고객정보/담보/보장분석 자동 추출)",
-  "pub_date": "2026-10-12T05:35:00Z",
+  "version": "2.2.38",
+  "notes": "성능 개선: PDF 분석 속도 최적화, 앱 시작 안정성 강화 (재시도 로직, 로딩 화면)",
+  "pub_date": "2026-10-12T07:30:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEtueDhtRTZoUlhkMUFYN1ZkWSt1c210MWV6YnFpbUR1a05OeEVkMmpqYnMwZmcwd0JxYnlYRTRIWFdkOFlUTnNFNGU1NGtncFphSklsZDJkYjk4clFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzg3MzA0CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zN194NjQtc2V0dXAuZXhlCk9QSmFaZTVPaVVTN1J3dG04bktSY3J1WlFvNGRZWEQ4OXU1Njd1WUhwaVlzbXpnT0xlQzhpOWREWUZuWHJSV2ZkZFR1dmI1RGVrMjZGbVM0M2hSREFnPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.37-windows/Insurance.AI_2.2.37_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEUrMjdyRmhhV1kyYzN1THRta1MwU3l4bXRibmhpb3RpY2wvOHM5M2dubDNLNjNRZDBCeVFHN1Z6RlgvYnkxR0s1ekdKSFZQTlBiZUZzVlBJdEJZN2cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzkyMTY0CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zOF94NjQtc2V0dXAuZXhlCnZYa3JrRys1SnR6aUJ5c3lXbm1OR1FLVktGQVFIQUMwUGxFSFhuZEd6Um5KaW52NnJuSEY1bjVSM2hWMVVtY1RwNzBkaW8wdTNJTWxSR0h2SDMvUUNnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.38-windows/Insurance.AI_2.2.38_x64-setup.exe"
     }
   }
 }
