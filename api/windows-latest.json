@@ -1,11 +1,11 @@
 {
-  "version": "2.2.38",
-  "notes": "성능 개선: PDF 분석 속도 최적화, 앱 시작 안정성 강화 (재시도 로직, 로딩 화면)",
-  "pub_date": "2026-10-12T07:30:00Z",
+  "version": "2.2.39",
+  "notes": "성능 대폭 개선: PDF Oxide 통합으로 PDF 처리 속도 5~24배 향상",
+  "pub_date": "2026-10-12T10:30:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbE05S1YyZlUwWGdNbGg4SjVwNlE1aWI0cUgwWDZLN0hub1piNlUwekpRdUNoMnBWQ1RVRGZGaFZ2SlIxeWcxS1h0RERVWCtmcmRkeHdqSW9uZTIreFFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNzkyMjI1CWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zOF94NjQtc2V0dXAuZXhlCmV1YXNaM1dJOWh0VVQ1Uk9xMUtNVWtYVHZQN3ZUVmptTG51bTNRVHJGbFhtTXhQQ2xUZmxQZmd1STJYY0Q0elhYLzNxOWFiY1dIVjNNWGR4K3JURkRRPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.38-windows/Insurance.AI_2.2.38_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEw3OUR0SzkvTmxOYTZ3Y0VuaUtsK0lGRGV3V1FxYjQ4eUltdEF4cE4xMmdLYTZOKzBwU0g3eUZ6NzkybzhsVlFTL3Q0YzMzMTVEQVErdkFkOThBNkFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODAyNDQzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMi4zOV94NjQtc2V0dXAuZXhlCjJSb1p1QXJMaXlsaE5jOUxLN3FPWS9xQzRYR3RTdy95VHo2aStoUzNrMFZUOG9rRXUzVlJsc2plUlM0M1Q5UENicGFMMjJsOGg2Tm9RMHpiWUlTaEF3PT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.2.39-windows/Insurance.AI_2.2.39_x64-setup.exe"
     }
   }
 }
