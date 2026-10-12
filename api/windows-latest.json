@@ -1,11 +1,11 @@
 {
-  "version": "2.3.0",
-  "notes": "v2.3.0 통합 완성: 빠른 고객 등록(2배), 완벽한 보장분석(7명 검증), 전체 플로우 안정화",
-  "pub_date": "2026-10-12T14:00:00Z",
+  "version": "2.3.1",
+  "notes": "긴급 수정: 보장분석 데이터 표시 문제 해결 (필드명 호환성 추가)",
+  "pub_date": "2026-10-13T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbENNaDB5dXRUTmZQejZYMFA5bmhiakFLZktvaEJRNU5OODBEaXl4ZmRkK1RuSjVSL2dpaU9wQzRIZno1ZVhXcmZzd09hK2V4dHZEd0g2UEZxU0lWUEFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODE0Njc1CWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4wX3g2NC1zZXR1cC5leGUKS2xWYnAxMkl0WmQ5N1oxMnRtYStLOGxZdENJUU8vQUFGeW5yMkY3S2VCdThBekdoSzFRNDJmSUc5VzF1V1cwRmFCTUNOVWZRcTFPS3lzbDFuSHdxQVE9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.0-windows/Insurance.AI_2.3.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbElQM09xS1VzK0ZjeExXQ1Z2N3NVOEdoM242Nk9ybUJXS3Y3LzRJQWdWcngxT0ZmU3A1NkczV2wxSmpVYS9IK3Qvbk5yYzJvVVhZYzcrek5oMnJyTkF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODE4NDQxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4xX3g2NC1zZXR1cC5leGUKMWM1YXZyOFV1cU9jaWcvQ0wvbHlJWVVtc0VicWIwVEFRQmxhN04rWnlWNGVyRHM1MmU0cVRSRk40WDhhblh4SWxOUWt4Q1lyTHlQS3Y4VVNwcHJqQkE9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.1-windows/Insurance.AI_2.3.1_x64-setup.exe"
     }
   }
 }
