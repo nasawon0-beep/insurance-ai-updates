@@ -1,11 +1,11 @@
 {
-  "version": "2.3.3",
-  "notes": "자료분석 저장 후 보장분석 자동 재계산 기능 추가",
-  "pub_date": "2026-10-13T05:00:00Z",
+  "version": "2.3.4",
+  "notes": "긴급 수정: 자료분석 저장 후 보장분석 재계산 시 올바른 customer_id 사용",
+  "pub_date": "2026-10-13T05:30:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEtLSk0xN01xbGFkZDJoN3k2MHlSSjFyZndQanNjQ0RtVk5ab3B3V0c2cWdwYUM2NFU2VXNBeTZwNkU5R0Z4NkFoNmZlTUh4N29JTUN5U2J0RTI3clE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY2NTUxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4zX3g2NC1zZXR1cC5leGUKUEFFdmx2dVl0Q09odXhCcElEY0VCL1JrdnZ1Q0xZcHBQVWhQRmJ2V05FY3NHNlh4M3BuVzE2NkE2bVo2cG5hUklKdStzUkxCbldueExvR0lIZmg1RFE9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.3-windows/Insurance.AI_2.3.3_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbERqOGc2dXVMMVRBbzZqWHUwUjllNHAzVE9NTjBpTFM4N09NbVpGMVpZY1RacUJiR2gxc0ZxMjU4cUJ4L2M5Y3IyS3dlcGFpRit1WGVjWVRzY0RTTndnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY5NzM1CWZpbGU6SW5zdXJhbmNlIEFJXzIuMy40X3g2NC1zZXR1cC5leGUKN2VwYTY4YUhMb3doN3ZaL2dyRjZ0YnFVVDRUUUJVUm8rdmw1ZjdaNTQ1YjRrbWIvZytGOWsvOEUzb083dUJRVDhZM1hyQUZTMENTTXJlWmdQRFo5QXc9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.4-windows/Insurance.AI_2.3.4_x64-setup.exe"
     }
   }
 }
