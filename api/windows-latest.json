@@ -1,11 +1,11 @@
 {
-  "version": "2.3.12",
-  "notes": "보장분석 고객 목록 API 오류 수정 (최종 완성)",
-  "pub_date": "2026-10-13T13:30:00Z",
+  "version": "2.3.13",
+  "notes": "보장분석 탭에 새로고침 버튼 추가 (앱 재시작 없이 고객 목록 갱신)",
+  "pub_date": "2026-10-13T14:05:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEpkQUhNN3lYd0ZTSC8yWVZoMk8zZ2tHMFdiQ1RGNktFOGx3UC9YQWNYSURzaW1ibFBQMXB1V2tFUEVQZ1JUQlBhZmVGSmM5dEZqblYxUWk3MUg4MUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODk3OTYxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4xMl94NjQtc2V0dXAuZXhlCjZxK0MycllvdXFMZTVwRFI3cWhYNVg1am9oQTBybmliUmtiVHZhc3dZT08zUk1reTFXUFQ1R0M3a2MrYTVwSHFVTUw5ek40Y0ljZm1LMUQxV1pPL0RnPT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.12-windows/Insurance.AI_2.3.12_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEVNV3RVSTljaUNjM0dpQURzbkdaK2NVOElTTENIMHBCaXdlT1d4eCt6Tjhvbnd3U1JLUkxKU25sWFI4RTc5SDR3Um1lcnprblkrU1RSaVRFbWtFSkE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTAwNzIzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4xM194NjQtc2V0dXAuZXhlCjFGTktzS2xkUzBGZ3IwUXN0bTZJamE1ZmtEVUtSd1NDbTdESitYK2ZoNU1TRlArVkR6UXQ0V1JoTHVJMEhpVmFCclhXYTI2MlEwQVBxeEhSRTd6ZEJnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.13-windows/Insurance.AI_2.3.13_x64-setup.exe"
     }
   }
 }
