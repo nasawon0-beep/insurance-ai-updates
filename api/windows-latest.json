@@ -1,11 +1,11 @@
 {
-  "version": "2.3.1",
-  "notes": "긴급 수정: 보장분석 데이터 표시 문제 해결 (필드명 호환성 추가)",
-  "pub_date": "2026-10-13T00:00:00Z",
+  "version": "2.3.2",
+  "notes": "보장분석 표시 개선: 통합보장분석 보험사/상품명 명확화",
+  "pub_date": "2026-10-13T01:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbElQM09xS1VzK0ZjeExXQ1Z2N3NVOEdoM242Nk9ybUJXS3Y3LzRJQWdWcngxT0ZmU3A1NkczV2wxSmpVYS9IK3Qvbk5yYzJvVVhZYzcrek5oMnJyTkF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODE4NDQxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4xX3g2NC1zZXR1cC5leGUKMWM1YXZyOFV1cU9jaWcvQ0wvbHlJWVVtc0VicWIwVEFRQmxhN04rWnlWNGVyRHM1MmU0cVRSRk40WDhhblh4SWxOUWt4Q1lyTHlQS3Y4VVNwcHJqQkE9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.1-windows/Insurance.AI_2.3.1_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEt4dTdwN3A0MkhkWDVFdEtCeTl1cFdVUjJVRXAwOHQrNy9QMGZXOHliTSsvS3BuOTRXTFhETW5sQjc5U2tsRHBFQVBDZllDd29oSHFhS1pYOVVsd1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODUzOTAzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4yX3g2NC1zZXR1cC5leGUKcElvS0hueVFPamdYUE5hTi8zaGx6M3pKaGxRa0cvOE1ncUZBM0JMMnlCT0xpR3pLUTVqcTNsZEZYODlGRU03djRLK3duT09iVXFnQzVoV1dxTUMzQ1E9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.2-windows/Insurance.AI_2.3.2_x64-setup.exe"
     }
   }
 }
