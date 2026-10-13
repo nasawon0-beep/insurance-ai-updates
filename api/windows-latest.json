@@ -1,11 +1,11 @@
 {
-  "version": "2.3.6",
-  "notes": "UI 개선 + 저장 실패 디버깅 로그 추가",
-  "pub_date": "2026-10-13T06:30:00Z",
+  "version": "2.3.7",
+  "notes": "UI 개선 + 저장 성공/실패 알림 표시",
+  "pub_date": "2026-10-13T07:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEsyWlhiQXMyUFJzak5HajNhdDAxaUNMV0daQUJuWFNaV0JtWjZzMVlIekh1d3EwUjEwWHJUcnlUVVVucHJROU9pUHNPRVZxSC9QamlZcVhnblFUWGdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODc0NDc1CWZpbGU6SW5zdXJhbmNlIEFJXzIuMy42X3g2NC1zZXR1cC5leGUKV0JFcTNwNjlRbm5GS0xRblpsM2Q1RFlEUkJrNG5vSkFRY1F0N0l4S1RqTmxyZW56OFlMODNPSG1ocHphNys3aHA2eE5UTmZMMmloQjBJZERkbUg3Qmc9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.6-windows/Insurance.AI_2.3.6_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbElKRmo2NE1kT0lpUmNqeFZRcktMbUZKZTFwKzZ2Rzdkb0t2cU42Q2xWamhRZG5nd2ZIUzRobGNuOUd4cnpkTlQvbkxNMHdrNHNXRDErOVZwbTR5bndBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODc2MTE2CWZpbGU6SW5zdXJhbmNlIEFJXzIuMy43X3g2NC1zZXR1cC5leGUKNmU3akR5WmF1bURYZXRrZWh6Zm44c1ZlaVdCSlVoSHQ4dFplUUlWVjI1V01qdXNuQ0U4Z3lnVFZHR2NVNmpISGQxU1dhSXQ4bnR4ZkNmVVdJRjJIQ0E9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.7-windows/Insurance.AI_2.3.7_x64-setup.exe"
     }
   }
 }
