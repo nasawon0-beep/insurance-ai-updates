@@ -1,11 +1,11 @@
 {
-  "version": "2.3.11",
-  "notes": "보장분석 고객 ID 선택 오류 수정 (최종 완성)",
-  "pub_date": "2026-10-13T12:55:00Z",
+  "version": "2.3.12",
+  "notes": "보장분석 고객 목록 API 오류 수정 (최종 완성)",
+  "pub_date": "2026-10-13T13:30:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbExFeUlZRUtISUpNNTAzekpncnFZTW8yNkdKK01DYkpUMHBqWlBRNWRuUlVHblAwUDV0eUptc0ljT3FIWGxUaUFiME9vN0NMWHJsSGJxNEhKTFVpbmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODk1OTQzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4xMV94NjQtc2V0dXAuZXhlCmNWT3dVc0lRTEtzeUVBdFovWFJiYWVacUNxcU9pMjgwQXhSK2x1MnlYRFF0dG13M2E4NmdrbWI5RzEzYktvWlNuZG55cTA1RkF3ZEI3TWF4ejgrcUN3PT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.11-windows/Insurance.AI_2.3.11_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEpkQUhNN3lYd0ZTSC8yWVZoMk8zZ2tHMFdiQ1RGNktFOGx3UC9YQWNYSURzaW1ibFBQMXB1V2tFUEVQZ1JUQlBhZmVGSmM5dEZqblYxUWk3MUg4MUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODk3OTYxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4xMl94NjQtc2V0dXAuZXhlCjZxK0MycllvdXFMZTVwRFI3cWhYNVg1am9oQTBybmliUmtiVHZhc3dZT08zUk1reTFXUFQ1R0M3a2MrYTVwSHFVTUw5ek40Y0ljZm1LMUQxV1pPL0RnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.12-windows/Insurance.AI_2.3.12_x64-setup.exe"
     }
   }
 }
