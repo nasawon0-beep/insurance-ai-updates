@@ -1,11 +1,11 @@
 {
-  "version": "2.3.2",
-  "notes": "보장분석 표시 개선: 통합보장분석 보험사/상품명 명확화",
-  "pub_date": "2026-10-13T01:00:00Z",
+  "version": "2.3.3",
+  "notes": "자료분석 저장 후 보장분석 자동 재계산 기능 추가",
+  "pub_date": "2026-10-13T05:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEt4dTdwN3A0MkhkWDVFdEtCeTl1cFdVUjJVRXAwOHQrNy9QMGZXOHliTSsvS3BuOTRXTFhETW5sQjc5U2tsRHBFQVBDZllDd29oSHFhS1pYOVVsd1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODUzOTAzCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4yX3g2NC1zZXR1cC5leGUKcElvS0hueVFPamdYUE5hTi8zaGx6M3pKaGxRa0cvOE1ncUZBM0JMMnlCT0xpR3pLUTVqcTNsZEZYODlGRU03djRLK3duT09iVXFnQzVoV1dxTUMzQ1E9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.2-windows/Insurance.AI_2.3.2_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEtLSk0xN01xbGFkZDJoN3k2MHlSSjFyZndQanNjQ0RtVk5ab3B3V0c2cWdwYUM2NFU2VXNBeTZwNkU5R0Z4NkFoNmZlTUh4N29JTUN5U2J0RTI3clE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODY2NTUxCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4zX3g2NC1zZXR1cC5leGUKUEFFdmx2dVl0Q09odXhCcElEY0VCL1JrdnZ1Q0xZcHBQVWhQRmJ2V05FY3NHNlh4M3BuVzE2NkE2bVo2cG5hUklKdStzUkxCbldueExvR0lIZmg1RFE9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.3-windows/Insurance.AI_2.3.3_x64-setup.exe"
     }
   }
 }
