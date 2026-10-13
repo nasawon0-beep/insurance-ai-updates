@@ -1,11 +1,11 @@
 {
-  "version": "2.3.8",
-  "notes": "보장분석 탭 데이터 표시 수정 (API 경로 개선)",
-  "pub_date": "2026-10-13T08:00:00Z",
+  "version": "2.3.9",
+  "notes": "pdfplumber 복원 (PDF Oxide 제거 - 안정성 우선)",
+  "pub_date": "2026-10-13T10:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEswY1F3K2I0cDI0d01oZ1Z0NlM1RTFYdDJPanRSc1lXWmdNa1piTXRFOG0vcDFsYXVjakFLSk9Sc3Q0R3hyeFAyVzE1OHgvN203enI1dW94ajlybmdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODc5ODkyCWZpbGU6SW5zdXJhbmNlIEFJXzIuMy44X3g2NC1zZXR1cC5leGUKMG9LUHdhNnJGVU4vU1BFaGhMbjZObG00VTJYSGYwTlRXNzNHNzJDUVNSZW1RZ1kzY3c2TmEyY3dSV015SVpPemhOUWVSb29Eb01XdklVczJWMVNHQUE9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.8-windows/Insurance.AI_2.3.8_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJQb1VkOStnSHk5emFKZnB4UXdrUXFSRmVnT1JrSWlNT251SnhYeVhZc05Kb1hDS01iVVpBcjA3V0NUekgxdFo5VW1rdlZINDVQTlJSRU83cGNkWEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxODg2OTY4CWZpbGU6SW5zdXJhbmNlIEFJXzIuMy45X3g2NC1zZXR1cC5leGUKR3JoNk8yMmpSMTlGL3FOV3NBdFNyaWdGclBiTEpoZW5IajNDdXE3UU1XUXhpZFBYaHp0ZTRPUWJiNTVxUHllc0txWm40YS9ZRUxKSUk4dno4UUZNQ3c9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.9-windows/Insurance.AI_2.3.9_x64-setup.exe"
     }
   }
 }
