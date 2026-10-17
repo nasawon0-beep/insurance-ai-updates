@@ -1,11 +1,11 @@
 {
-  "version": "2.3.14",
-  "notes": "새로고침 버튼 통합 (1개로 통합, 재계산 자동 실행)",
-  "pub_date": "2026-10-13T15:40:00Z",
+  "version": "v2.5.1",
+  "notes": "오프라인 모드 메시지 제거, 보장분석 담보 연결 수정 (v2.5.1)",
+  "pub_date": "2026-10-17T06:44:17Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEZ1d2JkYXJaa1l3ZzNKYUI5V090OFMxMWJPQUxhMHlOTlRFZkN0ckRLcllMcHZFcENoM0Q2ZnR0WWh2YlI3UjVJRDl3ZFhyMDBqVVNrMGtMT3pPSlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxOTEwNTQ0CWZpbGU6SW5zdXJhbmNlIEFJXzIuMy4xNF94NjQtc2V0dXAuZXhlCk5ldkxTSVI4YlNqUUNRa0VjVzBRWlN4d203eXBENkNPT1BaVlRGNTlOOWF5OEhNek95Q2R5Y0hwdUFEQXV2NGFxVUhyOEloQ0pGT1VMRmsxNkhQNUJ3PT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.3.14-windows/Insurance.AI_2.3.14_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbExxMEIwTUwwa2RIQjd4eU9mM0YwSnVmcitoNVZ4K09HTEc5M0wrVkI2a2RyMmEyc3N5aERnYXNqTE0vZC9rdEVLSDlWVElXQVQyV0JYUHpBVnVDR0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMjE4ODUxCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xX3g2NC1zZXR1cC5leGUKSXFLeWdlV3BKU2pDU3pDTUl1K1pNK20yeGRtQnZzMCtrWHNBL0xTSXVhTmxwaEdlZ3JBbTVPZUFaYUd4SW5XcXI3akQrZ1FLWktkd0t4N0tEc2VxQWc9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.1-windows/Insurance.AI_2.5.1_x64-setup.exe"
     }
   }
 }
