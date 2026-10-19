@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Insurance AI - 보험 상담을 위한 보장분석·고객관리 데스크톱 도구">
-    <meta name="theme-color" content="#050713">
-    <title>Insurance AI — 보험 상담 업무를 더 명확하게</title>
+    <meta name="description" content="Insurance AI - 보험 자료를 정리하고 상담 흐름을 관리하는 Windows 데스크톱 도구">
+    <meta name="theme-color" content="#080b12">
+    <title>Insurance AI — 보험 상담 준비를 한 흐름으로</title>
     <style>
         :root {
             --background: #ffffff;
@@ -425,6 +425,7 @@
                 rgba(255, 255, 255, .022);
             border-top: 1px solid rgba(255, 255, 255, .06);
         }
+        .download-grid { grid-template-columns: minmax(0, 760px); justify-content: center; }
         .download-card {
             background: linear-gradient(150deg, rgba(255, 255, 255, .095), rgba(255, 255, 255, .035));
             border-color: rgba(255, 255, 255, .13);
@@ -467,6 +468,65 @@
             *, *::before, *::after { animation: none !important; }
         }
     </style>
+    <style>
+        /* Story-led product detail refinement */
+        :root { --story-ink:#15201d; --story-soft:#53615c; --story-paper:#fbfcfa; --story-alt:#f0f5f2; --story-line:#d9e3dd; --story-mint:#35d5bb; --story-mint-dark:#087b6b; }
+        html { background: var(--story-paper); }
+        body { color:var(--story-ink); background:var(--story-paper); }
+        body::before, body::after { display:none; }
+        .site-header { background:rgba(8,11,18,.9); }
+        .hero { min-height:calc(100vh - 72px); color:#f5faf8; background:radial-gradient(circle at 12% 2%,rgba(147,133,255,.27),transparent 32rem),radial-gradient(circle at 88% 26%,rgba(101,191,255,.18),transparent 36rem),linear-gradient(145deg,#0c101c,#070a11 58%,#09110f); }
+        .hero::after { content:""; position:absolute; inset:0; z-index:-2; background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px); background-size:76px 76px; mask-image:linear-gradient(#000,transparent 82%); }
+        .hero-content h1 { font-size:clamp(48px,5.7vw,76px); line-height:1.08; }
+        .product-preview { transform:perspective(1200px) rotateY(-3deg); }
+        .story-lead { padding:clamp(94px,11vw,150px) 0; background:var(--story-paper); }
+        .story-lead-inner { max-width:930px; }
+        .story-kicker { display:block; margin-bottom:18px; color:var(--story-mint-dark); font-size:13px; font-weight:850; letter-spacing:.11em; text-transform:uppercase; }
+        .story-lead h2,.story-chapter h2 { margin:0; color:var(--story-ink); font-size:clamp(38px,5.2vw,64px); line-height:1.13; letter-spacing:-.057em; }
+        .story-lead p { max-width:730px; margin:28px 0 0; color:var(--story-soft); font-size:clamp(18px,2vw,23px); line-height:1.78; }
+        .story-chapter { padding:clamp(86px,10vw,138px) 0; background:#fff; border-top:1px solid var(--story-line); }
+        .story-row { display:grid; grid-template-columns:minmax(0,.84fr) minmax(470px,1.16fr); align-items:center; gap:clamp(56px,9vw,110px); }
+        .story-row.reverse { grid-template-columns:minmax(470px,1.16fr) minmax(0,.84fr); }
+        .story-row.reverse .story-copy { order:2; }
+        .story-number { display:block; margin-bottom:26px; color:#95a49f; font-size:14px; font-weight:800; letter-spacing:.09em; }
+        .story-chapter h2 { font-size:clamp(36px,4.6vw,56px); }
+        .story-copy>p { margin:23px 0 0; color:var(--story-soft); font-size:18px; line-height:1.8; }
+        .story-points { display:grid; gap:14px; margin:30px 0 0; padding:0; list-style:none; }
+        .story-points li { position:relative; padding-left:27px; color:#31423d; font-weight:680; }
+        .story-points li::before { content:"✓"; position:absolute; left:0; color:var(--story-mint-dark); font-weight:900; }
+        .story-visual { position:relative; min-width:0; min-height:500px; display:grid; place-items:center; padding:clamp(28px,5vw,55px); background:var(--story-alt); border-radius:6px; overflow:hidden; }
+        .story-visual::before { content:""; position:absolute; width:330px; height:330px; border-radius:50%; background:rgba(53,213,187,.17); filter:blur(24px); }
+        .visual-label { position:absolute; left:18px; bottom:15px; z-index:3; padding:5px 9px; color:#53645e; background:rgba(255,255,255,.9); border:1px solid var(--story-line); border-radius:5px; font-size:11px; font-weight:750; }
+        .paper-stack { position:relative; z-index:1; width:min(350px,80%); aspect-ratio:.78; }
+        .paper-sheet { position:absolute; inset:0; padding:34px 30px; background:#fff; border:1px solid #d9e2dd; box-shadow:0 28px 70px rgba(26,45,39,.13); }
+        .paper-sheet:nth-child(1){transform:rotate(-9deg) translate(-35px,8px)} .paper-sheet:nth-child(2){transform:rotate(7deg) translate(32px,14px)} .paper-sheet:nth-child(3){transform:rotate(-1deg)}
+        .paper-sheet b { display:block; margin-bottom:25px; } .paper-sheet i { display:block; height:7px; margin:13px 0; background:#e5ebe7; } .paper-sheet i:nth-of-type(2){width:80%} .paper-sheet i:nth-of-type(4){width:62%}
+        .pen-circle { position:absolute; right:35px; top:90px; width:86px; height:38px; border:3px solid #ef776d; border-radius:50%; transform:rotate(-11deg); }
+        .note-slip { position:absolute; right:-30px; bottom:60px; width:145px; padding:17px; background:#dff8f2; box-shadow:0 16px 35px rgba(28,60,50,.17); transform:rotate(4deg); font-size:12px; font-weight:720; }
+        .flow-board { position:relative; z-index:1; width:min(560px,100%); color:#e8f1ed; background:#111923; border:1px solid #26353d; border-radius:13px; box-shadow:0 28px 65px rgba(22,42,35,.25); overflow:hidden; }
+        .flow-head { display:flex; justify-content:space-between; padding:17px 20px; border-bottom:1px solid rgba(255,255,255,.08); font-size:13px; } .flow-head span{color:#6ce2c0}
+        .flow-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.08); }
+        .flow-step { min-width:0; min-height:260px; padding:24px 17px; background:#111923; } .flow-step small{display:grid;place-items:center;width:32px;height:32px;margin-bottom:32px;color:#102019;background:#8aead9;border-radius:50%;font-weight:850}.flow-step h3{margin:0 0 10px;font-size:17px}.flow-step p{margin:0;color:#98aaa3;font-size:12px;line-height:1.65}
+        .section.tint { color:var(--story-ink); background:var(--story-alt); border-color:var(--story-line); }
+        .section.tint .kicker,.section:not(.download-section) .kicker { color:var(--story-mint-dark); }
+        .section.tint h2,.section:not(.download-section) h2 { color:var(--story-ink); }
+        .section.tint .section-head p,.section:not(.download-section) .section-head p { color:var(--story-soft); }
+        .feature-grid { grid-template-columns:1fr; gap:0; border-top:1px solid #cbd6d0; }
+        .feature-card { min-height:0; display:grid; grid-template-columns:72px minmax(230px,.65fr) minmax(260px,1fr); align-items:center; gap:32px; padding:34px 0; color:var(--story-ink); background:transparent; border:0; border-bottom:1px solid #cbd6d0; border-radius:0; box-shadow:none; backdrop-filter:none; }
+        .feature-icon { margin:0; color:var(--story-mint-dark); background:#dff8f2; border-color:#bfe9df; }
+        .feature-card h3 { color:var(--story-ink); }
+        .feature-card p { color:var(--story-soft); }
+        #workflow { color:var(--story-ink); background:#fff; }
+        #workflow .step h3 { color:var(--story-ink); } #workflow .step p{color:var(--story-soft)} #workflow .step-number{color:var(--story-mint-dark);background:#dff8f2;border-color:#bfe9df} #workflow .step:not(:last-child)::before{background:#bfe0d7}
+        .privacy-panel { color:var(--story-ink); background:#dff8f2; border-color:#bfe9df; box-shadow:none; }
+        .privacy-panel p { color:#47635a; } .privacy-icon{color:var(--story-mint-dark);background:rgba(255,255,255,.68);border-color:#bfe9df}
+        .download-section { color:#fff; background:radial-gradient(circle at 18% 15%,rgba(147,133,255,.22),transparent 30rem),radial-gradient(circle at 88% 75%,rgba(53,213,187,.16),transparent 32rem),#090d15; }
+        .download-section h2 { color:#fff; } .download-section .section-head p{color:#bac7c2}.download-section .kicker{color:#79ded0}
+        footer { background:#06090e; }
+        @media(max-width:980px){.story-row,.story-row.reverse{grid-template-columns:1fr}.story-row.reverse .story-copy{order:initial}.feature-card{grid-template-columns:64px minmax(200px,.7fr) minmax(240px,1fr)}}
+        @media(max-width:700px){.product-preview{transform:none}.story-lead,.story-chapter{padding-block:82px}.story-lead h2,.story-chapter h2{font-size:clamp(36px,10.5vw,44px)}.story-row{gap:44px}.story-visual{min-height:400px;padding:30px 20px}.paper-stack{width:72%}.paper-sheet{padding:27px 22px}.paper-sheet:nth-child(1){transform:rotate(-7deg) translate(-20px,8px)}.paper-sheet:nth-child(2){transform:rotate(6deg) translate(20px,12px)}.note-slip{right:-18px;width:125px;padding:13px;font-size:10px}.flow-grid{grid-template-columns:1fr}.flow-step{min-height:0;padding:18px}.flow-step small{margin-bottom:14px}.feature-card{grid-template-columns:1fr;gap:10px;padding:28px 0}.feature-icon{margin-bottom:6px}.site-header .nav-cta{position:static}.footer-inner{padding-bottom:0}}
+        @media(max-width:390px){.story-visual{min-height:370px}.paper-stack{width:72%}}
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -479,9 +539,9 @@
                 <span>Insurance AI</span>
             </a>
             <nav class="nav-links" aria-label="주요 메뉴">
-                <a href="#features">주요 기능</a>
+                <a href="#story">제품 이야기</a>
                 <a href="#workflow">이용 흐름</a>
-                <a class="nav-cta" href="#download">다운로드</a>
+                <a class="nav-cta" href="#download">Windows 다운로드</a>
             </nav>
         </div>
     </header>
@@ -490,18 +550,18 @@
         <section class="hero" id="top">
             <div class="container hero-grid">
                 <div class="hero-content">
-                    <div class="eyebrow">보험 상담을 위한 데스크톱 도구</div>
-                    <h1>보험 상담 업무를<br>더 빠르고 명확하게.</h1>
-                    <p class="hero-copy">보험 PDF에서 보장 내용을 정리하고, 고객 정보와 상담 흐름을 한곳에서 관리하세요. 반복 작업은 줄이고 고객과의 대화에 집중할 수 있습니다.</p>
+                    <div class="eyebrow">보험 상담을 위한 Windows 데스크톱 도구</div>
+                    <h1>자료 정리보다,<br>상담에 집중하세요.</h1>
+                    <p class="hero-copy">보험 PDF를 살펴보고, 보장 내용을 옮겨 적고, 고객 기록을 다시 찾는 일. Insurance AI는 흩어진 준비 과정을 하나의 흐름으로 연결합니다.</p>
                     <div class="hero-actions">
                         <a class="button primary" href="#download">
                             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v10m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            내 컴퓨터용 다운로드
+                            Windows용 다운로드
                         </a>
-                        <a class="button" href="#features">기능 살펴보기</a>
+                        <a class="button" href="#story">제품 이야기 보기</a>
                     </div>
                     <div class="hero-note" aria-label="제품 특징">
-                        <span>Windows · macOS 지원</span>
+                        <span>Windows 전용</span>
                         <span>고객 정보 로컬 저장</span>
                         <span>자동 업데이트 지원</span>
                     </div>
@@ -534,12 +594,24 @@
             </div>
         </section>
 
+        <section class="story-lead" id="story">
+            <div class="container story-lead-inner"><span class="story-kicker">The everyday problem</span><h2>보험 자료는 늘어나는데,<br>정리는 아직 손이 많이 갑니다.</h2><p>한 장씩 내용을 확인하고, 필요한 항목을 따로 옮기고, 상담 전에 다시 찾아보는 과정. 중요한 판단을 하기 전부터 반복되는 정리 업무가 쌓입니다.</p></div>
+        </section>
+
+        <section class="story-chapter">
+            <div class="container story-row"><div class="story-copy"><span class="story-number">01 · BEFORE</span><h2>찾고, 옮기고,<br>다시 확인하는 시간.</h2><p>보험 PDF와 고객 메모가 따로 있으면 상담에 필요한 맥락을 한 번에 보기 어렵습니다. 문서가 바뀔 때마다 같은 확인을 반복하게 됩니다.</p><ul class="story-points"><li>보험 문서에서 필요한 보장 항목 찾기</li><li>고객 정보와 상담 내용을 따로 기록하기</li><li>다음 상담 전에 지난 기록 다시 확인하기</li></ul></div><div class="story-visual" aria-label="흩어진 보험 자료를 표현한 기능 흐름 그래픽"><div class="paper-stack" aria-hidden="true"><div class="paper-sheet"><b>보험 계약 자료</b><i></i><i></i><i></i><i></i></div><div class="paper-sheet"><b>상담 메모</b><i></i><i></i><i></i><i></i></div><div class="paper-sheet"><b>보장 내용 확인</b><i></i><i></i><i></i><i></i><span class="pen-circle"></span><span class="note-slip">확인한 내용을<br>다시 정리해야 합니다.</span></div></div><span class="visual-label">기능 흐름 예시 · 실제 고객 자료 아님</span></div></div>
+        </section>
+
+        <section class="story-chapter">
+            <div class="container story-row reverse"><div class="story-copy"><span class="story-number">02 · WITH INSURANCE AI</span><h2>자료에서 상담까지,<br>한 흐름으로 이어집니다.</h2><p>보험 PDF를 분석해 보장 항목을 확인하고, 고객 기록과 연결한 뒤, AI 문의로 상담 준비를 이어갈 수 있습니다.</p><ul class="story-points"><li>보험 PDF의 보장 내용을 항목별로 확인</li><li>고객 정보·계약·상담 기록을 함께 관리</li><li>분석 결과를 바탕으로 AI에 문의</li></ul></div><div class="story-visual" aria-label="Insurance AI 사용 흐름 예시"><div class="flow-board"><div class="flow-head"><strong>상담 준비 흐름</strong><span>● 연결됨</span></div><div class="flow-grid"><div class="flow-step"><small>1</small><h3>문서 분석</h3><p>보험 PDF를 불러와 보장 항목을 확인합니다.</p></div><div class="flow-step"><small>2</small><h3>고객 연결</h3><p>계약과 상담 기록을 고객 정보와 함께 관리합니다.</p></div><div class="flow-step"><small>3</small><h3>상담 준비</h3><p>분석 결과를 바탕으로 필요한 내용을 AI에 문의합니다.</p></div></div></div><span class="visual-label">기능 구성 예시 · 실제 앱 화면 아님</span></div></div>
+        </section>
+
         <section class="section tint" id="features">
             <div class="container">
                 <div class="section-head center">
-                    <span class="kicker">주요 기능</span>
-                    <h2>상담 준비부터 고객 관리까지,<br>필요한 기능을 한곳에.</h2>
-                    <p>복잡한 화면과 불필요한 단계를 줄이고 실제 보험 상담 업무에 필요한 흐름을 중심으로 구성했습니다.</p>
+                    <span class="kicker">What changes</span>
+                    <h2>기능을 더하는 대신,<br>업무의 흐름을 정리했습니다.</h2>
+                    <p>상담 준비에 필요한 기능이 서로 끊기지 않도록 문서, 고객, 일정, 상담 기록을 한곳에 모았습니다.</p>
                 </div>
                 <div class="feature-grid">
                     <article class="feature-card">
@@ -580,8 +652,8 @@
             <div class="container workflow">
                 <div class="section-head">
                     <span class="kicker">이용 흐름</span>
-                    <h2>문서를 올리고,<br>결과를 확인하고,<br>상담을 준비하세요.</h2>
-                    <p>보험 문서를 검토하는 반복 작업을 줄이고 상담에 필요한 정보로 자연스럽게 이어집니다.</p>
+                    <h2>복잡한 설명 없이,<br>이 순서로 시작하세요.</h2>
+                    <p>보험 문서를 불러오는 순간부터 상담 기록을 남기는 과정까지 자연스럽게 이어집니다.</p>
                 </div>
                 <div class="steps">
                     <article class="step"><div class="step-number">01</div><div class="step-content"><h3>보험 PDF 업로드</h3><p>고객의 보험 문서를 선택하거나 끌어다 놓아 분석을 시작합니다.</p></div></article>
@@ -604,26 +676,18 @@
         <section class="section download-section" id="download">
             <div class="container">
                 <div class="section-head center">
-                    <span class="kicker">다운로드</span>
-                    <h2>사용 중인 운영체제에 맞게<br>바로 설치하세요.</h2>
-                    <p>버전과 설치 파일은 배포 정보에서 자동으로 불러옵니다.</p>
+                    <span class="kicker">Ready to begin</span>
+                    <h2>이제, 자료 정리부터<br>가볍게 시작하세요.</h2>
+                    <p>Windows 설치 파일을 내려받아 Insurance AI의 상담 준비 흐름을 시작할 수 있습니다.</p>
                 </div>
                 <div class="download-grid">
-                    <article class="download-card" id="windows-card">
+                    <article class="download-card is-recommended" id="windows-card">
                         <div class="platform-head">
-                            <div><h3 class="platform-name">Windows</h3><p class="version" id="windows-version" aria-live="polite">최신 버전 확인 중...</p><span class="recommended">이 기기에 권장</span></div>
+                            <div><h3 class="platform-name">Insurance AI for Windows</h3><p class="version" id="windows-version" aria-live="polite">최신 버전 확인 중...</p><span class="recommended">Windows 전용</span></div>
                             <div class="platform-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 5.3 10.8 4v7.4H3V5.3Zm9.2-1.5L21 2.5v8.9h-8.8V3.8ZM3 12.8h7.8V20L3 18.7v-5.9Zm9.2 0H21v8.7l-8.8-1.3v-7.4Z" fill="currentColor"/></svg></div>
                         </div>
                         <ul class="requirements"><li>Windows 10 이상</li><li>x64 설치 파일</li><li>앱 자동 업데이트 지원</li></ul>
                         <a href="#" id="windows-download" class="button primary download-button" aria-disabled="true">Windows용 다운로드</a>
-                    </article>
-                    <article class="download-card" id="macos-card">
-                        <div class="platform-head">
-                            <div><h3 class="platform-name">macOS</h3><p class="version" id="macos-version" aria-live="polite">최신 버전 확인 중...</p><span class="recommended">이 기기에 권장</span></div>
-                            <div class="platform-icon" aria-hidden="true"><svg width="29" height="29" viewBox="0 0 24 24" fill="currentColor"><path d="M16.7 12.9c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.2 1-4 .9-.8 0-2.1-.9-3.5-.9-1.8 0-3.5 1.1-4.5 2.7-1.9 3.3-.5 8.2 1.4 10.9.9 1.3 2 2.8 3.5 2.7 1.4-.1 1.9-.9 3.6-.9 1.7 0 2.2.9 3.6.9 1.5 0 2.5-1.3 3.4-2.7 1.1-1.5 1.5-3 1.5-3.1-.1 0-3.4-1.3-3.4-4.3ZM14 5c.8-1 1.3-2.3 1.2-3.6-1.1 0-2.5.8-3.3 1.7-.7.8-1.4 2.2-1.2 3.4 1.3.1 2.5-.6 3.3-1.5Z"/></svg></div>
-                        </div>
-                        <ul class="requirements"><li>Apple Silicon 전용</li><li>DMG 설치 파일</li><li>앱 자동 업데이트 지원</li></ul>
-                        <a href="#" id="macos-download" class="button primary download-button" aria-disabled="true">Mac용 다운로드</a>
                     </article>
                 </div>
                 <p class="download-help">설치 또는 업데이트에 문제가 있나요? 아래 GitHub 문의/건의에서 알려주세요.</p>
@@ -639,37 +703,21 @@
     </footer>
 
     <script>
-        const platformConfigs = {
-            windows: {
-                url: 'api/windows.json',
-                cardId: 'windows-card',
-                versionId: 'windows-version',
-                downloadId: 'windows-download',
-                normalize(data) {
-                    return {
-                        version: data.version || data.latestVersion,
-                        fileSize: data.fileSize,
-                        downloadUrl: data.url || data.downloadUrl
-                    };
-                }
-            },
-            macos: {
-                url: 'api/macos.json',
-                cardId: 'macos-card',
-                versionId: 'macos-version',
-                downloadId: 'macos-download',
-                normalize(data) {
-                    return {
-                        version: data.latestVersion || data.version,
-                        fileSize: data.fileSize,
-                        downloadUrl: data.downloadUrl || data.url
-                    };
-                }
+        const windowsConfig = {
+            url: 'api/windows.json',
+            versionId: 'windows-version',
+            downloadId: 'windows-download',
+            normalize(data) {
+                return {
+                    version: data.version || data.latestVersion,
+                    fileSize: data.fileSize,
+                    downloadUrl: data.url || data.downloadUrl
+                };
             }
         };
 
-        async function loadPlatformInfo(platform) {
-            const config = platformConfigs[platform];
+        async function loadWindowsInfo() {
+            const config = windowsConfig;
             const versionEl = document.getElementById(config.versionId);
             const downloadEl = document.getElementById(config.downloadId);
             try {
@@ -677,14 +725,14 @@
                 if (!response.ok) throw new Error(`${config.url} returned ${response.status}`);
                 const raw = await response.json();
                 const apiPlatform = String(raw.platform || '').toLowerCase();
-                if (apiPlatform && apiPlatform !== platform) throw new Error(`${config.url} platform mismatch`);
+                if (apiPlatform && apiPlatform !== 'windows') throw new Error(`${config.url} platform mismatch`);
                 const data = config.normalize(raw);
                 if (!data.version || !data.downloadUrl) throw new Error(`${config.url} is missing required fields`);
                 versionEl.textContent = [String(data.version).replace(/^v?/, 'v'), data.fileSize].filter(Boolean).join(' · ');
                 downloadEl.href = data.downloadUrl;
                 downloadEl.removeAttribute('aria-disabled');
             } catch (error) {
-                console.warn(`${platform} 버전 정보를 불러오지 못했습니다:`, error.message);
+                console.warn(`Windows 버전 정보를 불러오지 못했습니다:`, error.message);
                 versionEl.textContent = '버전 정보를 불러오지 못했습니다';
                 downloadEl.href = 'https://github.com/nasawon0-beep/insurance-ai/releases';
                 downloadEl.removeAttribute('aria-disabled');
@@ -692,11 +740,6 @@
             }
         }
 
-        function markRecommendedPlatform() {
-            const userAgent = navigator.userAgent.toLowerCase();
-            const platform = userAgent.includes('mac') ? 'macos' : userAgent.includes('windows') ? 'windows' : null;
-            if (platform) document.getElementById(`${platform}-card`)?.classList.add('is-recommended');
-        }
 
         document.querySelectorAll('a[href^="#"]:not(.download-button)').forEach(anchor => {
             anchor.addEventListener('click', event => {
@@ -709,8 +752,7 @@
             });
         });
 
-        markRecommendedPlatform();
-        Promise.all(Object.keys(platformConfigs).map(loadPlatformInfo));
+        loadWindowsInfo();
     </script>
 </body>
 </html>
