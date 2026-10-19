@@ -1,7 +1,7 @@
 {
-  "version": "2.5.1",
-  "pub_date": "2026-10-17T06:44:17Z",
-  "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.1-windows/Insurance.AI_2.5.1_x64-setup.exe",
-  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbExxMEIwTUwwa2RIQjd4eU9mM0YwSnVmcitoNVZ4K09HTEc5M0wrVkI2a2RyMmEyc3N5aERnYXNqTE0vZC9rdEVLSDlWVElXQVQyV0JYUHpBVnVDR0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMjE4ODUxCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xX3g2NC1zZXR1cC5leGUKSXFLeWdlV3BKU2pDU3pDTUl1K1pNK20yeGRtQnZzMCtrWHNBL0xTSXVhTmxwaEdlZ3JBbTVPZUFaYUd4SW5XcXI3akQrZ1FLWktkd0t4N0tEc2VxQWc9PQo=",
-  "notes": "오프라인 모드 메시지 제거, 보장분석 담보 연결 수정 (v2.5.1)"
+  "version": "2.5.2",
+  "pub_date": "2026-10-19T22:26:44.089072Z",
+  "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.2-windows/Insurance.AI_2.5.2_x64-setup.exe",
+  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFBtMVV1Q21FNTBzM2R6Q243cWJocDR4TC9NQXRmSVR1V0pITEVCYTMvemNBc2VqaTlIQWhjaHJHUFFScDN6SVhjb085ZVlqR0l5UWJJOFlhZU5pM1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDI0MDIyCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4yX3g2NC1zZXR1cC5leGUKZFM2WHBZOFlLM0pCcEVaSEJVTDJGT0s2VGU4cXJ6bkF2eHdtTFU0SmZoUnF0K0ZGbnBDQlZDWmdGdmt3Y09oWkU5ZExzZHZ0VGMvd2VYdmk5VmsyRGc9PQo=",
+  "notes": "보장분석 원본 요약 보존 및 새로고침 동시성 보호 개선 (v2.5.2)"
 }
