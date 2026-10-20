@@ -1,7 +1,7 @@
 {
-  "version": "2.5.2",
-  "pub_date": "2026-10-19T22:26:44.089072Z",
-  "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.2-windows/Insurance.AI_2.5.2_x64-setup.exe",
-  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFBtMVV1Q21FNTBzM2R6Q243cWJocDR4TC9NQXRmSVR1V0pITEVCYTMvemNBc2VqaTlIQWhjaHJHUFFScDN6SVhjb085ZVlqR0l5UWJJOFlhZU5pM1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDI0MDIyCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4yX3g2NC1zZXR1cC5leGUKZFM2WHBZOFlLM0pCcEVaSEJVTDJGT0s2VGU4cXJ6bkF2eHdtTFU0SmZoUnF0K0ZGbnBDQlZDWmdGdmt3Y09oWkU5ZExzZHZ0VGMvd2VYdmk5VmsyRGc9PQo=",
-  "notes": "보장분석 원본 요약 보존 및 새로고침 동시성 보호 개선 (v2.5.2)"
+  "version": "2.5.4",
+  "pub_date": "2026-10-20T16:54:20Z",
+  "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.4-windows/Insurance.AI_2.5.4_x64-setup.exe",
+  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEphR1F6dCtNNENkNURRc25HUmVwY0J3MkVwUlJybHoxc0w3TFpwZ25tanlYZGJFSnoxZnZBTEVQRkkzcnE4cWprYkFuMXlObUV1T3RJNXQxYk82d0FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTE0Mjk4CWZpbGU6SW5zdXJhbmNlIEFJXzIuNS40X3g2NC1zZXR1cC5leGUKeTYvZmpKRFBNYjA3Wkc3ZG1vTFVmdzY2R1kxOUNsbHBGMkJLdHBzdktxTmJOY0htamlTUkVTZnJPL0Y3ODlWMFh3QUN4b2dJcFF0VG5sN2p1ZFVYRFE9PQo=",
+  "notes": "네이비 UI·다크모드 및 접근성 개선, 계약별 담보 선택·취소와 통계 반영 개선 (v2.5.4)"
 }
