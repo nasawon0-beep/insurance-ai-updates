@@ -1,11 +1,11 @@
 {
-  "version": "v2.5.4",
-  "notes": "네이비 UI·다크모드 및 접근성 개선, 계약별 담보 선택·취소와 통계 반영 개선 (v2.5.4)",
-  "pub_date": "2026-10-20T16:54:20Z",
+  "version": "v2.5.5",
+  "notes": "모아둠: 파일 드롭·자료 저장·고객 삭제 및 목록 갱신 수정, 고객 화면 겹침·표 정렬 개선",
+  "pub_date": "2026-10-21T06:44:01Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEphR1F6dCtNNENkNURRc25HUmVwY0J3MkVwUlJybHoxc0w3TFpwZ25tanlYZGJFSnoxZnZBTEVQRkkzcnE4cWprYkFuMXlObUV1T3RJNXQxYk82d0FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTE0Mjk4CWZpbGU6SW5zdXJhbmNlIEFJXzIuNS40X3g2NC1zZXR1cC5leGUKeTYvZmpKRFBNYjA3Wkc3ZG1vTFVmdzY2R1kxOUNsbHBGMkJLdHBzdktxTmJOY0htamlTUkVTZnJPL0Y3ODlWMFh3QUN4b2dJcFF0VG5sN2p1ZFVYRFE9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.4-windows/Insurance.AI_2.5.4_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbE5nK01kUnlkL1VFc2pDWExIQzlFRmFFb2hQblQrS1ZscUZyYXpUbnp1dmZ5RWd6Rnp5NGdnYWQyRWY0QU1LV01maGRrd3BsOUFsTW9xekVTem9jdndvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTY0MjgyCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS41X3g2NC1zZXR1cC5leGUKb3o4V0plcFRHMG9XUHVpVXRlRzBCSk0rTml3T3h4Z29JVHpOcmloYWdkeFVxc0tnVVVTdWd0cXBjd2hyNUhsSzFaeW1XVHNDYTJmMSt6RG10dGo3Q0E9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.5-windows/Insurance.AI_2.5.5_x64-setup.exe"
     }
   }
 }
