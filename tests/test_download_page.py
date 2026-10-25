@@ -48,23 +48,38 @@ def test_windows_stable_is_separate_from_brand_test_candidate() -> None:
     assert candidate["downloadUrl"].endswith("/" + WINDOWS_ASSET)
 
 
-def test_download_ui_has_real_asset_links_and_visible_debug_warning() -> None:
+def test_download_ui_is_customer_facing_with_two_primary_cards() -> None:
     html = INDEX.read_text(encoding="utf-8")
     android_url = json.loads(ANDROID.read_text(encoding="utf-8"))["downloadUrl"]
     windows_test_url = json.loads(WINDOWS_TEST.read_text(encoding="utf-8"))["downloadUrl"]
     assert f'href="{android_url}"' in html
     assert f'href="{windows_test_url}"' in html
-    assert "바로가기 아이콘 지속 수정 포함" in html
-    assert "Windows 화면 표시 최종 확인 전" in html
+    assert html.count('<article class="download-card">') == 2
+    assert "<h3>Windows</h3>" in html
+    assert "Windows 10 이상 · 64비트" in html
+    assert ">Windows용 다운로드<" in html
+    assert "<h3>Android</h3>" in html
+    assert ">APK 다운로드<" in html
+    assert "Android 8.0 이상 · PC와 같은 Wi-Fi에서 연결" in html
+    assert ">베타<" in html
+    assert "개선 중인 버전입니다." in html
+    assert "새 버전 미리보기" in html
+    assert "미리보기 버전입니다." in html
+    assert "개발용 서명 APK" in html
     assert 'id="android-download"' in html
     assert 'id="windows-test-download"' in html
-    assert "Android 테스트 버전(APK)" in html
-    assert "디버그 인증서" in html
-    assert "UI 개편은 아직 완료되지 않았습니다" in html
-    assert "Android 8.0 이상" in html
-    assert "같은 Wi-Fi" in html
-    assert "분석은 PC" in html
     assert "알 수 없는 앱 설치" in html
+    for internal_copy in (
+        "브랜드",
+        "후보",
+        "내부 버전",
+        "versionCode",
+        "updater JSON",
+        "검증",
+        "실기기 미확인",
+        "DEBUG TEST",
+    ):
+        assert internal_copy not in html
     assert "iOS" not in html
     assert "macOS" not in html
 
