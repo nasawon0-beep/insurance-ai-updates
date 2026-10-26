@@ -2,16 +2,16 @@
   "platform": "android",
   "name": "Android 테스트 버전(APK)",
   "status": "test",
-  "versionCode": 1,
-  "versionName": "1.0.0-phase1",
+  "versionCode": 4,
+  "versionName": "1.0.0-phase4",
   "releaseType": "debug",
   "releaseDate": null,
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.5-brand-b-test.1/Moadoom_Android_1.0.0-phase1_debug.apk",
-  "fileName": "Moadoom_Android_1.0.0-phase1_debug.apk",
-  "fileSize": "25,857,805 bytes",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.6-windows/Moadoom_Android_1.0.0-phase4_debug-reviewed.apk",
+  "fileName": "Moadoom_Android_1.0.0-phase4_debug-reviewed.apk",
+  "fileSize": "32,319,583 bytes",
   "minimumAndroid": "8.0",
   "checksum": {
-    "sha256": "f973fcaf6405727d4a0e79712c6491767c051ddbbf293c618f03728f8e467c0d"
+    "sha256": "28375ea5bf5f1460223dbb5c29a8dedf1b6561aa6de0759aa6029ee4c47ccd56"
   },
   "signing": "Android Debug certificate",
   "requirements": [
@@ -21,7 +21,7 @@
   ],
   "warnings": [
     "테스트용 debug APK이며 정식 안정 버전이 아닙니다.",
-    "모바일 UI 개편과 실제 기기 검증은 완료되지 않았습니다.",
+    "Android 실제 기기 연결과 자동 설치 검증은 완료되지 않았습니다.",
     "설치 시 브라우저 또는 파일 앱의 알 수 없는 앱 설치 허용이 필요할 수 있습니다."
   ]
 }

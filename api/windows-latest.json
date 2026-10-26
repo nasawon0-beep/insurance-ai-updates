@@ -1,11 +1,11 @@
 {
-  "version": "v2.5.5",
-  "notes": "모아둠: 파일 드롭·자료 저장·고객 삭제 및 목록 갱신 수정, 고객 화면 겹침·표 정렬 개선",
-  "pub_date": "2026-10-21T06:44:01Z",
+  "version": "v2.5.6",
+  "notes": "모아둠 Windows 안정 버전 2.5.6",
+  "pub_date": "2026-10-26T01:49:14Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbE5nK01kUnlkL1VFc2pDWExIQzlFRmFFb2hQblQrS1ZscUZyYXpUbnp1dmZ5RWd6Rnp5NGdnYWQyRWY0QU1LV01maGRrd3BsOUFsTW9xekVTem9jdndvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTY0MjgyCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS41X3g2NC1zZXR1cC5leGUKb3o4V0plcFRHMG9XUHVpVXRlRzBCSk0rTml3T3h4Z29JVHpOcmloYWdkeFVxc0tnVVVTdWd0cXBjd2hyNUhsSzFaeW1XVHNDYTJmMSt6RG10dGo3Q0E9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.5-windows/Insurance.AI_2.5.5_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEo2bXZsZVZFT3F6LzBnM29lQ1Z2cnlEa3doSmM2Z05RYkZqaEpVRWRLSmdPczFYQU9mbVJzMWtnVDl5RUJhanNnZjE4V05rRnhVNy9wdXpzVjhJUEFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTc5MzMzCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS42X3g2NC1zZXR1cC5leGUKcGF0ek0zLzUvcGJlcTF6ZTRYQTdZZXZmQktOOThlZkJFc2RLM0hBNEZwWDNPa1BuQzlBNWRiWUg1dnBSU3ZENjZ5ZnNlcm1JVTlMSkZXVkpiWk9RQ2c9PQo=",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.6-windows/Insurance.AI_2.5.6_x64-setup.exe"
     }
   }
 }
