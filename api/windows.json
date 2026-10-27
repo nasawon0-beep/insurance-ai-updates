@@ -1,12 +1,12 @@
 {
-  "version": "2.5.6",
-  "pub_date": "2026-10-26T01:49:14Z",
-  "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.6-windows/Insurance.AI_2.5.6_x64-setup.exe",
-  "fileName": "Insurance.AI_2.5.6_x64-setup.exe",
-  "fileSize": "182,479,799 bytes",
+  "version": "2.5.9",
+  "pub_date": "2026-10-27T08:26:13Z",
+  "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.9-windows/Insurance.AI_2.5.9_x64-setup.exe",
+  "fileName": "Insurance.AI_2.5.9_x64-setup.exe",
+  "fileSize": "182,470,685 bytes",
   "checksum": {
-    "sha256": "291e7fe80a5928e6b73a0d6872430834ce61532245a8cd06f01e2aa856d95bef"
+    "sha256": "958f26b82f3f6d677e2a91923f4cf1bfb567a97a14c6e529016b6733a77ff437"
   },
-  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEo2bXZsZVZFT3F6LzBnM29lQ1Z2cnlEa3doSmM2Z05RYkZqaEpVRWRLSmdPczFYQU9mbVJzMWtnVDl5RUJhanNnZjE4V05rRnhVNy9wdXpzVjhJUEFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyOTc5MzMzCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS42X3g2NC1zZXR1cC5leGUKcGF0ek0zLzUvcGJlcTF6ZTRYQTdZZXZmQktOOThlZkJFc2RLM0hBNEZwWDNPa1BuQzlBNWRiWUg1dnBSU3ZENjZ5ZnNlcm1JVTlMSkZXVkpiWk9RQ2c9PQo=",
-  "notes": "모아둠 Windows 안정 버전 2.5.6"
+  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbElXdkx3YTI5aEYzZmVIRzhWM3NvT1ZRM2JUT2NMeHlyQVdLSDVXK0g4Mjcxemo4d29uem41WVZ5RWMzNVQ1UllHbGNRa1RzaEVCRGhETDhMdGQwMGdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDg5NTU3CWZpbGU6SW5zdXJhbmNlIEFJXzIuNS45X3g2NC1zZXR1cC5leGUKM1EyRlIrQ2pQUlA2ZndmWnRTcURYS3dpZ0ZOVWd3NHRBYTdzWGJkTnpYZkxWNEQ3WU9nTFJ2TzNHWmZwYkhzSEtOdnF1TDVFMHdSVVY4ek81U215QUE9PQo=",
+  "notes": "모아둠 Windows 안정 버전 2.5.9"
 }
