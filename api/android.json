@@ -2,16 +2,16 @@
   "platform": "android",
   "name": "Android 테스트 버전(APK)",
   "status": "test",
-  "versionCode": 6,
-  "versionName": "1.0.0-phase6",
+  "versionCode": 7,
+  "versionName": "1.0.0-phase7",
   "releaseType": "debug",
   "releaseDate": null,
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.9-windows/Moadoom_Android_1.0.0-phase6_debug.apk",
-  "fileName": "Moadoom_Android_1.0.0-phase6_debug.apk",
-  "fileSize": "32,178,124 bytes",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.10-windows/Moadoom_Android_1.0.0-phase7_debug.apk",
+  "fileName": "Moadoom_Android_1.0.0-phase7_debug.apk",
+  "fileSize": "32,410,842 bytes",
   "minimumAndroid": "8.0",
   "checksum": {
-    "sha256": "7aa1c501328c00e5107738f7a4b59163839fe98de0e013b36e5718dba352029a"
+    "sha256": "048cfd0d1cb9be83f8af9dcb7cb0e2b603152422fdc070d9920bcb5b7ee21823"
   },
   "signing": "Android Debug certificate",
   "requirements": [

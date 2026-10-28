@@ -1,11 +1,11 @@
 {
-  "version": "v2.5.9",
-  "notes": "모아둠 Windows 안정 버전 2.5.9",
-  "pub_date": "2026-10-27T08:26:13Z",
+  "version": "v2.5.10",
+  "notes": "모아둠 Windows 2.5.10 · 가족 연결 및 모바일 화면 정리",
+  "pub_date": "2026-10-28T14:08:48Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbElXdkx3YTI5aEYzZmVIRzhWM3NvT1ZRM2JUT2NMeHlyQVdLSDVXK0g4Mjcxemo4d29uem41WVZ5RWMzNVQ1UllHbGNRa1RzaEVCRGhETDhMdGQwMGdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDg5NTU3CWZpbGU6SW5zdXJhbmNlIEFJXzIuNS45X3g2NC1zZXR1cC5leGUKM1EyRlIrQ2pQUlA2ZndmWnRTcURYS3dpZ0ZOVWd3NHRBYTdzWGJkTnpYZkxWNEQ3WU9nTFJ2TzNHWmZwYkhzSEtOdnF1TDVFMHdSVVY4ek81U215QUE9PQo=",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.9-windows/Insurance.AI_2.5.9_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJHL2FGUHgzRlJXR3FnenVjREZnNTFNaFRQM21Qd214alVNRi9saDc1ZFk2T2hNZTg3VjZVWUE1ekVUZ2VmSG1sWElYZTZoMmJqaGc2cHpPYzNaYmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTk2NTA3CWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xMF94NjQtc2V0dXAuZXhlCjR2LzVqTzN2NENaaElMTHk1MC9xVjBqRDk3bzY5ekZqWVBVRDRyd1ZCL3E3SUNxR1d4Mk5RNlVsM3FDTTRqL0M3K044QVhCK1JVM3F5OVd5andMM0RnPT0K",
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.10-windows/Insurance.AI_2.5.10_x64-setup.exe"
     }
   }
 }
