@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모아둠 회원 이용 관리</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../assets/central/central.css">
+</head>
+<body>
+<header><div class="in"><a class="home" href="../">모아둠</a><span>· 회원 이용 관리</span><span class="who" id="who"></span>
+  <button type="button" id="logoutBtn" hidden style="font-size:13px;padding:5px 10px">로그아웃</button></div></header>
+<main>
+  <section class="notice" id="notReady" hidden role="status" style="max-width:640px">
+    <strong>회원가입·로그인 연결 준비 중</strong>
+    <p>모아둠 계정 서비스가 아직 연결되지 않아 관리자 화면을 사용할 수 없습니다. 로그인 입력란은 잠겨 있어 아무 내용도 전송되지 않으며, 회원 정보는 표시되지 않습니다.</p>
+    <p>서비스가 연결된 뒤에도 이 화면은 서버에서 소유자·관리자로 확인된 계정만 사용할 수 있습니다.</p>
+  </section>
+
+  <section class="card" id="loginCard" hidden style="max-width:440px">
+    <h2>관리자 로그인</h2>
+    <p class="muted">권한은 서버가 확인합니다. 소유자/관리자 역할이 없는 계정은 이 화면을 쓸 수 없습니다.</p>
+    <form id="loginForm">
+      <label for="email">이메일</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" autocomplete="current-password" required>
+      <div style="margin-top:14px"><button class="primary" type="submit">로그인</button></div>
+    </form>
+    <div class="msg" id="loginMsg" role="status"></div>
+  </section>
+
+  <div class="grid" id="console" hidden>
+    <div>
+      <section class="card">
+        <h2>회원 검색</h2>
+        <form id="searchForm" class="row">
+          <input id="q" placeholder="이메일 일부">
+          <button type="submit">검색</button>
+        </form>
+        <ul class="users" id="users"></ul>
+        <div class="msg" id="searchMsg"></div>
+      </section>
+      <section class="card">
+        <h2>만료 전 안내 메일</h2>
+        <p class="muted">무료체험·기간 이용 종료 며칠 전에 안내할지 정합니다. 기본 제안: 3일 전, 1일 전.</p>
+        <div class="row">
+          <input id="noticeDays" placeholder="예: 3,1" style="flex:1">
+          <button type="button" id="noticeSave">저장</button>
+        </div>
+        <div class="msg" id="noticeMsg" role="status"></div>
+        <p class="note">메일 발송 서비스 연결 전에는 발송 대기로만 기록되며, 실제 발송 완료로 표시되지 않습니다.</p>
+      </section>
+    </div>
+
+    <section class="card">
+      <p class="muted" id="emptyDetail">왼쪽에서 회원을 선택하세요.</p>
+      <div id="detailBody" hidden>
+        <h2 id="dEmail"></h2>
+        <dl>
+          <dt>이용 상태</dt><dd id="dStatus"></dd>
+          <dt>이용 형태</dt><dd id="dKind"></dd>
+          <dt>시작</dt><dd id="dStart"></dd>
+          <dt>종료</dt><dd id="dEnd"></dd>
+          <dt>남은 기간</dt><dd id="dLeft"></dd>
+          <dt>무료체험</dt><dd id="dTrial"></dd>
+          <dt>역할</dt><dd id="dRole"></dd>
+          <dt>가입일</dt><dd id="dCreated"></dd>
+          <dt>이메일 확인</dt><dd id="dConfirmed"></dd>
+        </dl>
+
+        <div id="ownerTools">
+          <h3>이용 상태 지정</h3>
+          <div class="opts" role="group" aria-label="이용 형태">
+            <button type="button" data-opt="trial" aria-pressed="false">무료체험</button>
+            <button type="button" data-opt="term" aria-pressed="false">기간지정</button>
+            <button type="button" data-opt="lifetime" aria-pressed="false">무기한 무료</button>
+            <button type="button" data-opt="adjust" aria-pressed="false">연장·단축</button>
+            <button type="button" data-opt="suspend" aria-pressed="false">이용정지</button>
+          </div>
+          <div class="pane" data-pane="trial" hidden>
+            <div class="row">지금부터 <input id="tDays" type="number" min="1" max="90" value="7" style="width:80px;flex:none"> 일
+              <button type="button" class="primary" id="trialBtn">무료체험 지정</button></div>
+            <p class="note">가입 시 자동 체험(이메일 확인 시각부터 7일)과 별개로, 소유자가 직접 체험 기간을 다시 정할 때만 씁니다.</p>
+          </div>
+          <div class="pane" data-pane="term" hidden>
+            <div class="row">종료일 <input id="termEnd" type="date" style="width:auto;flex:none"> 까지(한국 시간 그날 끝)
+              <button type="button" class="primary" id="termBtn">기간 지정</button></div>
+            <p class="note">무기한 무료를 해제할 때도 기간지정 또는 이용정지를 고릅니다.</p>
+          </div>
+          <div class="pane" data-pane="lifetime" hidden>
+            <div class="row"><button type="button" class="primary" id="lifetimeBtn">무기한 무료 지정</button></div>
+            <p class="note">종료일 없이 사용합니다. 관리자/소유자 권한을 주는 것이 아닙니다. PC 앱은 5일마다 온라인 확인이 필요하며, 해제하면 다음 확인 때 반영됩니다.</p>
+          </div>
+          <div class="pane" data-pane="adjust" hidden>
+            <div class="row"><input id="aDays" type="number" min="1" max="3660" value="7" style="width:90px;flex:none"> 일
+              <button type="button" id="extendBtn">연장</button><button type="button" id="shortenBtn">단축</button></div>
+            <p class="note">연장: 이미 끝났으면 지금부터, 아니면 현재 종료 시각부터 더합니다. 단축: 현재 종료 시각에서 뺍니다. 무기한 무료에는 쓸 수 없습니다.</p>
+          </div>
+          <div class="pane" data-pane="suspend" hidden>
+            <div class="row"><button type="button" class="danger" id="suspendBtn">이용정지</button>
+              <button type="button" id="resumeBtn">정지 해제</button></div>
+            <p class="note">정지해도 회원 PC의 고객 자료는 지워지지 않습니다. 해제하면 기존 이용 형태와 종료 시각이 그대로 돌아옵니다.</p>
+          </div>
+          <label for="reason">변경 사유 (필수)</label>
+          <input id="reason" maxlength="500" placeholder="예: 지인 무기한 무료 / 체험 연장 요청">
+        </div>
+        <p class="note" id="adminOnlyNote" hidden>현재 정책상 이용 상태 변경은 소유자만 할 수 있습니다. 관리자는 조회만 가능합니다.</p>
+        <div class="msg" id="actMsg" role="status"></div>
+
+        <h3>변경 이력</h3>
+        <table>
+          <thead><tr><th>시각</th><th>작업</th><th>처리자</th><th>변경</th><th>사유</th></tr></thead>
+          <tbody id="audit"></tbody>
+        </table>
+        <h3>안내 메일 이력</h3>
+        <table>
+          <thead><tr><th>기록 시각</th><th>종류</th><th>상태</th><th>시도</th><th>발송 시각</th></tr></thead>
+          <tbody id="mail"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="../assets/central/config.js"></script>
+<script src="../assets/central/central.js"></script>
+<script>
+(function () {
+  const C = window.MoadoomCentral;
+  const $ = (id) => document.getElementById(id);
+  const ACTION = { trial_auto: "자동 무료체험", trial: "무료체험 지정", term: "기간지정", lifetime: "무기한 무료", adjust: "연장·단축", suspend: "이용정지", resume: "정지 해제" };
+  const MAIL_KIND = { welcome_trial: "체험 시작 안내", entitlement_changed: "이용 상태 변경 안내", expiry_notice: "종료 전 안내" };
+  const MAIL_STATUS = { queued: "발송 대기", sending: "발송 중", sent: "발송됨", failed: "발송 실패" };
+  let selected = null;
+  let myRole = null;
+  if (!C.configured()) { $("notReady").hidden = false; $("loginCard").hidden = false; C.lockAll(); return; }
+
+  function badge(sub, role) {
+    const s = document.createElement("span");
+    const st = role === "owner" ? "active" : (sub && sub.status) || "none";
+    const lifetime = role !== "owner" && sub && sub.kind === "lifetime" && st === "active";
+    s.className = "badge " + (lifetime ? "lifetime" : st);
+    s.textContent = role === "owner" ? "소유자" : lifetime ? "무기한" : (sub && sub.kind && st === "active" ? C.KIND[sub.kind] : C.STATUS[st] || st);
+    return s;
+  }
+  function stateText(x) {
+    if (!x) return "—";
+    if (x.status === "none" || !x.kind) return "이용권 없음";
+    const end = x.kind === "lifetime" ? "무기한" : C.kst(x.ends_at);
+    return `${C.KIND[x.kind] || x.kind}/${C.STATUS[x.status] || x.status}, 종료 ${end}`;
+  }
+  async function rpc(name, args) {
+    const { data, error } = await C.sb().rpc(name, args || {});
+    if (error) throw error;
+    return data;
+  }
+  function showLogin(msg) {
+    $("loginCard").hidden = false; $("console").hidden = true; $("logoutBtn").hidden = true; $("who").textContent = "";
+    if (msg) C.setMsg($("loginMsg"), msg, "err");
+  }
+  async function enter() {
+    const { data } = await C.sb().auth.getSession();
+    if (!data.session) return showLogin();
+    try {
+      const me = await rpc("moadoom_my_entitlement");
+      if (me.role !== "owner" && me.role !== "admin") {
+        await C.sb().auth.signOut({ scope: "local" });
+        return showLogin("관리자 권한이 없습니다.");
+      }
+      myRole = me.role;
+      $("who").textContent = `${data.session.user.email} · ${me.role === "owner" ? "소유자" : "관리자"}`;
+      $("loginCard").hidden = true; $("console").hidden = false; $("logoutBtn").hidden = false;
+      $("noticeSave").disabled = myRole !== "owner";
+      try { const st = await rpc("moadoom_admin_settings"); $("noticeDays").value = (st.expiry_notice_days || []).join(","); } catch (e) { C.setMsg($("noticeMsg"), C.ko(e), "err"); }
+      await search();
+    } catch (e) {
+      showLogin(C.ko(e));
+    }
+  }
+  async function search() {
+    C.setMsg($("searchMsg"), "");
+    try {
+      const rows = await rpc("moadoom_admin_search_members", { q: $("q").value });
+      const ul = $("users"); ul.replaceChildren();
+      rows.forEach((u) => {
+        const li = document.createElement("li");
+        const name = document.createElement("span"); name.textContent = u.email + (u.email_confirmed ? "" : " (미확인)");
+        li.append(name, badge(u.subscription, u.role));
+        if (u.user_id === selected) li.className = "sel";
+        li.onclick = () => select(u.user_id);
+        ul.append(li);
+      });
+      if (!rows.length) C.setMsg($("searchMsg"), "검색 결과가 없습니다.");
+    } catch (e) { C.setMsg($("searchMsg"), C.ko(e), "err"); }
+  }
+  function cell(tr, t) { const td = document.createElement("td"); td.textContent = t; tr.append(td); }
+  async function select(id) {
+    selected = id;
+    C.setMsg($("actMsg"), "");
+    try {
+      const d = await rpc("moadoom_admin_member_detail", { target: id });
+      const s = d.subscription;
+      $("emptyDetail").hidden = true; $("detailBody").hidden = false;
+      $("dEmail").textContent = d.email;
+      $("dStatus").replaceChildren(badge(s, d.role), document.createTextNode(" " + C.describe(s, d.role)));
+      $("dKind").textContent = C.KIND[s.kind] || "—";
+      $("dStart").textContent = C.kst(s.starts_at);
+      $("dEnd").textContent = s.kind === "lifetime" ? "없음(무기한)" : C.kst(s.ends_at);
+      $("dLeft").textContent = s.kind === "lifetime" || s.remaining_seconds == null ? "—" : C.remaining(s.remaining_seconds);
+      $("dTrial").textContent = s.trial_started_at ? `사용함 (이메일 확인 ${C.kst(s.trial_started_at)} 시작, 계정당 1회)` : d.email_confirmed ? "기록 없음" : "이메일 확인 전";
+      $("dRole").textContent = d.role === "owner" ? "소유자" : d.role === "admin" ? "관리자" : "일반 회원";
+      $("dCreated").textContent = C.kst(d.created_at);
+      $("dConfirmed").textContent = d.email_confirmed ? `확인됨 (${C.kst(d.email_confirmed_at)})` : "미확인";
+      $("ownerTools").hidden = !(myRole === "owner" && d.role !== "owner");
+      $("adminOnlyNote").hidden = myRole === "owner";
+      const tb = $("audit"); tb.replaceChildren();
+      (d.audit.length ? d.audit : [null]).forEach((a) => {
+        const tr = document.createElement("tr");
+        (a ? [C.kst(a.at), ACTION[a.action] || a.action, a.actor_email || "—", `${stateText(a.before)} → ${stateText(a.after)}`, a.reason] : ["기록 없음", "", "", "", ""]).forEach((t) => cell(tr, t));
+        tb.append(tr);
+      });
+      const mb = $("mail"); mb.replaceChildren();
+      (d.mail.length ? d.mail : [null]).forEach((m) => {
+        const tr = document.createElement("tr");
+        (m ? [C.kst(m.created_at), MAIL_KIND[m.kind] || m.kind, (MAIL_STATUS[m.status] || m.status) + (m.last_error ? ` (${m.last_error})` : ""), String(m.attempts), m.sent_at ? C.kst(m.sent_at) : "—"] : ["기록 없음", "", "", "", ""]).forEach((t) => cell(tr, t));
+        mb.append(tr);
+      });
+      search();
+    } catch (e) { C.setMsg($("actMsg"), C.ko(e), "err"); }
+  }
+  async function act(action, extra, confirmText) {
+    if (!selected) return;
+    if (confirmText && !confirm(confirmText)) return;
+    try {
+      await rpc("moadoom_admin_change_subscription", Object.assign({
+        target: selected, action, ends_on: null, days: null, reason: $("reason").value,
+      }, extra));
+      $("reason").value = "";
+      await select(selected);
+      C.setMsg($("actMsg"), "반영했습니다. 회원의 사이트·PC 앱은 다음 확인 때 새 상태를 받습니다.", "ok");
+    } catch (e) { C.setMsg($("actMsg"), C.ko(e), "err"); }
+  }
+  document.querySelectorAll(".opts button").forEach((b) => {
+    b.onclick = () => {
+      document.querySelectorAll(".opts button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      document.querySelectorAll("[data-pane]").forEach((p) => { p.hidden = p.dataset.pane !== b.dataset.opt; });
+    };
+  });
+  $("loginForm").onsubmit = async (ev) => {
+    ev.preventDefault();
+    C.setMsg($("loginMsg"), "");
+    try {
+      const { error } = await C.sb().auth.signInWithPassword({ email: $("email").value.trim().toLowerCase(), password: $("pw").value });
+      if (error) throw error;
+      $("pw").value = "";
+      await enter();
+    } catch (e) { C.setMsg($("loginMsg"), C.ko(e), "err"); }
+  };
+  $("searchForm").onsubmit = (ev) => { ev.preventDefault(); search(); };
+  $("trialBtn").onclick = () => act("trial", { days: Number($("tDays").value) });
+  $("termBtn").onclick = () => act("term", { ends_on: $("termEnd").value || null });
+  $("lifetimeBtn").onclick = () => act("lifetime", {}, "이 회원에게 무기한 무료를 지정할까요? (관리자 권한은 주지 않습니다)");
+  $("extendBtn").onclick = () => act("adjust", { days: Math.abs(Number($("aDays").value)) });
+  $("shortenBtn").onclick = () => act("adjust", { days: -Math.abs(Number($("aDays").value)) });
+  $("suspendBtn").onclick = () => act("suspend", {}, "이 회원의 이용을 정지할까요? 고객 자료는 지워지지 않습니다.");
+  $("resumeBtn").onclick = () => act("resume", {});
+  $("noticeSave").onclick = async () => {
+    try {
+      const list = $("noticeDays").value.split(/[,\s]+/).filter(Boolean).map(Number);
+      const saved = await rpc("moadoom_admin_set_expiry_notice_days", { days_list: list });
+      $("noticeDays").value = saved.join(",");
+      C.setMsg($("noticeMsg"), "저장했습니다.", "ok");
+    } catch (e) { C.setMsg($("noticeMsg"), C.ko(e), "err"); }
+  };
+  $("logoutBtn").onclick = async () => { await C.sb().auth.signOut({ scope: "local" }); selected = null; showLogin(); };
+  C.loadSdk().then(enter, (e) => showLogin(C.ko(e)));
+})();
+</script>
+</body>
+</html>

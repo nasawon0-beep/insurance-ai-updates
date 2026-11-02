@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모아둠 계정</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../assets/central/central.css">
+</head>
+<body>
+<header><div class="in"><a class="home" href="../">모아둠</a><span class="who" id="who"></span></div></header>
+<main class="narrow">
+  <h1>모아둠 계정</h1>
+  <p class="lead">PC 앱과 같은 계정입니다. 고객 자료는 서버에 올라가지 않고, 계정과 이용권 정보만 확인합니다.</p>
+
+  <section class="notice" id="notReady" hidden role="status">
+    <strong>회원가입·로그인 연결 준비 중</strong>
+    <p>모아둠 계정 서비스가 아직 연결되지 않았습니다. 지금은 가입·로그인을 받지 않으며, 아래 입력란은 잠겨 있어 아무 내용도 전송·저장되지 않습니다.</p>
+    <p>7일 무료체험은 계정 서비스가 연결된 뒤, 가입 이메일 확인을 마친 시각부터 시작되는 정책입니다. 지금은 체험이 시작되지 않습니다.</p>
+    <p>PC 앱은 <a href="../#download">다운로드</a>에서 받아 지금처럼 사용할 수 있습니다.</p>
+  </section>
+
+  <section class="card" id="authCard" hidden>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tabLogin" aria-selected="true">로그인</button>
+      <button type="button" role="tab" id="tabSignup" aria-selected="false">회원가입</button>
+    </div>
+    <form id="authForm">
+      <label for="email">이메일</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" autocomplete="current-password" minlength="6" required>
+      <p class="muted" id="pwHint" hidden>6자 이상으로 정해 주세요. 가입하면 확인 메일이 가고, 메일의 링크를 누른 시각부터 무료체험 7일이 시작됩니다(계정당 1회, 자동 결제 없음).</p>
+      <div style="margin-top:14px"><button class="primary" type="submit" id="submitBtn">로그인</button></div>
+    </form>
+    <div class="msg" id="authMsg" role="status"></div>
+    <p class="muted"><a href="reset.html">비밀번호를 잊으셨나요?</a></p>
+  </section>
+
+  <section class="card" id="meCard" hidden>
+    <h2>내 계정</h2>
+    <dl>
+      <dt>이메일</dt><dd id="meEmail"></dd>
+      <dt>이용 상태</dt><dd id="meSub"></dd>
+      <dt>시작</dt><dd id="meStart"></dd>
+      <dt>종료</dt><dd id="meEnd"></dd>
+    </dl>
+    <p class="muted" id="meNote"></p>
+    <div class="row">
+      <button type="button" id="logoutBtn">로그아웃</button>
+      <a id="adminLink" href="../admin/" hidden>회원 이용권 관리</a>
+    </div>
+    <div class="msg" id="meMsg" role="status"></div>
+  </section>
+</main>
+<script src="../assets/central/config.js"></script>
+<script src="../assets/central/central.js"></script>
+<script>
+(function () {
+  const C = window.MoadoomCentral;
+  const $ = (id) => document.getElementById(id);
+  let mode = "login";
+  if (!C.configured()) { $("notReady").hidden = false; $("authCard").hidden = false; C.lockAll(); return; }
+  const confirmedFromLink = /type=(signup|email)/.test(location.hash);
+
+  function setMode(m) {
+    mode = m;
+    $("tabLogin").setAttribute("aria-selected", String(m === "login"));
+    $("tabSignup").setAttribute("aria-selected", String(m === "signup"));
+    $("submitBtn").textContent = m === "login" ? "로그인" : "가입하고 확인 메일 받기";
+    $("pw").autocomplete = m === "login" ? "current-password" : "new-password";
+    $("pwHint").hidden = m !== "signup";
+    C.setMsg($("authMsg"), "");
+  }
+  $("tabLogin").onclick = () => setMode("login");
+  $("tabSignup").onclick = () => setMode("signup");
+
+  async function render() {
+    let session = null;
+    try { session = (await C.sb().auth.getSession()).data.session; } catch (e) { C.setMsg($("authMsg"), C.ko(e), "err"); }
+    if (!session) { $("authCard").hidden = false; $("meCard").hidden = true; $("who").textContent = ""; return; }
+    $("authCard").hidden = true; $("meCard").hidden = false;
+    $("meEmail").textContent = session.user.email;
+    $("who").textContent = session.user.email;
+    if (confirmedFromLink) C.setMsg($("meMsg"), "이메일 확인이 끝나 무료체험이 시작되었습니다. 모아둠 PC 앱에서 같은 이메일로 로그인하세요.", "ok");
+    try {
+      const { data, error } = await C.sb().rpc("moadoom_my_entitlement");
+      if (error) throw error;
+      const s = data.subscription || {};
+      const owner = data.role === "owner";
+      $("meSub").textContent = C.describe(s, data.role);
+      const trialFromConfirm = s.kind === "trial" && s.trial_started_at && s.starts_at === s.trial_started_at;
+      $("meStart").textContent = s.starts_at ? C.kst(s.starts_at) + (trialFromConfirm ? " (이메일 확인 완료 시각)" : "") : "—";
+      $("meEnd").textContent = s.kind === "lifetime" ? "없음(무기한)" : s.ends_at ? C.kst(s.ends_at) + " (한국 시간)" : "—";
+      const notes = [];
+      if (!owner && s.status === "none") notes.push(s.trial_started_at ? "무료체험은 계정당 1회이며 이미 사용했습니다. 계속 사용하려면 관리자에게 문의하세요." : "이메일 확인이 끝나면 무료체험 7일이 자동으로 시작됩니다.");
+      if (!owner && s.kind === "trial" && s.status === "active") notes.push("무료체험은 계정당 1회입니다. 재로그인·비밀번호 재설정·앱 재설치로 다시 시작되지 않습니다.");
+      if (!owner && (s.status === "expired" || s.status === "suspended")) notes.push("고객 자료는 PC에 그대로 있습니다. 계속 사용하려면 관리자에게 문의하세요.");
+      notes.push("자동 결제는 없습니다. PC 앱에서 같은 이메일로 로그인하면 같은 이용 상태가 적용됩니다.");
+      $("meNote").textContent = notes.join(" ");
+      $("adminLink").hidden = !(data.role === "owner" || data.role === "admin");
+    } catch (e) {
+      $("meSub").textContent = "확인 실패";
+      C.setMsg($("meMsg"), C.ko(e), "err");
+    }
+  }
+
+  $("authForm").onsubmit = async (ev) => {
+    ev.preventDefault();
+    const email = $("email").value.trim().toLowerCase();
+    const password = $("pw").value;
+    $("submitBtn").disabled = true;
+    try {
+      if (mode === "signup") {
+        const { data, error } = await C.sb().auth.signUp({ email, password, options: { emailRedirectTo: location.origin + location.pathname } });
+        if (error) throw error;
+        $("pw").value = "";
+        if (!data.session) {
+          C.setMsg($("authMsg"), "확인 메일을 보냈습니다. 메일의 링크를 누르면 가입이 끝납니다. 메일이 없으면 스팸함을 확인하세요.", "ok");
+          return;
+        }
+      } else {
+        const { error } = await C.sb().auth.signInWithPassword({ email, password });
+        if (error) throw error;
+        $("pw").value = "";
+      }
+      await render();
+    } catch (e) {
+      C.setMsg($("authMsg"), C.ko(e), "err");
+    } finally {
+      $("submitBtn").disabled = false;
+    }
+  };
+  $("logoutBtn").onclick = async () => { await C.sb().auth.signOut({ scope: "local" }); await render(); };
+  C.loadSdk().then(render, (e) => { $("authCard").hidden = false; C.setMsg($("authMsg"), C.ko(e), "err"); });
+})();
+</script>
+</body>
+</html>

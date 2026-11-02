@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모아둠 비밀번호 재설정</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../assets/central/central.css">
+</head>
+<body>
+<header><div class="in"><a class="home" href="../">모아둠</a></div></header>
+<main class="narrow">
+  <h1>비밀번호 재설정</h1>
+  <p class="lead">모아둠 계정(PC 앱과 같은 계정)의 비밀번호를 다시 정합니다.</p>
+  <section class="notice" id="notReady" hidden role="status">
+    <strong>회원가입·로그인 연결 준비 중</strong>
+    <p>모아둠 계정 서비스가 아직 연결되지 않아 비밀번호 재설정을 받지 않습니다. 입력란은 잠겨 있어 아무 내용도 전송·저장되지 않습니다.</p>
+    <p>PC 앱의 기존 계정 비밀번호는 앱 설정 화면에서 바꿀 수 있습니다.</p>
+  </section>
+
+  <section class="card" id="requestCard" hidden>
+    <form id="requestForm">
+      <label for="email">가입한 이메일</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <div style="margin-top:14px"><button class="primary" type="submit" id="requestBtn">재설정 메일 받기</button></div>
+    </form>
+    <div class="msg" id="requestMsg" role="status"></div>
+  </section>
+
+  <section class="card" id="updateCard" hidden>
+    <form id="updateForm">
+      <label for="pw1">새 비밀번호</label>
+      <input id="pw1" type="password" autocomplete="new-password" minlength="6" required>
+      <label for="pw2">새 비밀번호 확인</label>
+      <input id="pw2" type="password" autocomplete="new-password" minlength="6" required>
+      <div style="margin-top:14px"><button class="primary" type="submit" id="updateBtn">비밀번호 바꾸기</button></div>
+    </form>
+    <div class="msg" id="updateMsg" role="status"></div>
+  </section>
+  <p class="muted"><a href="./">계정 화면으로</a></p>
+</main>
+<script src="../assets/central/config.js"></script>
+<script src="../assets/central/central.js"></script>
+<script>
+(function () {
+  const C = window.MoadoomCentral;
+  const $ = (id) => document.getElementById(id);
+  if (!C.configured()) { $("notReady").hidden = false; $("requestCard").hidden = false; C.lockAll(); return; }
+  // 재설정 링크의 세션을 받으려면 로그인 모듈이 먼저 준비돼야 한다
+  C.loadSdk().then(() => { C.sb(); }, (e) => C.setMsg($("requestMsg"), C.ko(e), "err"));
+  const recovery = /type=recovery/.test(location.hash);
+  $("requestCard").hidden = recovery;
+  $("updateCard").hidden = !recovery;
+
+  $("requestForm").onsubmit = async (ev) => {
+    ev.preventDefault();
+    $("requestBtn").disabled = true;
+    try {
+      const { error } = await C.sb().auth.resetPasswordForEmail($("email").value.trim().toLowerCase(), {
+        redirectTo: location.origin + location.pathname,
+      });
+      if (error) throw error;
+      // 가입 여부를 드러내지 않는 같은 안내
+      C.setMsg($("requestMsg"), "가입된 이메일이면 재설정 메일이 갑니다. 메일의 링크를 눌러 새 비밀번호를 정하세요.", "ok");
+    } catch (e) {
+      C.setMsg($("requestMsg"), C.ko(e), "err");
+    } finally {
+      $("requestBtn").disabled = false;
+    }
+  };
+
+  $("updateForm").onsubmit = async (ev) => {
+    ev.preventDefault();
+    if ($("pw1").value !== $("pw2").value) { C.setMsg($("updateMsg"), "두 비밀번호가 다릅니다.", "err"); return; }
+    $("updateBtn").disabled = true;
+    try {
+      const { data } = await C.sb().auth.getSession();
+      if (!data.session) throw new Error("재설정 링크가 만료되었습니다. 메일을 다시 받아 주세요.");
+      const { error } = await C.sb().auth.updateUser({ password: $("pw1").value });
+      if (error) throw error;
+      $("pw1").value = ""; $("pw2").value = "";
+      await C.sb().auth.signOut({ scope: "local" });
+      C.setMsg($("updateMsg"), "비밀번호를 바꿨습니다. PC 앱과 사이트에서 새 비밀번호로 로그인하세요.", "ok");
+    } catch (e) {
+      C.setMsg($("updateMsg"), C.ko(e), "err");
+    } finally {
+      $("updateBtn").disabled = false;
+    }
+  };
+})();
+</script>
+</body>
+</html>
