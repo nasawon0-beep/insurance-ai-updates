@@ -99,3 +99,13 @@ def test_callback_urls_are_page_relative() -> None:
 def test_account_pages_noindex() -> None:
     for p in PAGES:
         assert '<meta name="robots" content="noindex">' in read(p), p.name
+
+
+def test_owner_view_separates_permission_from_past_trial_record() -> None:
+    js = read(CENTRAL / "central.js")
+    assert 'if (role === "owner") return "사용 가능 — 소유자 권한(이용권 기간과 무관)";' in js
+    assert "function ownerRecord(sub)" in js and "소유자 사용에는 영향 없음" in js
+    account = read(PAGES[0])
+    assert '$("meStartLabel").textContent = owner ? "일반 이용권 기록" : "시작";' in account
+    assert '$("meEndLabel").hidden = owner; $("meEnd").hidden = owner;' in account
+    assert "if (owner) $(\"meStart\").textContent = C.ownerRecord(s);" in account

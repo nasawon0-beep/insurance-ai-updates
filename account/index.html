@@ -48,8 +48,8 @@
     <dl>
       <dt>이메일</dt><dd id="meEmail"></dd>
       <dt>이용 상태</dt><dd id="meSub"></dd>
-      <dt>시작</dt><dd id="meStart"></dd>
-      <dt>종료</dt><dd id="meEnd"></dd>
+      <dt id="meStartLabel">시작</dt><dd id="meStart"></dd>
+      <dt id="meEndLabel">종료</dt><dd id="meEnd"></dd>
     </dl>
     <p class="muted" id="meNote"></p>
     <div class="row">
@@ -105,6 +105,10 @@
       const trialFromConfirm = s.kind === "trial" && s.trial_started_at && s.starts_at === s.trial_started_at;
       $("meStart").textContent = s.starts_at ? C.kst(s.starts_at) + (trialFromConfirm ? " (이메일 확인 완료 시각)" : "") : "—";
       $("meEnd").textContent = s.kind === "lifetime" ? "없음(무기한)" : s.ends_at ? C.kst(s.ends_at) + " (한국 시간)" : "—";
+      // 소유자: 권한과 일반 이용권 기록을 분리 — 지난 무료체험 종료일이 사용 종료처럼 보이지 않게(표시만, 권한 판정 불변)
+      $("meStartLabel").textContent = owner ? "일반 이용권 기록" : "시작";
+      $("meEndLabel").hidden = owner; $("meEnd").hidden = owner;
+      if (owner) $("meStart").textContent = C.ownerRecord(s);
       const notes = [];
       if (!owner && s.status === "none") notes.push(s.trial_started_at ? "무료체험은 계정당 1회이며 이미 사용했습니다. 계속 사용하려면 관리자에게 문의하세요." : "이메일 확인이 끝나면 무료체험 7일이 자동으로 시작됩니다.");
       if (!owner && s.kind === "trial" && s.status === "active") notes.push("무료체험은 계정당 1회입니다. 재로그인·비밀번호 재설정·앱 재설치로 다시 시작되지 않습니다.");

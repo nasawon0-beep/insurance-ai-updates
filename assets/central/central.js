@@ -100,7 +100,7 @@
   const STATUS = { active: "이용 중", expired: "기간 종료", suspended: "이용정지", none: "이용권 없음", scheduled: "시작 전" };
   // 한 줄 상태 문구(사이트·관리자 공통)
   function describe(sub, role) {
-    if (role === "owner") return "소유자 계정 — 이용권과 무관하게 사용";
+    if (role === "owner") return "사용 가능 — 소유자 권한(이용권 기간과 무관)";
     const s = sub || {};
     if (s.status === "none" || !s.kind) return "이용권 없음";
     const k = KIND[s.kind] || s.kind;
@@ -109,5 +109,17 @@
     if (s.kind === "lifetime") return "무기한 무료 · 사용 중 (종료일 없음)";
     return `${k} · 사용 중 · 남은 기간 ${remaining(s.remaining_seconds)}`;
   }
-  window.MoadoomCentral = { configured, signupOpen, loadSdk, lockAll, sb, ko, setMsg, kst, remaining, describe, KIND, STATUS };
+  // 소유자 화면용: 일반 이용권 기록(역할 반영 전)을 '사용 종료'로 읽히지 않게 요약
+  function ownerRecord(sub) {
+    const s = sub || {};
+    if (s.status === "none" || !s.kind) return "없음 — 소유자 사용에는 영향 없음";
+    const k = KIND[s.kind] || s.kind;
+    let st;
+    if (s.status === "suspended" || s.status === "revoked") st = "정지됨";
+    else if (s.kind === "lifetime") st = "무기한";
+    else if (s.status === "expired" || (s.ends_at && Date.parse(s.ends_at) <= Date.now())) st = `기간 종료(${kst(s.ends_at)})`;
+    else st = s.ends_at ? `진행 중(종료 ${kst(s.ends_at)})` : "진행 중";
+    return `${k} · ${st} — 소유자 사용에는 영향 없음`;
+  }
+  window.MoadoomCentral = { configured, signupOpen, loadSdk, lockAll, sb, ko, setMsg, kst, remaining, describe, ownerRecord, KIND, STATUS };
 })();
