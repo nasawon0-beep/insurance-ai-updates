@@ -1,6 +1,7 @@
-// 모아둠 계정 공개 설정 — 배포 단계에서 프로젝트 값으로 채운다.
-// publishable 키(sb_publishable_...)만 넣는다. secret/service_role 키는 절대 넣지 않는다.
+// 모아둠 계정 공개 설정 — 공개 클라이언트 값만(publishable 키는 공개용). secret/service_role 키는 절대 넣지 않는다.
+// signupOpen: 신규 가입 화면 열기. 메일 발송(SMTP) 설정 전에는 false — 기존 계정 로그인·재설정·관리자만 사용.
 window.MOADOOM_CENTRAL = {
-  url: "",
-  publishableKey: "",
+  url: "https://fhdushntttxbfwkxylhz.supabase.co",
+  publishableKey: "sb_publishable_UyNBq--K3G5NTgN2tfDPgg_Pwkr0Wk6",
+  signupOpen: false,
 };

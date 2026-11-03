@@ -37,6 +37,7 @@
     </form>
     <div class="msg" id="updateMsg" role="status"></div>
   </section>
+  <p class="muted" id="mailNote">안내 메일 발송 설정이 준비 중이라 재설정 메일이 일부 계정에만 전달될 수 있습니다. 받지 못하면 관리자에게 문의하세요.</p>
   <p class="muted"><a href="./">계정 화면으로</a></p>
 </main>
 <script src="../assets/central/config.js"></script>
@@ -45,7 +46,7 @@
 (function () {
   const C = window.MoadoomCentral;
   const $ = (id) => document.getElementById(id);
-  if (!C.configured()) { $("notReady").hidden = false; $("requestCard").hidden = false; C.lockAll(); return; }
+  if (!C.configured()) { $("notReady").hidden = false; $("requestCard").hidden = false; $("mailNote").hidden = true; C.lockAll(); return; }
   // 재설정 링크의 세션을 받으려면 로그인 모듈이 먼저 준비돼야 한다
   C.loadSdk().then(() => { C.sb(); }, (e) => C.setMsg($("requestMsg"), C.ko(e), "err"));
   const recovery = /type=recovery/.test(location.hash);

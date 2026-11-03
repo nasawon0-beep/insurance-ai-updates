@@ -20,6 +20,12 @@
     <p>PC 앱은 <a href="../#download">다운로드</a>에서 받아 지금처럼 사용할 수 있습니다.</p>
   </section>
 
+  <section class="notice" id="signupClosed" hidden role="status">
+    <strong>지금은 기존 모아둠 계정 로그인만 가능합니다</strong>
+    <p>신규 회원가입은 안내 메일 발송 준비가 끝난 뒤 열립니다. 7일 무료체험은 가입이 열린 뒤, 가입 이메일 확인을 마친 시각부터 시작됩니다.</p>
+    <p>PC 앱은 <a href="../#download">다운로드</a>에서 받아 지금처럼 사용할 수 있습니다.</p>
+  </section>
+
   <section class="card" id="authCard" hidden>
     <div class="tabs" role="tablist">
       <button type="button" role="tab" id="tabLogin" aria-selected="true">로그인</button>
@@ -62,8 +68,15 @@
   let mode = "login";
   if (!C.configured()) { $("notReady").hidden = false; $("authCard").hidden = false; C.lockAll(); return; }
   const confirmedFromLink = /type=(signup|email)/.test(location.hash);
+  const signupOpen = C.signupOpen();
+  if (!signupOpen) {
+    $("signupClosed").hidden = false;
+    $("tabSignup").disabled = true;
+    $("tabSignup").textContent = "회원가입(준비 중)";
+  }
 
   function setMode(m) {
+    if (m === "signup" && !signupOpen) return;
     mode = m;
     $("tabLogin").setAttribute("aria-selected", String(m === "login"));
     $("tabSignup").setAttribute("aria-selected", String(m === "signup"));
@@ -78,8 +91,8 @@
   async function render() {
     let session = null;
     try { session = (await C.sb().auth.getSession()).data.session; } catch (e) { C.setMsg($("authMsg"), C.ko(e), "err"); }
-    if (!session) { $("authCard").hidden = false; $("meCard").hidden = true; $("who").textContent = ""; return; }
-    $("authCard").hidden = true; $("meCard").hidden = false;
+    if (!session) { $("authCard").hidden = false; $("meCard").hidden = true; $("who").textContent = ""; $("signupClosed").hidden = signupOpen; return; }
+    $("authCard").hidden = true; $("meCard").hidden = false; $("signupClosed").hidden = true;
     $("meEmail").textContent = session.user.email;
     $("who").textContent = session.user.email;
     if (confirmedFromLink) C.setMsg($("meMsg"), "이메일 확인이 끝나 무료체험이 시작되었습니다. 모아둠 PC 앱에서 같은 이메일로 로그인하세요.", "ok");
@@ -112,6 +125,7 @@
     $("submitBtn").disabled = true;
     try {
       if (mode === "signup") {
+        if (!signupOpen) throw new Error("신규 회원가입은 아직 열리지 않았습니다.");
         const { data, error } = await C.sb().auth.signUp({ email, password, options: { emailRedirectTo: location.origin + location.pathname } });
         if (error) throw error;
         $("pw").value = "";
