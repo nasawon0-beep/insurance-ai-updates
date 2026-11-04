@@ -56,7 +56,7 @@
     [/user already registered/i, "이미 가입된 이메일입니다. 로그인하거나 비밀번호를 재설정하세요."],
     [/password should be at least/i, "비밀번호가 너무 짧습니다."],
     [/rate limit|too many/i, "요청이 많습니다. 잠시 후 다시 시도하세요."],
-    [/email address not authorized|error sending (confirmation|recovery|magic link)? ?email|sending email/i, "지금은 이 이메일로 안내 메일을 보낼 수 없습니다(메일 발송 설정 준비 중). 관리자에게 문의하세요."],
+    [/email address not authorized|error sending (confirmation|recovery|magic link)? ?email|sending email/i, "지금은 이 이메일로 안내 메일을 보낼 수 없습니다. 잠시 후 다시 시도하고, 계속되면 관리자에게 문의하세요."],
     [/operator role required/i, "권한이 없습니다(이용 상태 변경은 소유자만 가능합니다)."],
     [/cannot change own subscription/i, "자기 계정의 이용 상태는 직접 변경할 수 없습니다."],
     [/reason required/i, "변경 사유를 입력하세요."],

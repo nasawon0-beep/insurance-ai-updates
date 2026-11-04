@@ -1,6 +1,6 @@
 """공개 사이트 계정 화면(로그인·재설정·관리자) 실제 서비스 연결 후보 검사.
 
-- config.js: 실제 프로젝트 URL + publishable(공개) 키만, 신규 가입은 닫힘(signupOpen=false, 메일 발송 설정 전)
+- config.js: 실제 프로젝트 URL + publishable(공개) 키만, 신규 가입 열림(signupOpen=true, Gmail SMTP 설정 완료 후)
 - 비밀/QA 흔적 없음, 로그인 SDK는 설정된 경우에만 동적 로드
 - 설정이 비면(롤백 등) 기존 '연결 준비 중' 잠금 경로 유지
 """
@@ -21,12 +21,12 @@ def read(p: Path) -> str:
     return p.read_text(encoding="utf-8")
 
 
-def test_public_config_has_only_project_url_publishable_key_and_closed_signup() -> None:
+def test_public_config_has_only_project_url_publishable_key_and_open_signup() -> None:
     cfg = read(CENTRAL / "config.js")
     assert f'url: "{PROJECT_URL}"' in cfg
     keys = re.findall(r'publishableKey:\s*"([^"]*)"', cfg)
     assert len(keys) == 1 and re.fullmatch(r"sb_publishable_[A-Za-z0-9_-]{20,}", keys[0])
-    assert re.search(r"signupOpen:\s*false", cfg)
+    assert re.search(r"signupOpen:\s*true", cfg)
     assert len(re.findall(r"sb_[a-z]+_[A-Za-z0-9]", cfg)) == 1  # 공개키 1개 외 다른 키 없음
 
 
@@ -52,7 +52,8 @@ def test_login_sdk_is_not_loaded_statically() -> None:
     assert "integrity = SDK_SRI" in js
 
 
-def test_signup_closed_until_mail_ready_and_no_signup_promotion() -> None:
+def test_signup_gate_kept_and_mail_ready_wording() -> None:
+    # 가입 개방은 config.js 한 곳(signupOpen)으로만 — 닫힘 경로 코드는 롤백용으로 유지
     js = read(CENTRAL / "central.js")
     assert "return configured() && cfg.signupOpen === true;" in js
     account = read(PAGES[0])
@@ -61,8 +62,10 @@ def test_signup_closed_until_mail_ready_and_no_signup_promotion() -> None:
     assert 'if (m === "signup" && !signupOpen) return;' in account
     assert 'if (!signupOpen) throw new Error("신규 회원가입은 아직 열리지 않았습니다.");' in account
     index = read(INDEX)
-    assert "가입·로그인" not in index and "회원가입" not in index
-    assert "안내 메일 발송 설정이 준비 중" in read(PAGES[1])
+    assert "가입·로그인" in index
+    for p in ALL:
+        assert "준비 중이라" not in read(p) and "메일 발송 설정 준비 중" not in read(p), p.name
+    assert "스팸함을 확인하세요" in read(PAGES[1])
 
 
 def test_unconfigured_fallback_still_locks_everything() -> None:
@@ -85,7 +88,7 @@ def test_admin_has_no_public_entry_and_requires_server_role() -> None:
 
 def test_main_page_links_to_account_on_desktop_and_mobile() -> None:
     index = read(INDEX)
-    assert '<a class="nav-account" href="account/">로그인</a>' in index
+    assert '<a class="nav-account" href="account/">가입·로그인</a>' in index
     assert ".nav a.nav-account{display:inline-block}" in index
     assert index.index(".nav a.nav-account{display:inline-block}") > index.index(".nav a:not(.nav-cta){display:none}")
     assert '<a href="account/">모아둠 계정</a>' in index
