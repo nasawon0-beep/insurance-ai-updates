@@ -1,11 +1,11 @@
 {
-  "version": "v2.5.15",
-  "notes": "모아둠 Windows 2.5.15 · 모바일 QR 최초 등록, Private 네트워크 방화벽 설정 안내. 실폰 QR·동기화 전체 검증은 완료되지 않았습니다.",
-  "pub_date": "2026-11-09T10:43:19Z",
+  "version": "v2.5.16",
+  "notes": "모바일 연결 화면을 간단하게 정리하고, 공용 네트워크·핫스팟 안내와 기기명 표시를 개선했습니다.",
+  "pub_date": "2026-11-09T13:53:04Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.15-windows/Insurance.AI_2.5.15_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFB3bVFINlI5RDkvSC9EM0RlQTdITWVzeTdlMFJlRzZEVkpEeTlwWm5ZV0x4WVEvRy9HSXcyYy9wSHhvbDhiVUZoOXZ3NnFYSDhPMXpsZTVVWnJUWHdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjIwODgzCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xNV94NjQtc2V0dXAuZXhlCjRQME9yU1FFS0dQUlhyZGR3cGV6NnBrSG1DTHplSUw3Zjd3Q3RkZXFFM0VFWm5GNGU0cmUyVFpYNzUxaTNkalA5aFJPbWtDUk9KYlFtTUxvS29SakRRPT0K"
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.16-windows/Insurance.AI_2.5.16_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJuMTdFbkRJU3BMRC9hNVIrOTE1RUZUQlpjSVZXbVg5L0N2M1dlUVQ0RTE3eGo5WGFnNjN6d2FaK2J3ZlJaZ1UyZWJBNHVqeGo2dS83YmZkWHZMSWdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjMxMTkwCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xNl94NjQtc2V0dXAuZXhlCnowVUpIRWZTZHJudlM4WlRiR0Z2aG1SQ3JrS0paOFdDSkdLNHNFdk5LdG5WNmlGN2xyUWQ2aDV6OFlXd3J2UXZuNzZCbFdVSEVvblhsQUNSRXE5OUJnPT0K"
     }
   }
 }

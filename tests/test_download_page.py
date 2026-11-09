@@ -11,13 +11,13 @@ WINDOWS = ROOT / "api" / "windows.json"
 WINDOWS_LATEST = ROOT / "api" / "windows-latest.json"
 WINDOWS_TEST = ROOT / "api" / "windows-brand-test.json"
 LOGO = ROOT / "assets" / "brand" / "moadoom-icon-b.svg"
-RELEASE_TAG = "v2.5.15-windows"
+RELEASE_TAG = "v2.5.16-windows"
 ANDROID_RELEASE_TAG = "android-phase13-sync-test"
-WINDOWS_ASSET = "Insurance.AI_2.5.15_x64-setup.exe"
+WINDOWS_ASSET = "Insurance.AI_2.5.16_x64-setup.exe"
 ANDROID_ASSET = "Moadoom_Android_1.0.0-phase13_debug.apk"
 WINDOWS_URL = f"https://github.com/nasawon0-beep/insurance-ai/releases/download/{RELEASE_TAG}/{WINDOWS_ASSET}"
 ANDROID_URL = f"https://github.com/nasawon0-beep/insurance-ai/releases/download/{ANDROID_RELEASE_TAG}/{ANDROID_ASSET}"
-WINDOWS_SIGNATURE = "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFB3bVFINlI5RDkvSC9EM0RlQTdITWVzeTdlMFJlRzZEVkpEeTlwWm5ZV0x4WVEvRy9HSXcyYy9wSHhvbDhiVUZoOXZ3NnFYSDhPMXpsZTVVWnJUWHdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjIwODgzCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xNV94NjQtc2V0dXAuZXhlCjRQME9yU1FFS0dQUlhyZGR3cGV6NnBrSG1DTHplSUw3Zjd3Q3RkZXFFM0VFWm5GNGU0cmUyVFpYNzUxaTNkalA5aFJPbWtDUk9KYlFtTUxvS29SakRRPT0K"
+WINDOWS_SIGNATURE = "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJuMTdFbkRJU3BMRC9hNVIrOTE1RUZUQlpjSVZXbVg5L0N2M1dlUVQ0RTE3eGo5WGFnNjN6d2FaK2J3ZlJaZ1UyZWJBNHVqeGo2dS83YmZkWHZMSWdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjMxMTkwCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xNl94NjQtc2V0dXAuZXhlCnowVUpIRWZTZHJudlM4WlRiR0Z2aG1SQ3JrS0paOFdDSkdLNHNFdk5LdG5WNmlGN2xyUWQ2aDV6OFlXd3J2UXZuNzZCbFdVSEVvblhsQUNSRXE5OUJnPT0K"
 WINDOWS_TEST_TAG = "v2.5.5-brand-b-test.2"
 WINDOWS_TEST_ASSET = "Moadoom_2.5.5_brand-b-test.2_x64-setup.exe"
 
@@ -32,13 +32,13 @@ def test_b_logo_is_exact_selected_source_and_referenced() -> None:
 def test_windows_stable_and_updater_metadata_match_verified_setup() -> None:
     stable = json.loads(WINDOWS.read_text(encoding="utf-8"))
     latest = json.loads(WINDOWS_LATEST.read_text(encoding="utf-8"))
-    assert stable["version"] == "2.5.15"
+    assert stable["version"] == "2.5.16"
     assert stable["url"] == WINDOWS_URL
     assert stable["fileName"] == WINDOWS_ASSET
-    assert stable["fileSize"] == "182,900,659 bytes"
-    assert stable["checksum"]["sha256"] == "cab7379435d36473ba781584d481297712610d63cdd89843341ed4751386cf97"
+    assert stable["fileSize"] == "182,901,915 bytes"
+    assert stable["checksum"]["sha256"] == "83f79cfd49235a018ff0f89461173cef008198cb0f3b9ded5992715b25309e1c"
     assert stable["signature"] == WINDOWS_SIGNATURE
-    assert latest["version"] == "v2.5.15"
+    assert latest["version"] == "v2.5.16"
     assert set(latest["platforms"]) == {"windows-x86_64"}
     updater = latest["platforms"]["windows-x86_64"]
     assert updater["url"] == WINDOWS_URL
@@ -68,7 +68,7 @@ def test_android_metadata_is_explicitly_phase13_debug_beta() -> None:
 def test_windows_stable_is_separate_from_old_brand_test_candidate() -> None:
     stable = json.loads(WINDOWS.read_text(encoding="utf-8"))
     candidate = json.loads(WINDOWS_TEST.read_text(encoding="utf-8"))
-    assert stable["version"] == "2.5.15"
+    assert stable["version"] == "2.5.16"
     assert stable["url"] == WINDOWS_URL
     assert candidate["channel"] == "brand-test"
     assert candidate["internalVersion"] == "2.5.5"
@@ -85,7 +85,7 @@ def test_download_ui_links_stable_windows_and_phase13_android() -> None:
     assert f'href="{ANDROID_URL}"' in html
     assert html.count('<article class="download-card">') == 2
     assert "<h3>Windows</h3>" in html
-    assert "안정 버전 2.5.15" in html
+    assert "안정 버전 2.5.16" in html
     assert "Windows 10 이상 · 64비트" in html
     assert ">Windows용 다운로드<" in html
     assert "<h3>Android</h3>" in html
