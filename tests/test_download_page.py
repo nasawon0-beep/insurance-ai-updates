@@ -11,13 +11,13 @@ WINDOWS = ROOT / "api" / "windows.json"
 WINDOWS_LATEST = ROOT / "api" / "windows-latest.json"
 WINDOWS_TEST = ROOT / "api" / "windows-brand-test.json"
 LOGO = ROOT / "assets" / "brand" / "moadoom-icon-b.svg"
-RELEASE_TAG = "v2.5.12-windows"
-ANDROID_RELEASE_TAG = "v2.5.10-windows"  # Android phase7 APK는 기존 2.5.10 릴리스 자산 그대로
-WINDOWS_ASSET = "Insurance.AI_2.5.12_x64-setup.exe"
-ANDROID_ASSET = "Moadoom_Android_1.0.0-phase7_debug.apk"
+RELEASE_TAG = "v2.5.15-windows"
+ANDROID_RELEASE_TAG = "android-phase13-sync-test"
+WINDOWS_ASSET = "Insurance.AI_2.5.15_x64-setup.exe"
+ANDROID_ASSET = "Moadoom_Android_1.0.0-phase13_debug.apk"
 WINDOWS_URL = f"https://github.com/nasawon0-beep/insurance-ai/releases/download/{RELEASE_TAG}/{WINDOWS_ASSET}"
 ANDROID_URL = f"https://github.com/nasawon0-beep/insurance-ai/releases/download/{ANDROID_RELEASE_TAG}/{ANDROID_ASSET}"
-WINDOWS_SIGNATURE = "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEY3WDRmcVBUYnUxeWZrWTVsUnNGTVU4UVpmc2FIVFlWM0hoMDlyNDUyUDM3VkhzQ2Jhazc1bmRBc2VXeFhvKzUwMkxSNllPMjI3U2VVYlMzVUp3Q3dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzczMjYwCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xMl94NjQtc2V0dXAuZXhlCkgrSEYwMUNOQTltZXRPcFMrMFZQUkVPYmxYS0QrczR0ZmpwdEYvSE9BU2VpUk9oZlliZ2dONGtTdVk4SE4yV21uaDlMSEdhSy8vQmFvbnJTS0NsYUJ3PT0K"
+WINDOWS_SIGNATURE = "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFB3bVFINlI5RDkvSC9EM0RlQTdITWVzeTdlMFJlRzZEVkpEeTlwWm5ZV0x4WVEvRy9HSXcyYy9wSHhvbDhiVUZoOXZ3NnFYSDhPMXpsZTVVWnJUWHdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjIwODgzCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xNV94NjQtc2V0dXAuZXhlCjRQME9yU1FFS0dQUlhyZGR3cGV6NnBrSG1DTHplSUw3Zjd3Q3RkZXFFM0VFWm5GNGU0cmUyVFpYNzUxaTNkalA5aFJPbWtDUk9KYlFtTUxvS29SakRRPT0K"
 WINDOWS_TEST_TAG = "v2.5.5-brand-b-test.2"
 WINDOWS_TEST_ASSET = "Moadoom_2.5.5_brand-b-test.2_x64-setup.exe"
 
@@ -32,13 +32,13 @@ def test_b_logo_is_exact_selected_source_and_referenced() -> None:
 def test_windows_stable_and_updater_metadata_match_verified_setup() -> None:
     stable = json.loads(WINDOWS.read_text(encoding="utf-8"))
     latest = json.loads(WINDOWS_LATEST.read_text(encoding="utf-8"))
-    assert stable["version"] == "2.5.12"
+    assert stable["version"] == "2.5.15"
     assert stable["url"] == WINDOWS_URL
     assert stable["fileName"] == WINDOWS_ASSET
-    assert stable["fileSize"] == "182,808,607 bytes"
-    assert stable["checksum"]["sha256"] == "f11cb87f56044f8d6fd42269332936c5113ccf32590824d7751015a9db01163c"
+    assert stable["fileSize"] == "182,900,659 bytes"
+    assert stable["checksum"]["sha256"] == "cab7379435d36473ba781584d481297712610d63cdd89843341ed4751386cf97"
     assert stable["signature"] == WINDOWS_SIGNATURE
-    assert latest["version"] == "v2.5.12"
+    assert latest["version"] == "v2.5.15"
     assert set(latest["platforms"]) == {"windows-x86_64"}
     updater = latest["platforms"]["windows-x86_64"]
     assert updater["url"] == WINDOWS_URL
@@ -47,17 +47,17 @@ def test_windows_stable_and_updater_metadata_match_verified_setup() -> None:
     assert latest["pub_date"] == stable["pub_date"]
 
 
-def test_android_metadata_is_explicitly_phase7_debug_beta() -> None:
+def test_android_metadata_is_explicitly_phase13_debug_beta() -> None:
     data = json.loads(ANDROID.read_text(encoding="utf-8"))
     assert data["status"] == "test"
-    assert data["versionCode"] == 7
-    assert data["versionName"] == "1.0.0-phase7"
+    assert data["versionCode"] == 13
+    assert data["versionName"] == "1.0.0-phase13"
     assert data["releaseType"] == "debug"
     assert data["minimumAndroid"] == "8.0"
     assert data["downloadUrl"] == ANDROID_URL
     assert data["fileName"] == ANDROID_ASSET
-    assert data["fileSize"] == "32,410,842 bytes"
-    assert data["checksum"]["sha256"] == "048cfd0d1cb9be83f8af9dcb7cb0e2b603152422fdc070d9920bcb5b7ee21823"
+    assert data["fileSize"] == "32,664,049 bytes"
+    assert data["checksum"]["sha256"] == "f10e3928e3e3208b8c8c9cb542a1da8ff0c9f30f616297f69e33d84af0c0e10a"
     assert any("기존 주소로 한 번 정상 연결" in item for item in data["requirements"])
     warning_text = " ".join(data["warnings"])
     assert "debug APK" in warning_text
@@ -68,7 +68,7 @@ def test_android_metadata_is_explicitly_phase7_debug_beta() -> None:
 def test_windows_stable_is_separate_from_old_brand_test_candidate() -> None:
     stable = json.loads(WINDOWS.read_text(encoding="utf-8"))
     candidate = json.loads(WINDOWS_TEST.read_text(encoding="utf-8"))
-    assert stable["version"] == "2.5.12"
+    assert stable["version"] == "2.5.15"
     assert stable["url"] == WINDOWS_URL
     assert candidate["channel"] == "brand-test"
     assert candidate["internalVersion"] == "2.5.5"
@@ -79,20 +79,20 @@ def test_windows_stable_is_separate_from_old_brand_test_candidate() -> None:
     assert candidate["downloadUrl"].endswith("/" + WINDOWS_TEST_ASSET)
 
 
-def test_download_ui_links_stable_windows_and_phase7_android() -> None:
+def test_download_ui_links_stable_windows_and_phase13_android() -> None:
     html = INDEX.read_text(encoding="utf-8")
     assert f'href="{WINDOWS_URL}"' in html
     assert f'href="{ANDROID_URL}"' in html
     assert html.count('<article class="download-card">') == 2
     assert "<h3>Windows</h3>" in html
-    assert "안정 버전 2.5.12" in html
+    assert "안정 버전 2.5.15" in html
     assert "Windows 10 이상 · 64비트" in html
     assert ">Windows용 다운로드<" in html
     assert "<h3>Android</h3>" in html
     assert ">APK 다운로드<" in html
     assert "Android 8.0 이상 · PC와 같은 Wi-Fi에서 연결" in html
     assert ">베타<" in html
-    assert "베타 · 1.0.0-phase7" in html
+    assert "베타 · 1.0.0-phase13" in html
     assert "가족 연결" in html
     assert "모아둠 계정 가입·로그인과 7일 무료체험을 반영한 최신 검수 버전입니다." in html
     assert "개발용 서명 APK" in html
@@ -101,7 +101,10 @@ def test_download_ui_links_stable_windows_and_phase7_android() -> None:
     assert 'id="android-version"' in html
     assert "알 수 없는 앱 설치" in html
     assert "기존 주소로 한 번 정상 연결" in html
-    assert "실폰 NSD 전체 연결과 자동 설치 검증은 완료되지 않았습니다" in html
+    assert "실폰 QR·동기화 및 업데이트 설치 흐름의 전체 검증은 완료되지 않았습니다" in html
+    for notice in ("phase11·12", "최초 한 번", "삭제하지 마세요", "브라우저 다운로드", "Android 설치 승인", "무인 업데이트가 아닙니다"):
+        assert notice in html
+        assert notice in " ".join(json.loads(ANDROID.read_text(encoding="utf-8"))["warnings"])
     assert 'id="windows-test-download"' not in html
     assert "v2.5.5-brand-b-test" not in html
     assert "v2.5.9-windows" not in html

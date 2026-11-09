@@ -2,16 +2,16 @@
   "platform": "android",
   "name": "Android 테스트 버전(APK)",
   "status": "test",
-  "versionCode": 7,
-  "versionName": "1.0.0-phase7",
+  "versionCode": 13,
+  "versionName": "1.0.0-phase13",
   "releaseType": "debug",
-  "releaseDate": null,
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.10-windows/Moadoom_Android_1.0.0-phase7_debug.apk",
-  "fileName": "Moadoom_Android_1.0.0-phase7_debug.apk",
-  "fileSize": "32,410,842 bytes",
+  "releaseDate": "2026-11-09T10:39:54Z",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/android-phase13-sync-test/Moadoom_Android_1.0.0-phase13_debug.apk",
+  "fileName": "Moadoom_Android_1.0.0-phase13_debug.apk",
+  "fileSize": "32,664,049 bytes",
   "minimumAndroid": "8.0",
   "checksum": {
-    "sha256": "048cfd0d1cb9be83f8af9dcb7cb0e2b603152422fdc070d9920bcb5b7ee21823"
+    "sha256": "f10e3928e3e3208b8c8c9cb542a1da8ff0c9f30f616297f69e33d84af0c0e10a"
   },
   "signing": "Android Debug certificate",
   "requirements": [
@@ -22,7 +22,9 @@
   ],
   "warnings": [
     "테스트용 debug APK이며 정식 안정 버전이 아닙니다.",
-    "Android 실제 기기 연결과 자동 설치 검증은 완료되지 않았습니다.",
+    "Android 실제 기기 QR·동기화 및 업데이트 설치 흐름의 전체 검증은 완료되지 않았습니다.",
+    "phase11·12 사용자는 최초 한 번 수동 덮어쓰기 설치가 필요합니다. 기존 앱을 삭제하지 마세요.",
+    "이후 업데이트는 알림 → 브라우저 다운로드 → APK 열기 → Android 설치 승인이 필요하며 무인 업데이트가 아닙니다.",
     "설치 시 브라우저 또는 파일 앱의 알 수 없는 앱 설치 허용이 필요할 수 있습니다."
   ]
 }

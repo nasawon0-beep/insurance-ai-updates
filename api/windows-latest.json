@@ -1,11 +1,11 @@
 {
-  "version": "v2.5.12",
-  "notes": "모아둠 Windows 2.5.12 · 모아둠 계정 가입·로그인, 7일 무료체험, 기존 PC 계정 자료 보존 모드",
-  "pub_date": "2026-11-04T06:21:00Z",
+  "version": "v2.5.15",
+  "notes": "모아둠 Windows 2.5.15 · 모바일 QR 최초 등록, Private 네트워크 방화벽 설정 안내. 실폰 QR·동기화 전체 검증은 완료되지 않았습니다.",
+  "pub_date": "2026-11-09T10:43:19Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEY3WDRmcVBUYnUxeWZrWTVsUnNGTVU4UVpmc2FIVFlWM0hoMDlyNDUyUDM3VkhzQ2Jhazc1bmRBc2VXeFhvKzUwMkxSNllPMjI3U2VVYlMzVUp3Q3dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzczMjYwCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xMl94NjQtc2V0dXAuZXhlCkgrSEYwMUNOQTltZXRPcFMrMFZQUkVPYmxYS0QrczR0ZmpwdEYvSE9BU2VpUk9oZlliZ2dONGtTdVk4SE4yV21uaDlMSEdhSy8vQmFvbnJTS0NsYUJ3PT0K",
-      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.12-windows/Insurance.AI_2.5.12_x64-setup.exe"
+      "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.15-windows/Insurance.AI_2.5.15_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbFB3bVFINlI5RDkvSC9EM0RlQTdITWVzeTdlMFJlRzZEVkpEeTlwWm5ZV0x4WVEvRy9HSXcyYy9wSHhvbDhiVUZoOXZ3NnFYSDhPMXpsZTVVWnJUWHdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjIwODgzCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xNV94NjQtc2V0dXAuZXhlCjRQME9yU1FFS0dQUlhyZGR3cGV6NnBrSG1DTHplSUw3Zjd3Q3RkZXFFM0VFWm5GNGU0cmUyVFpYNzUxaTNkalA5aFJPbWtDUk9KYlFtTUxvS29SakRRPT0K"
     }
   }
 }
