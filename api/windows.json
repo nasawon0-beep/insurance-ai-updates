@@ -1,12 +1,12 @@
 {
-  "version": "2.5.16",
-  "pub_date": "2026-11-09T13:53:04Z",
-  "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.16-windows/Insurance.AI_2.5.16_x64-setup.exe",
-  "fileName": "Insurance.AI_2.5.16_x64-setup.exe",
-  "fileSize": "182,901,915 bytes",
+  "version": "2.5.17",
+  "pub_date": "2026-11-10T01:58:18Z",
+  "url": "https://github.com/nasawon0-beep/insurance-ai/releases/download/v2.5.17-windows/Insurance.AI_2.5.17_x64-setup.exe",
+  "fileName": "Insurance.AI_2.5.17_x64-setup.exe",
+  "fileSize": "182,948,211 bytes",
   "checksum": {
-    "sha256": "83f79cfd49235a018ff0f89461173cef008198cb0f3b9ded5992715b25309e1c"
+    "sha256": "fdf2853be160b38089d815f3f49397546b6cac425fb90b14188d88580a758c93"
   },
-  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEJuMTdFbkRJU3BMRC9hNVIrOTE1RUZUQlpjSVZXbVg5L0N2M1dlUVQ0RTE3eGo5WGFnNjN6d2FaK2J3ZlJaZ1UyZWJBNHVqeGo2dS83YmZkWHZMSWdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjMxMTkwCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xNl94NjQtc2V0dXAuZXhlCnowVUpIRWZTZHJudlM4WlRiR0Z2aG1SQ3JrS0paOFdDSkdLNHNFdk5LdG5WNmlGN2xyUWQ2aDV6OFlXd3J2UXZuNzZCbFdVSEVvblhsQUNSRXE5OUJnPT0K",
-  "notes": "모바일 연결 화면을 간단하게 정리하고, 공용 네트워크·핫스팟 안내와 기기명 표시를 개선했습니다."
+  "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEpieXpPMnZHeVBrMnROWEFyczI5b29uMitpQ203SE1NOFRLcDRXeC9Wem9xOE8yK01mKzREY2dXV1VDNzZEa0Rqai9RWG5wSTVwV0lhZmN6WXRPemc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjcwMjEyCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xN194NjQtc2V0dXAuZXhlClhxVlRaMXNoT2dxbVdUZHd0SmtzVjlHUmp5N1ZzTkVmOGFIWm9BRlZVSEVEZ0xHNHlsdkIrRUdHN3ZQTFd1RG9wRFZJZWdva3RldkpMVXhIdFFTZENRPT0K",
+  "notes": "모아둠 2.5.17 · 공용 연결 동의·허용 해제, 해제 기기 목록 숨김, 업무 초기화·복원. 초기화는 폰 자료·등록·키·원본 PDF를 유지하며 동기화를 중지합니다. 정상 백업 복원 후 직접 연결을 재개합니다. UAC GUI·실폰 동기화 전체 검증은 완료되지 않았습니다."
 }

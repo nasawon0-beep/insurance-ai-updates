@@ -2,16 +2,16 @@
   "platform": "android",
   "name": "Android 테스트 버전(APK)",
   "status": "test",
-  "versionCode": 13,
-  "versionName": "1.0.0-phase13",
+  "versionCode": 14,
+  "versionName": "1.0.0-phase14",
   "releaseType": "debug",
-  "releaseDate": "2026-11-09T10:39:54Z",
-  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/android-phase13-sync-test/Moadoom_Android_1.0.0-phase13_debug.apk",
-  "fileName": "Moadoom_Android_1.0.0-phase13_debug.apk",
+  "releaseDate": "2026-11-10T01:58:40Z",
+  "downloadUrl": "https://github.com/nasawon0-beep/insurance-ai/releases/download/android-phase14-sync-test/Moadoom_Android_1.0.0-phase14_debug.apk",
+  "fileName": "Moadoom_Android_1.0.0-phase14_debug.apk",
   "fileSize": "32,664,049 bytes",
   "minimumAndroid": "8.0",
   "checksum": {
-    "sha256": "f10e3928e3e3208b8c8c9cb542a1da8ff0c9f30f616297f69e33d84af0c0e10a"
+    "sha256": "1f90f5f10b6bbd340c448afb4f017c8a661aa4f75d395689ad80c61fadec78db"
   },
   "signing": "Android Debug certificate",
   "requirements": [
