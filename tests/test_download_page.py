@@ -12,9 +12,9 @@ WINDOWS_LATEST = ROOT / "api" / "windows-latest.json"
 WINDOWS_TEST = ROOT / "api" / "windows-brand-test.json"
 LOGO = ROOT / "assets" / "brand" / "moadoom-icon-b.svg"
 RELEASE_TAG = "v2.5.17-windows"
-ANDROID_RELEASE_TAG = "android-phase14-sync-test"
+ANDROID_RELEASE_TAG = "android-phase15-sync-test"
 WINDOWS_ASSET = "Insurance.AI_2.5.17_x64-setup.exe"
-ANDROID_ASSET = "Moadoom_Android_1.0.0-phase14_debug.apk"
+ANDROID_ASSET = "Moadoom_Android_1.0.0-phase15_debug.apk"
 WINDOWS_URL = f"https://github.com/nasawon0-beep/insurance-ai/releases/download/{RELEASE_TAG}/{WINDOWS_ASSET}"
 ANDROID_URL = f"https://github.com/nasawon0-beep/insurance-ai/releases/download/{ANDROID_RELEASE_TAG}/{ANDROID_ASSET}"
 WINDOWS_SIGNATURE = "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUa2tvZmJNSGFpbEpieXpPMnZHeVBrMnROWEFyczI5b29uMitpQ203SE1NOFRLcDRXeC9Wem9xOE8yK01mKzREY2dXV1VDNzZEa0Rqai9RWG5wSTVwV0lhZmN6WXRPemc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MjcwMjEyCWZpbGU6SW5zdXJhbmNlIEFJXzIuNS4xN194NjQtc2V0dXAuZXhlClhxVlRaMXNoT2dxbVdUZHd0SmtzVjlHUmp5N1ZzTkVmOGFIWm9BRlZVSEVEZ0xHNHlsdkIrRUdHN3ZQTFd1RG9wRFZJZWdva3RldkpMVXhIdFFTZENRPT0K"
@@ -47,17 +47,17 @@ def test_windows_stable_and_updater_metadata_match_verified_setup() -> None:
     assert latest["pub_date"] == stable["pub_date"]
 
 
-def test_android_metadata_is_explicitly_phase14_debug_beta() -> None:
+def test_android_metadata_is_explicitly_phase15_debug_beta() -> None:
     data = json.loads(ANDROID.read_text(encoding="utf-8"))
     assert data["status"] == "test"
-    assert data["versionCode"] == 14
-    assert data["versionName"] == "1.0.0-phase14"
+    assert data["versionCode"] == 15
+    assert data["versionName"] == "1.0.0-phase15"
     assert data["releaseType"] == "debug"
     assert data["minimumAndroid"] == "8.0"
     assert data["downloadUrl"] == ANDROID_URL
     assert data["fileName"] == ANDROID_ASSET
-    assert data["fileSize"] == "32,664,049 bytes"
-    assert data["checksum"]["sha256"] == "1f90f5f10b6bbd340c448afb4f017c8a661aa4f75d395689ad80c61fadec78db"
+    assert data["fileSize"] == "32,696,813 bytes"
+    assert data["checksum"]["sha256"] == "cf89af919adb7baaf220bc21eeb2d80b841ab2024ce117b60c8e7795d4557f72"
     assert any("기존 주소로 한 번 정상 연결" in item for item in data["requirements"])
     warning_text = " ".join(data["warnings"])
     assert "debug APK" in warning_text
@@ -79,7 +79,7 @@ def test_windows_stable_is_separate_from_old_brand_test_candidate() -> None:
     assert candidate["downloadUrl"].endswith("/" + WINDOWS_TEST_ASSET)
 
 
-def test_download_ui_links_stable_windows_and_phase14_android() -> None:
+def test_download_ui_links_stable_windows_and_phase15_android() -> None:
     html = INDEX.read_text(encoding="utf-8")
     assert f'href="{WINDOWS_URL}"' in html
     assert f'href="{ANDROID_URL}"' in html
@@ -92,7 +92,7 @@ def test_download_ui_links_stable_windows_and_phase14_android() -> None:
     assert ">APK 다운로드<" in html
     assert "Android 8.0 이상 · PC와 같은 Wi-Fi에서 연결" in html
     assert ">베타<" in html
-    assert "베타 · 1.0.0-phase14" in html
+    assert "베타 · 1.0.0-phase15" in html
     assert "가족 연결" in html
     assert "모아둠 계정 가입·로그인과 7일 무료체험을 반영한 최신 검수 버전입니다." in html
     assert "개발용 서명 APK" in html
